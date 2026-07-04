@@ -1,0 +1,100 @@
+text_skin: ocean
+highlight_theme: tomorrow-night-blue
+
+url: https://transcendentsky.github.io
+baseurl:
+title: Transcendent Sky
+description: >-
+  Transcendent Sky 的个人网站，收录简历、项目、研究笔记与博客文章。
+
+lang: zh-CN
+timezone: Asia/Shanghai
+
+author:
+  type: person
+  name: Transcendent Sky
+  url: https://transcendentsky.github.io
+  avatar: /images/avatar.gif
+  bio: 关注软件工程、数据、AI、开源协作与知识管理。
+  email:
+  github: transcendentsky
+
+repository: transcendentsky/transcendentsky.github.io
+repository_tree: master
+
+paths:
+  root: /
+  home: /
+  archive: /blog/
+  rss: /feed.xml
+
+excerpt_separator: <!--more-->
+license: CC-BY-NC-4.0
+
+toc:
+  selectors: h1,h2,h3
+
+mathjax: false
+mathjax_autoNumber: false
+mermaid: false
+chart: false
+
+paginate: 8
+paginate_path: /page:num
+
+sources: unpkg
+
+sharing:
+  provider: false
+
+comments:
+  provider: false
+
+pageview:
+  provider: false
+
+search:
+  provider: default
+
+analytics:
+  provider: false
+
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+
+exclude:
+  - CHANGELOG.md
+  - HOW_TO_RELEASE.md
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README-*.md
+  - gulpfile.js
+  - jekyll-text-theme.gemspec
+  - package-lock.json
+  - package.json
+  - /docs
+  - /node_modules
+  - /screenshots
+  - /test
+  - /vendor
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: article
+      sharing: false
+      license: true
+      aside:
+        toc: true
+      show_edit_on_github: true
+      show_subscribe: false
+      pageview: false
+
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap

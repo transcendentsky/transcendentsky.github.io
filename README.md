@@ -4,20 +4,19 @@ This repository hosts the GitHub Pages site for `transcendentsky.github.io`.
 
 ## Structure
 
-- `index.html`: home page.
-- `resume/index.html`: resume page.
-- `blog/index.html`: blog index.
-- `blog/hello-github-pages/index.html`: example post.
-- `assets/site.css`: shared styles.
+- `_config.yml`: Jekyll and TeXt theme configuration.
+- `index.html`: TeXt home page.
+- `resume.md`: resume page.
+- `blog.md`: blog archive page.
+- `_posts/`: Markdown blog posts.
 - `2018/`, `archives/`, `tags/`, `categories/`: legacy Hexo archive pages.
 
 ## Add A Blog Post
 
-1. Copy `blog/hello-github-pages/` to a new folder such as `blog/my-new-post/`.
-2. Edit the new `index.html`.
-3. Add the post link to `blog/index.html`.
-4. Optionally add it to the home page latest posts section.
+1. Create a Markdown file in `_posts/`, such as `_posts/2026-07-04-my-new-post.md`.
+2. Add front matter with `title` and optional `tags`.
+3. Write the article body in Markdown.
 
 ## Update Resume
 
-Edit `resume/index.html` and replace the placeholder content with real education, project, publication, award, and contact information.
+Edit `resume.md` and replace the placeholder content with real education, project, publication, award, and contact information.

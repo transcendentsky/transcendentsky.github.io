@@ -1,0 +1,25 @@
+header:
+  - titles:
+      zh-CN: 首页
+      en: Home
+    url: /
+
+  - titles:
+      zh-CN: 简历
+      en: Resume
+    url: /resume/
+
+  - titles:
+      zh-CN: 博客
+      en: Blog
+    url: /blog/
+
+  - titles:
+      zh-CN: 旧文归档
+      en: Legacy
+    url: /archives/
+
+  - titles:
+      zh-CN: GitHub
+      en: GitHub
+    url: https://github.com/transcendentsky
