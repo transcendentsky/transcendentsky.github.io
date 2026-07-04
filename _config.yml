@@ -3,20 +3,20 @@ highlight_theme: tomorrow-night-blue
 
 url: https://transcendentsky.github.io
 baseurl:
-title: Transcendent Sky
+title: 全权
 description: >-
-  Transcendent Sky 的个人网站，收录简历、项目、研究笔记与博客文章。
+  全权的个人网站，收录简历、项目、研究笔记与博客文章。
 
 lang: zh-CN
 timezone: Asia/Shanghai
 
 author:
   type: person
-  name: Transcendent Sky
+  name: 全权
   url: https://transcendentsky.github.io
   avatar: /images/avatar.gif
-  bio: 关注软件工程、数据、AI、开源协作与知识管理。
-  email:
+  bio: 可靠多模态智能系统 / 行业诊断智能体算法。
+  email: quanquan20b@gmail.com
   github: transcendentsky
 
 repository: transcendentsky/transcendentsky.github.io
