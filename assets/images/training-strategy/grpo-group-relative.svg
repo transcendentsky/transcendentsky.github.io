@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="540" viewBox="0 0 1100 540" role="img" aria-label="GRPO 组内相对奖励示意图">
+  <defs>
+    <style>
+      .bg{fill:#fbfaf7}
+      .card{fill:#fff;stroke:#d8d0c3;stroke-width:2;rx:16}
+      .prompt{fill:#e9f1ff;stroke:#9cb9ee}
+      .ok{fill:#e8f7ef;stroke:#8fc9a6}
+      .no{fill:#ffe8e5;stroke:#e69a8f}
+      .avg{fill:#fff1d8;stroke:#e4bd70}
+      .title{font:700 30px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#1f2a2e}
+      .label{font:700 23px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#1f2a2e}
+      .small{font:18px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#4a555a}
+      .score{font:700 22px Arial,sans-serif;fill:#1f2a2e}
+      .arrow{stroke:#2f3a3f;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#2f3a3f"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1100" height="540"/>
+  <text class="title" x="60" y="58">GRPO：同题多解，组内相对比较</text>
+  <text class="small" x="60" y="90">不单独训练 value model，而是让同一个问题的多条回答互相做参照。</text>
+  <rect class="card prompt" x="70" y="190" width="210" height="130"/>
+  <text class="label" x="175" y="232" text-anchor="middle">一道数学题</text>
+  <text class="small" x="175" y="267" text-anchor="middle">同一个 prompt</text>
+  <text class="small" x="175" y="295" text-anchor="middle">采样 G 个回答</text>
+  <path class="arrow" d="M280 255 H350"/>
+  <g>
+    <rect class="card no" x="365" y="125" width="130" height="74"/>
+    <text class="label" x="430" y="155" text-anchor="middle">回答 1</text>
+    <text class="score" x="430" y="183" text-anchor="middle">r = 0</text>
+    <rect class="card ok" x="520" y="125" width="130" height="74"/>
+    <text class="label" x="585" y="155" text-anchor="middle">回答 2</text>
+    <text class="score" x="585" y="183" text-anchor="middle">r = 1</text>
+    <rect class="card no" x="675" y="125" width="130" height="74"/>
+    <text class="label" x="740" y="155" text-anchor="middle">回答 3</text>
+    <text class="score" x="740" y="183" text-anchor="middle">r = 0</text>
+    <rect class="card ok" x="365" y="235" width="130" height="74"/>
+    <text class="label" x="430" y="265" text-anchor="middle">回答 4</text>
+    <text class="score" x="430" y="293" text-anchor="middle">r = 1</text>
+    <rect class="card no" x="520" y="235" width="130" height="74"/>
+    <text class="label" x="585" y="265" text-anchor="middle">回答 5</text>
+    <text class="score" x="585" y="293" text-anchor="middle">r = 0</text>
+    <rect class="card no" x="675" y="235" width="130" height="74"/>
+    <text class="label" x="740" y="265" text-anchor="middle">回答 6</text>
+    <text class="score" x="740" y="293" text-anchor="middle">r = 0</text>
+  </g>
+  <path class="arrow" d="M805 218 H860"/>
+  <rect class="card avg" x="875" y="165" width="170" height="140"/>
+  <text class="label" x="960" y="206" text-anchor="middle">组内均值</text>
+  <text class="score" x="960" y="242" text-anchor="middle">mean = 0.33</text>
+  <text class="small" x="960" y="275" text-anchor="middle">比平均好就奖励</text>
+  <path class="arrow" d="M960 305 C930 390 755 425 635 425"/>
+  <rect class="card" x="350" y="380" width="370" height="90"/>
+  <text class="label" x="535" y="416" text-anchor="middle">优势值</text>
+  <text class="small" x="535" y="448" text-anchor="middle">advantage ≈ 当前奖励 - 组内平均奖励</text>
+</svg>

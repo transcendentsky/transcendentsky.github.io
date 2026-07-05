@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520" role="img" aria-label="RLHF 与 PPO 流程图">
+  <defs>
+    <style>
+      .bg{fill:#fbfaf7}
+      .box{fill:#fff;stroke:#d8d0c3;stroke-width:2;rx:16}
+      .blue{fill:#e9f1ff;stroke:#9cb9ee}
+      .green{fill:#e8f7ef;stroke:#8fc9a6}
+      .orange{fill:#fff1d8;stroke:#e4bd70}
+      .purple{fill:#f1e9ff;stroke:#bca3e8}
+      .title{font:700 30px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#1f2a2e}
+      .label{font:700 24px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#1f2a2e}
+      .small{font:18px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#4a555a}
+      .arrow{stroke:#2f3a3f;stroke-width:3;fill:none;marker-end:url(#arrow)}
+      .dash{stroke:#7b878d;stroke-width:2;fill:none;stroke-dasharray:8 8;marker-end:url(#arrow2)}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#2f3a3f"/>
+    </marker>
+    <marker id="arrow2" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#7b878d"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1100" height="520"/>
+  <text class="title" x="60" y="58">RLHF + PPO：让模型学会“人类更喜欢什么”</text>
+  <text class="small" x="60" y="90">先训练奖励模型，再用 PPO 小步更新助手模型，避免为了高分跑偏。</text>
+  <rect class="box blue" x="70" y="150" width="190" height="96"/>
+  <text class="label" x="165" y="187" text-anchor="middle">SFT 模型</text>
+  <text class="small" x="165" y="217" text-anchor="middle">先学会听指令</text>
+  <rect class="box orange" x="335" y="130" width="210" height="136"/>
+  <text class="label" x="440" y="166" text-anchor="middle">人类偏好</text>
+  <text class="small" x="440" y="198" text-anchor="middle">A、B、C 回答排序</text>
+  <text class="small" x="440" y="226" text-anchor="middle">chosen / rejected</text>
+  <rect class="box green" x="620" y="150" width="210" height="96"/>
+  <text class="label" x="725" y="187" text-anchor="middle">Reward Model</text>
+  <text class="small" x="725" y="217" text-anchor="middle">预测人类会给几分</text>
+  <rect class="box purple" x="885" y="150" width="160" height="96"/>
+  <text class="label" x="965" y="187" text-anchor="middle">PPO</text>
+  <text class="small" x="965" y="217" text-anchor="middle">小步更新策略</text>
+  <path class="arrow" d="M260 198 H330"/>
+  <path class="arrow" d="M545 198 H615"/>
+  <path class="arrow" d="M830 198 H880"/>
+  <rect class="box" x="350" y="340" width="400" height="90"/>
+  <text class="label" x="550" y="376" text-anchor="middle">训练目标</text>
+  <text class="small" x="550" y="407" text-anchor="middle">奖励更高 + 不要偏离参考模型太远</text>
+  <path class="dash" d="M965 246 C950 330 820 386 755 386"/>
+  <path class="dash" d="M165 246 C210 335 280 386 345 386"/>
+</svg>

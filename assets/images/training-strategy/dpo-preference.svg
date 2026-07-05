@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="500" viewBox="0 0 1100 500" role="img" aria-label="DPO 偏好优化示意图">
+  <defs>
+    <style>
+      .bg{fill:#fbfaf7}
+      .card{fill:#fff;stroke:#d8d0c3;stroke-width:2;rx:16}
+      .good{fill:#e8f7ef;stroke:#8fc9a6}
+      .bad{fill:#ffe8e5;stroke:#e69a8f}
+      .model{fill:#e9f1ff;stroke:#9cb9ee}
+      .title{font:700 30px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#1f2a2e}
+      .label{font:700 24px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#1f2a2e}
+      .small{font:18px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#4a555a}
+      .big{font:700 42px Arial,sans-serif;fill:#2f3a3f}
+      .arrow{stroke:#2f3a3f;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#2f3a3f"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1100" height="500"/>
+  <text class="title" x="60" y="58">DPO：不绕奖励模型，直接学偏好</text>
+  <text class="small" x="60" y="90">看到同一个问题下的好答案和坏答案，直接提高 chosen 概率、压低 rejected 概率。</text>
+  <rect class="card" x="70" y="150" width="240" height="210"/>
+  <text class="label" x="190" y="190" text-anchor="middle">同一个 Prompt</text>
+  <text class="small" x="190" y="230" text-anchor="middle">“解释一下黑洞”</text>
+  <text class="small" x="190" y="268" text-anchor="middle">模型不需要在线探索</text>
+  <text class="small" x="190" y="298" text-anchor="middle">直接吃偏好数据</text>
+  <rect class="card good" x="400" y="135" width="260" height="100"/>
+  <text class="label" x="530" y="174" text-anchor="middle">chosen</text>
+  <text class="small" x="530" y="205" text-anchor="middle">清楚、准确、用户喜欢</text>
+  <rect class="card bad" x="400" y="285" width="260" height="100"/>
+  <text class="label" x="530" y="324" text-anchor="middle">rejected</text>
+  <text class="small" x="530" y="355" text-anchor="middle">啰嗦、错误、不合适</text>
+  <text class="big" x="705" y="210">↑</text>
+  <text class="big" x="705" y="360">↓</text>
+  <rect class="card model" x="790" y="190" width="240" height="120"/>
+  <text class="label" x="910" y="233" text-anchor="middle">更新模型</text>
+  <text class="small" x="910" y="266" text-anchor="middle">chosen 概率更高</text>
+  <text class="small" x="910" y="294" text-anchor="middle">rejected 概率更低</text>
+  <path class="arrow" d="M310 255 H390"/>
+  <path class="arrow" d="M660 185 C725 190 750 220 785 236"/>
+  <path class="arrow" d="M660 335 C725 330 750 290 785 270"/>
+</svg>
