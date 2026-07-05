@@ -10,6 +10,11 @@ header:
     url: /resume/
 
   - titles:
+      zh-CN: 英文简历
+      en: Resume EN
+    url: /resume-en/
+
+  - titles:
       zh-CN: 博客
       en: Blog
     url: /blog/
