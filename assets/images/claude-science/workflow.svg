@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">Claude Science workflow</title>
+  <desc id="desc">A left to right workflow from scientific goal to planning, tool selection, code execution, artifact generation, review, and iteration.</desc>
+  <defs>
+    <style>
+      .bg{fill:#fbfbfd}
+      .card{fill:#fff;stroke:#d8dee9;stroke-width:2}
+      .c1{fill:#e8f1ff}.c2{fill:#eaf7f0}.c3{fill:#fff3da}.c4{fill:#ffecef}.c5{fill:#eceffd}.c6{fill:#e8f6f8}
+      .ink{fill:#1f2937;font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+      .muted{fill:#64748b;font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+      .line{stroke:#64748b;stroke-width:3;fill:none;marker-end:url(#arrow)}
+      .loop{stroke:#94a3b8;stroke-width:2.5;fill:none;stroke-dasharray:7 7;marker-end:url(#arrowSmall)}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#64748b"/>
+    </marker>
+    <marker id="arrowSmall" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M2,2 L8,5 L2,8 Z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="520"/>
+  <text class="ink" x="60" y="70" font-size="34" font-weight="700">端到端科研任务流</text>
+  <text class="muted" x="60" y="108" font-size="18">从目标提出到复跑优化，每一步都留下可追踪的计算证据。</text>
+
+  <g transform="translate(58 165)">
+    <rect class="card" width="155" height="132" rx="14"/>
+    <rect class="c1" x="16" y="16" width="54" height="54" rx="12"/>
+    <text class="ink" x="32" y="53" font-size="28" font-weight="700">1</text>
+    <text class="ink" x="22" y="95" font-size="20" font-weight="700">提出目标</text>
+    <text class="muted" x="22" y="120" font-size="15">问题、数据、约束</text>
+  </g>
+  <path class="line" d="M218 231 H278"/>
+
+  <g transform="translate(290 165)">
+    <rect class="card" width="155" height="132" rx="14"/>
+    <rect class="c2" x="16" y="16" width="54" height="54" rx="12"/>
+    <text class="ink" x="32" y="53" font-size="28" font-weight="700">2</text>
+    <text class="ink" x="22" y="95" font-size="20" font-weight="700">拆解计划</text>
+    <text class="muted" x="22" y="120" font-size="15">任务、风险、产物</text>
+  </g>
+  <path class="line" d="M450 231 H510"/>
+
+  <g transform="translate(522 165)">
+    <rect class="card" width="155" height="132" rx="14"/>
+    <rect class="c3" x="16" y="16" width="54" height="54" rx="12"/>
+    <text class="ink" x="32" y="53" font-size="28" font-weight="700">3</text>
+    <text class="ink" x="22" y="95" font-size="20" font-weight="700">选择工具</text>
+    <text class="muted" x="22" y="120" font-size="15">agent / skill / MCP</text>
+  </g>
+  <path class="line" d="M682 231 H742"/>
+
+  <g transform="translate(754 165)">
+    <rect class="card" width="155" height="132" rx="14"/>
+    <rect class="c4" x="16" y="16" width="54" height="54" rx="12"/>
+    <text class="ink" x="32" y="53" font-size="28" font-weight="700">4</text>
+    <text class="ink" x="22" y="95" font-size="20" font-weight="700">执行分析</text>
+    <text class="muted" x="22" y="120" font-size="15">代码、数据库、计算</text>
+  </g>
+  <path class="line" d="M914 231 H974"/>
+
+  <g transform="translate(986 165)">
+    <rect class="card" width="155" height="132" rx="14"/>
+    <rect class="c5" x="16" y="16" width="54" height="54" rx="12"/>
+    <text class="ink" x="32" y="53" font-size="28" font-weight="700">5</text>
+    <text class="ink" x="22" y="95" font-size="20" font-weight="700">生成产物</text>
+    <text class="muted" x="22" y="120" font-size="15">图表、表格、报告</text>
+  </g>
+
+  <g transform="translate(412 365)">
+    <rect class="card" width="376" height="76" rx="14"/>
+    <rect class="c6" x="20" y="18" width="44" height="40" rx="10"/>
+    <text class="ink" x="82" y="48" font-size="21" font-weight="700">Reviewer 复核：结果是否来自真实数据与代码？</text>
+  </g>
+  <path class="loop" d="M1062 302 C1055 380 840 390 794 401"/>
+  <path class="loop" d="M406 402 C230 388 126 342 136 302"/>
+  <text class="muted" x="812" y="385" font-size="16">保存 provenance</text>
+  <text class="muted" x="160" y="374" font-size="16">用户追问后复跑</text>
+</svg>

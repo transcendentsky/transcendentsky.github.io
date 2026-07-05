@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">
+  <title id="title">Claude Science architecture</title>
+  <desc id="desc">A research workbench architecture showing user goals, coordinating agent, specialist agents, tools, data sources, execution environment, artifacts, provenance, and reviewer.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f7f8fb}
+      .panel{fill:#fff;stroke:#d8dde8;stroke-width:2}
+      .core{fill:#22314f}
+      .blue{fill:#e7f0ff;stroke:#7aa3e5}
+      .green{fill:#eaf6ef;stroke:#7bb98b}
+      .amber{fill:#fff4de;stroke:#d0a44b}
+      .rose{fill:#ffecef;stroke:#d98593}
+      .ink{fill:#1f2937;font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+      .muted{fill:#64748b;font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+      .white{fill:#fff;font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+      .arrow{stroke:#64748b;stroke-width:3;fill:none;marker-end:url(#arrow)}
+      .thin{stroke:#b6bfcc;stroke-width:2;fill:none;marker-end:url(#arrowSmall)}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#64748b"/>
+    </marker>
+    <marker id="arrowSmall" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M2,2 L8,5 L2,8 Z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="660" rx="0"/>
+  <text class="ink" x="60" y="72" font-size="34" font-weight="700">Claude Science：科研智能体工作台架构</text>
+  <text class="muted" x="60" y="112" font-size="18">总控 Agent 负责理解目标与调度，外部工具和数据环境负责执行，Reviewer 负责复核与溯源。</text>
+
+  <rect class="panel" x="58" y="155" width="240" height="145" rx="16"/>
+  <text class="ink" x="88" y="205" font-size="24" font-weight="700">用户科研目标</text>
+  <text class="muted" x="88" y="242" font-size="17">自然语言任务</text>
+  <text class="muted" x="88" y="270" font-size="17">数据、论文、实验记录</text>
+
+  <rect class="core" x="390" y="155" width="420" height="145" rx="18"/>
+  <text class="white" x="430" y="204" font-size="26" font-weight="700">Generalist Coordinating Agent</text>
+  <text class="white" x="430" y="242" font-size="17">拆解任务 · 选择 specialist · 组织工具链</text>
+  <text class="white" x="430" y="270" font-size="17">决定何时执行、何时复核、何时让用户介入</text>
+
+  <rect class="panel" x="902" y="155" width="240" height="145" rx="16"/>
+  <text class="ink" x="936" y="205" font-size="24" font-weight="700">用户审阅</text>
+  <text class="muted" x="936" y="242" font-size="17">追问、修正阈值</text>
+  <text class="muted" x="936" y="270" font-size="17">批准下一轮分析</text>
+
+  <path class="arrow" d="M298 228 H378"/>
+  <path class="arrow" d="M812 228 H890"/>
+  <path class="thin" d="M1022 300 C1022 380 795 382 780 304"/>
+
+  <rect class="blue" x="78" y="388" width="220" height="132" rx="14"/>
+  <text class="ink" x="112" y="430" font-size="21" font-weight="700">Specialist Agents</text>
+  <text class="muted" x="112" y="465" font-size="16">single-cell</text>
+  <text class="muted" x="112" y="492" font-size="16">genomics / proteomics</text>
+
+  <rect class="green" x="350" y="388" width="220" height="132" rx="14"/>
+  <text class="ink" x="400" y="430" font-size="21" font-weight="700">Skills</text>
+  <text class="muted" x="386" y="465" font-size="16">标准流程</text>
+  <text class="muted" x="386" y="492" font-size="16">脚本、规范、最佳实践</text>
+
+  <rect class="amber" x="630" y="388" width="220" height="132" rx="14"/>
+  <text class="ink" x="682" y="430" font-size="21" font-weight="700">Connectors</text>
+  <text class="muted" x="660" y="465" font-size="16">PubMed / Benchling</text>
+  <text class="muted" x="660" y="492" font-size="16">数据库与实验平台</text>
+
+  <rect class="rose" x="902" y="388" width="220" height="132" rx="14"/>
+  <text class="ink" x="956" y="430" font-size="21" font-weight="700">Code Runtime</text>
+  <text class="muted" x="940" y="465" font-size="16">Python / R / shell</text>
+  <text class="muted" x="940" y="492" font-size="16">sandbox 执行环境</text>
+
+  <path class="thin" d="M500 300 C455 348 260 342 200 385"/>
+  <path class="thin" d="M560 300 C540 342 486 348 462 385"/>
+  <path class="thin" d="M635 300 C670 345 711 348 732 385"/>
+  <path class="thin" d="M710 300 C795 345 942 348 1000 385"/>
+
+  <rect class="panel" x="216" y="575" width="330" height="52" rx="12"/>
+  <text class="ink" x="248" y="609" font-size="18" font-weight="700">Artifacts：图表、表格、模型结果、报告</text>
+  <rect class="panel" x="654" y="575" width="330" height="52" rx="12"/>
+  <text class="ink" x="686" y="609" font-size="18" font-weight="700">Provenance：数据、代码、参数、版本</text>
+  <path class="thin" d="M460 520 V568"/>
+  <path class="thin" d="M740 520 V568"/>
+</svg>

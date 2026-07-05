@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Single cell RNA-seq example</title>
+  <desc id="desc">A single-cell RNA-seq workflow showing input files, QC, filtering, clustering, visualization, artifacts, and reviewer checks.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}
+      .lane{fill:#fff;stroke:#d8dee9;stroke-width:2}
+      .data{fill:#e8f1ff;stroke:#7aa3e5}
+      .step{fill:#eaf7f0;stroke:#7bb98b}
+      .viz{fill:#fff3da;stroke:#d0a44b}
+      .review{fill:#ffecef;stroke:#d98593}
+      .ink{fill:#1f2937;font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+      .muted{fill:#64748b;font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+      .line{stroke:#64748b;stroke-width:3;fill:none;marker-end:url(#arrow)}
+      .thin{stroke:#94a3b8;stroke-width:2;fill:none}
+      .dot1{fill:#3b82f6}.dot2{fill:#10b981}.dot3{fill:#f59e0b}.dot4{fill:#ef4444}.dot5{fill:#8b5cf6}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="640"/>
+  <text class="ink" x="60" y="70" font-size="34" font-weight="700">单细胞 RNA-seq：一个可追踪的分析例子</text>
+  <text class="muted" x="60" y="108" font-size="18">Claude Science 的价值不只在“跑完”，而是在每一步都能解释数据、参数和结果来源。</text>
+
+  <rect class="lane" x="58" y="155" width="1084" height="350" rx="18"/>
+  <text class="muted" x="92" y="198" font-size="18" font-weight="700">分析流水线</text>
+
+  <rect class="data" x="90" y="230" width="160" height="98" rx="14"/>
+  <text class="ink" x="122" y="268" font-size="20" font-weight="700">输入数据</text>
+  <text class="muted" x="120" y="298" font-size="15">h5 / h5ad</text>
+  <path class="line" d="M255 279 H320"/>
+
+  <rect class="step" x="330" y="230" width="160" height="98" rx="14"/>
+  <text class="ink" x="370" y="268" font-size="20" font-weight="700">QC</text>
+  <text class="muted" x="360" y="298" font-size="15">线粒体比例</text>
+  <path class="line" d="M495 279 H560"/>
+
+  <rect class="step" x="570" y="230" width="160" height="98" rx="14"/>
+  <text class="ink" x="612" y="268" font-size="20" font-weight="700">过滤</text>
+  <text class="muted" x="604" y="298" font-size="15">MAD 阈值</text>
+  <path class="line" d="M735 279 H800"/>
+
+  <rect class="viz" x="810" y="230" width="160" height="98" rx="14"/>
+  <text class="ink" x="846" y="268" font-size="20" font-weight="700">聚类 / UMAP</text>
+  <text class="muted" x="846" y="298" font-size="15">marker 检查</text>
+  <path class="line" d="M975 279 H1040"/>
+
+  <rect class="data" x="965" y="365" width="140" height="84" rx="14"/>
+  <text class="ink" x="1000" y="398" font-size="19" font-weight="700">输出</text>
+  <text class="muted" x="992" y="426" font-size="15">图表 / 报告</text>
+
+  <path class="line" d="M1047 328 V354"/>
+
+  <g transform="translate(130 372)">
+    <rect class="viz" width="230" height="86" rx="14"/>
+    <text class="ink" x="26" y="36" font-size="19" font-weight="700">QC violin plot</text>
+    <path class="thin" d="M34 62 C60 22 88 22 112 62 C138 24 166 26 192 62"/>
+    <circle class="dot1" cx="54" cy="58" r="5"/>
+    <circle class="dot2" cx="101" cy="46" r="5"/>
+    <circle class="dot3" cx="151" cy="53" r="5"/>
+  </g>
+
+  <g transform="translate(430 372)">
+    <rect class="viz" width="230" height="86" rx="14"/>
+    <text class="ink" x="26" y="36" font-size="19" font-weight="700">UMAP clusters</text>
+    <circle class="dot1" cx="72" cy="60" r="7"/><circle class="dot1" cx="92" cy="52" r="6"/><circle class="dot1" cx="109" cy="65" r="5"/>
+    <circle class="dot2" cx="145" cy="56" r="7"/><circle class="dot2" cx="164" cy="66" r="6"/><circle class="dot3" cx="184" cy="48" r="7"/>
+  </g>
+
+  <rect class="review" x="210" y="548" width="780" height="58" rx="14"/>
+  <text class="ink" x="250" y="584" font-size="21" font-weight="700">Reviewer：核对图表是否由代码生成，结论是否能追溯到数据与参数</text>
+  <path class="line" d="M725 449 C746 510 882 510 900 546"/>
+</svg>
