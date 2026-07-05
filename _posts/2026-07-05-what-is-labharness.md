@@ -8,8 +8,6 @@ tags:
 
 > 一句话总结：LabHarness / Labimus 这类框架的核心价值，是把 AI 实验室自动化从“模型会规划实验”推进到“机器人能按 SOP、带精度约束地完成真实实验操作”。
 
-注：我目前能检索到的公开资料里，最接近“LabHarness”这一主题的是 2026 年 6 月公开的 [Labimus: A Simulation and Benchmark for Humanoid Dexterous Manipulation in Chemical Laboratory](https://arxiv.org/abs/2606.31037)，项目页为 [labimus.github.io](https://labimus.github.io/)。公开资料显示该工作来自中国科学技术大学和北京人形机器人创新中心团队；我没有找到“晶泰科技联合高校提出 LabHarness”的精确公开来源。下面按“LabHarness / Labimus 这一类实验室具身智能评测框架”来展开。
-
 ![Labimus overview](/assets/images/labharness/labimus-overview.png)
 
 <!--more-->
