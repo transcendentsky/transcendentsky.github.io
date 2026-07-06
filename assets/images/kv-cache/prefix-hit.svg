@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">
+  <title id="title">KV Cache prefix hit and invalidation</title>
+  <desc id="desc">A diagram explaining that KV Cache reuse depends on identical common prefix, not vector similarity search.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}
+      .panel{fill:#fff;stroke:#d8dee9;stroke-width:2}
+      .hit{fill:#dcfce7;stroke:#22c55e}
+      .miss{fill:#fee2e2;stroke:#ef4444}
+      .new{fill:#e8f1ff;stroke:#7aa3e5}
+      .ink{fill:#1f2937;font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+      .muted{fill:#64748b;font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+      .line{stroke:#94a3b8;stroke-width:2;fill:none}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="660"/>
+  <text class="ink" x="60" y="70" font-size="34" font-weight="700">缓存命中看公共前缀，不是向量检索</text>
+  <text class="muted" x="60" y="108" font-size="18">旧缓存能否复用，只看新旧文本开头是否完全一致；头部改动会让后续位置整体偏移。</text>
+
+  <rect class="panel" x="70" y="160" width="1060" height="130" rx="16"/>
+  <text class="ink" x="105" y="205" font-size="22" font-weight="700">场景 A：只在末尾追加文字</text>
+  <text class="muted" x="105" y="240" font-size="17">前缀完全一致，旧 KV 可以命中，新增 token 单独计算。</text>
+  <rect class="hit" x="500" y="190" width="92" height="52" rx="10"/><text class="ink" x="532" y="223" font-size="18">我</text>
+  <rect class="hit" x="604" y="190" width="92" height="52" rx="10"/><text class="ink" x="636" y="223" font-size="18">想</text>
+  <rect class="hit" x="708" y="190" width="92" height="52" rx="10"/><text class="ink" x="730" y="223" font-size="18">了解</text>
+  <rect class="new" x="812" y="190" width="122" height="52" rx="10"/><text class="ink" x="844" y="223" font-size="18">KV Cache</text>
+
+  <rect class="panel" x="70" y="330" width="1060" height="130" rx="16"/>
+  <text class="ink" x="105" y="375" font-size="22" font-weight="700">场景 B：在开头插入文字</text>
+  <text class="muted" x="105" y="410" font-size="17">第一个 token 就变了，旧序列位置全部后移，缓存无法复用。</text>
+  <rect class="new" x="500" y="360" width="92" height="52" rx="10"/><text class="ink" x="532" y="393" font-size="18">请</text>
+  <rect class="miss" x="604" y="360" width="92" height="52" rx="10"/><text class="ink" x="636" y="393" font-size="18">我</text>
+  <rect class="miss" x="708" y="360" width="92" height="52" rx="10"/><text class="ink" x="740" y="393" font-size="18">想</text>
+  <rect class="miss" x="812" y="360" width="122" height="52" rx="10"/><text class="ink" x="844" y="393" font-size="18">了解</text>
+
+  <rect class="panel" x="70" y="500" width="1060" height="104" rx="16"/>
+  <text class="ink" x="105" y="545" font-size="22" font-weight="700">关键原因</text>
+  <text class="muted" x="225" y="545" font-size="18">RoPE 等位置编码会让 K/V 绑定序列位置；位置变了，旧 KV 就不能直接拿来用。</text>
+  <line class="line" x1="500" y1="246" x2="934" y2="246"/>
+  <line class="line" x1="604" y1="416" x2="934" y2="416"/>
+</svg>

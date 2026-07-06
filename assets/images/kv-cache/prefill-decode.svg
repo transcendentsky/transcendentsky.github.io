@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Prefill and decode with KV Cache</title>
+  <desc id="desc">A diagram showing prefill creates KV Cache and decode reuses it one token at a time.</desc>
+  <defs>
+    <style>
+      .bg{fill:#fbfbfd}
+      .card{fill:#fff;stroke:#d8dee9;stroke-width:2}
+      .prefill{fill:#e8f1ff;stroke:#7aa3e5}
+      .decode{fill:#eaf7f0;stroke:#7bb98b}
+      .cache{fill:#fff3da;stroke:#d0a44b}
+      .ink{fill:#1f2937;font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+      .muted{fill:#64748b;font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+      .line{stroke:#64748b;stroke-width:3;fill:none;marker-end:url(#arrow)}
+      .loop{stroke:#94a3b8;stroke-width:2.5;fill:none;stroke-dasharray:7 7;marker-end:url(#arrowSmall)}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#64748b"/>
+    </marker>
+    <marker id="arrowSmall" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M2,2 L8,5 L2,8 Z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="560"/>
+  <text class="ink" x="60" y="70" font-size="34" font-weight="700">Prefill 造缓存，Decode 吃缓存</text>
+  <text class="muted" x="60" y="108" font-size="18">两阶段的资源特征不同：Prefill 更偏计算密集，Decode 更依赖缓存读取和显存带宽。</text>
+
+  <rect class="prefill" x="82" y="180" width="260" height="130" rx="16"/>
+  <text class="ink" x="126" y="230" font-size="26" font-weight="700">Prefill</text>
+  <text class="muted" x="126" y="268" font-size="17">一次性处理完整 prompt</text>
+  <text class="muted" x="126" y="292" font-size="17">生成历史 K/V</text>
+
+  <rect class="cache" x="470" y="178" width="260" height="134" rx="16"/>
+  <text class="ink" x="514" y="228" font-size="26" font-weight="700">KV Cache</text>
+  <text class="muted" x="514" y="266" font-size="17">按 token 顺序追加</text>
+  <text class="muted" x="514" y="290" font-size="17">存放每层 K/V</text>
+
+  <rect class="decode" x="860" y="180" width="260" height="130" rx="16"/>
+  <text class="ink" x="904" y="230" font-size="26" font-weight="700">Decode</text>
+  <text class="muted" x="904" y="268" font-size="17">每次输入一个新 token</text>
+  <text class="muted" x="904" y="292" font-size="17">复用历史缓存</text>
+
+  <path class="line" d="M350 245 H456"/>
+  <path class="line" d="M738 245 H846"/>
+  <path class="loop" d="M990 314 C960 400 640 428 600 320"/>
+  <text class="muted" x="656" y="405" font-size="18">新 token 的 K/V 追加回缓存尾部</text>
+
+  <rect class="card" x="142" y="405" width="220" height="64" rx="12"/>
+  <text class="ink" x="170" y="444" font-size="19" font-weight="700">缓存未命中</text>
+  <rect class="card" x="838" y="405" width="220" height="64" rx="12"/>
+  <text class="ink" x="866" y="444" font-size="19" font-weight="700">历史缓存命中</text>
+</svg>

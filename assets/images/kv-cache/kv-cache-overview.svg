@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">KV Cache overview</title>
+  <desc id="desc">A visual explanation of KV Cache storing historical key and value vectors for decoder-only LLM inference.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}
+      .panel{fill:#fff;stroke:#d8dee9;stroke-width:2}
+      .blue{fill:#e8f1ff;stroke:#7aa3e5}
+      .green{fill:#eaf7f0;stroke:#7bb98b}
+      .amber{fill:#fff3da;stroke:#d0a44b}
+      .dark{fill:#22314f}
+      .ink{fill:#1f2937;font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+      .muted{fill:#64748b;font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+      .white{fill:#fff;font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+      .line{stroke:#64748b;stroke-width:3;fill:none;marker-end:url(#arrow)}
+      .thin{stroke:#94a3b8;stroke-width:2;fill:none;marker-end:url(#arrowSmall)}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#64748b"/>
+    </marker>
+    <marker id="arrowSmall" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M2,2 L8,5 L2,8 Z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="640"/>
+  <text class="ink" x="60" y="68" font-size="34" font-weight="700">KV Cache：把历史上下文的 K/V 存起来</text>
+  <text class="muted" x="60" y="108" font-size="18">生成下一个 token 时，不再重复计算整段历史，只读取缓存里的 Key / Value。</text>
+
+  <rect class="panel" x="72" y="170" width="250" height="135" rx="16"/>
+  <text class="ink" x="112" y="220" font-size="24" font-weight="700">输入 Prompt</text>
+  <text class="muted" x="112" y="258" font-size="17">token1, token2, token3...</text>
+
+  <rect class="dark" x="472" y="158" width="270" height="158" rx="18"/>
+  <text class="white" x="512" y="215" font-size="26" font-weight="700">Decoder-only LLM</text>
+  <text class="white" x="512" y="255" font-size="17">Attention 计算 Q / K / V</text>
+  <text class="white" x="512" y="282" font-size="17">输出下一个 token 概率</text>
+
+  <rect class="panel" x="880" y="170" width="250" height="135" rx="16"/>
+  <text class="ink" x="930" y="220" font-size="24" font-weight="700">生成 Token</text>
+  <text class="muted" x="930" y="258" font-size="17">逐 token 自回归输出</text>
+
+  <path class="line" d="M326 238 H456"/>
+  <path class="line" d="M748 238 H864"/>
+
+  <rect class="blue" x="120" y="430" width="210" height="92" rx="14"/>
+  <text class="ink" x="154" y="466" font-size="21" font-weight="700">历史 K</text>
+  <text class="muted" x="154" y="496" font-size="16">Key vectors</text>
+  <rect class="green" x="382" y="430" width="210" height="92" rx="14"/>
+  <text class="ink" x="416" y="466" font-size="21" font-weight="700">历史 V</text>
+  <text class="muted" x="416" y="496" font-size="16">Value vectors</text>
+  <rect class="amber" x="644" y="430" width="420" height="92" rx="14"/>
+  <text class="ink" x="686" y="466" font-size="21" font-weight="700">KV Cache 存在显存中</text>
+  <text class="muted" x="686" y="496" font-size="16">随着序列长度和并发请求增长而变大</text>
+
+  <path class="thin" d="M560 316 C530 370 438 395 330 430"/>
+  <path class="thin" d="M640 316 C650 370 698 395 760 430"/>
+  <path class="thin" d="M1004 306 C1010 380 952 400 895 430"/>
+
+  <text class="ink" x="120" y="585" font-size="22" font-weight="700">一句话：</text>
+  <text class="muted" x="218" y="585" font-size="22">Prefill 造缓存，Decode 读缓存，少算历史上下文。</text>
+</svg>
