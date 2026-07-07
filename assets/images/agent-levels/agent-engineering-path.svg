@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Engineering path from tool agent to autonomous loop</title>
+  <desc id="desc">A practical engineering path from L2 tool calling agent to L4 autonomous closed loop agent.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}
+      .card{fill:#fff;stroke:#d8dee9;stroke-width:2}
+      .blue{fill:#e8f1ff}.green{fill:#eaf7f0}.amber{fill:#fff3da}.rose{fill:#ffecef}
+      .ink{fill:#1f2937;font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+      .muted{fill:#64748b;font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+      .line{stroke:#64748b;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="560"/>
+  <text class="ink" x="60" y="70" font-size="34" font-weight="700">落地路径：先做好 L2，再走向 L4</text>
+  <text class="muted" x="60" y="108" font-size="18">企业里最常见的误区，是系统还没有稳定工具调用，就急着宣称全自动 Agent。</text>
+
+  <rect class="card" x="80" y="175" width="225" height="180" rx="16"/>
+  <rect class="blue" x="105" y="205" width="72" height="48" rx="10"/>
+  <text class="ink" x="195" y="236" font-size="22" font-weight="700">L2 工具可用</text>
+  <text class="muted" x="115" y="288" font-size="17">函数调用稳定</text>
+  <text class="muted" x="115" y="316" font-size="17">参数校验明确</text>
+
+  <rect class="card" x="385" y="175" width="225" height="180" rx="16"/>
+  <rect class="green" x="410" y="205" width="72" height="48" rx="10"/>
+  <text class="ink" x="500" y="236" font-size="22" font-weight="700">L3 会规划</text>
+  <text class="muted" x="420" y="288" font-size="17">任务拆解</text>
+  <text class="muted" x="420" y="316" font-size="17">中间状态可见</text>
+
+  <rect class="card" x="690" y="175" width="225" height="180" rx="16"/>
+  <rect class="amber" x="715" y="205" width="72" height="48" rx="10"/>
+  <text class="ink" x="805" y="236" font-size="22" font-weight="700">L4 能闭环</text>
+  <text class="muted" x="725" y="288" font-size="17">失败重试</text>
+  <text class="muted" x="725" y="316" font-size="17">自检与复跑</text>
+
+  <rect class="card" x="995" y="175" width="125" height="180" rx="16"/>
+  <rect class="rose" x="1020" y="205" width="72" height="48" rx="10"/>
+  <text class="ink" x="1022" y="288" font-size="17" font-weight="700">治理</text>
+  <text class="muted" x="1022" y="318" font-size="16">审计</text>
+
+  <path class="line" d="M310 265 H370"/>
+  <path class="line" d="M615 265 H675"/>
+  <path class="line" d="M920 265 H980"/>
+
+  <rect class="card" x="160" y="425" width="880" height="70" rx="14"/>
+  <text class="ink" x="204" y="466" font-size="21" font-weight="700">工程原则：</text>
+  <text class="muted" x="312" y="466" font-size="21">可观测、可回滚、可干预，比“看起来很自主”更重要。</text>
+</svg>
