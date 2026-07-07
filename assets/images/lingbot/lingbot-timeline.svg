@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="520" viewBox="0 0 1120 520" role="img" aria-labelledby="title desc">
+  <title id="title">LingBot 2026 timeline</title>
+  <desc id="desc">Timeline of LingBot-World, LingBot-VA, LingBot-Map, and SANA-WM comparison context.</desc>
+  <rect width="1120" height="520" rx="28" fill="#fbfaf6"/>
+  <text x="70" y="70" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#183044">2026 年 LingBot 相关节点</text>
+  <text x="70" y="105" font-family="Arial, sans-serif" font-size="17" fill="#66727e">从开源世界模拟器，到机器人控制，再到三维重建</text>
+  <line x1="120" y1="270" x2="1000" y2="270" stroke="#d3d9df" stroke-width="8" stroke-linecap="round"/>
+  <g font-family="Arial, sans-serif">
+    <circle cx="170" cy="270" r="16" fill="#2f80ed"/>
+    <rect x="90" y="155" width="220" height="82" rx="14" fill="#ffffff" stroke="#d7e6f8"/>
+    <text x="112" y="188" font-size="18" font-weight="700" fill="#17324d">1 月 28-29 日</text>
+    <text x="112" y="216" font-size="15" fill="#4f5f6f">LingBot-World / VA</text>
+    <text x="139" y="315" font-size="16" font-weight="700" fill="#2f80ed">开源发布</text>
+
+    <circle cx="430" cy="270" r="16" fill="#00a878"/>
+    <rect x="350" y="315" width="230" height="82" rx="14" fill="#ffffff" stroke="#d7eee6"/>
+    <text x="372" y="348" font-size="18" font-weight="700" fill="#17324d">3 月 22 日</text>
+    <text x="372" y="376" font-size="15" fill="#4f5f6f">LingBot-VA 修订版</text>
+    <text x="398" y="234" font-size="16" font-weight="700" fill="#00a878">控制强化</text>
+
+    <circle cx="690" cy="270" r="16" fill="#b25cff"/>
+    <rect x="610" y="155" width="240" height="82" rx="14" fill="#ffffff" stroke="#eadcff"/>
+    <text x="632" y="188" font-size="18" font-weight="700" fill="#17324d">4 月 15-16 日</text>
+    <text x="632" y="216" font-size="15" fill="#4f5f6f">LingBot-Map 论文修订</text>
+    <text x="659" y="315" font-size="16" font-weight="700" fill="#b25cff">空间理解</text>
+
+    <circle cx="945" cy="270" r="16" fill="#f2994a"/>
+    <rect x="815" y="315" width="245" height="82" rx="14" fill="#ffffff" stroke="#f6dfc7"/>
+    <text x="837" y="348" font-size="18" font-weight="700" fill="#17324d">5 月 14 日</text>
+    <text x="837" y="376" font-size="15" fill="#4f5f6f">SANA-WM 把 LingBot-World 作为重要参照</text>
+    <text x="911" y="234" font-size="16" font-weight="700" fill="#f2994a">行业对标</text>
+  </g>
+</svg>
