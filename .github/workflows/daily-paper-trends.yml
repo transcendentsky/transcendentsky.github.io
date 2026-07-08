@@ -1,0 +1,56 @@
+name: Daily Paper Trends
+
+on:
+  schedule:
+    # 23:30 UTC = 07:30 Asia/Shanghai
+    - cron: '30 23 * * *'
+  workflow_dispatch:
+    inputs:
+      report_date:
+        description: 'Report date, YYYY-MM-DD. Leave empty for current runner date.'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set report date
+        id: date
+        shell: bash
+        run: |
+          if [ -n "${{ github.event.inputs.report_date }}" ]; then
+            echo "date=${{ github.event.inputs.report_date }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "date=$(TZ=Asia/Shanghai date +%F)" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Generate paper trend report
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 scripts/generate_paper_trends.py \
+            --date "${{ steps.date.outputs.date }}" \
+            --lookback-days 7 \
+            --per-query 50 \
+            --max-total 180 \
+            --github-search
+
+      - name: Commit report
+        shell: bash
+        run: |
+          if git diff --quiet -- _posts; then
+            echo "No report changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _posts
+          git commit -m "Add daily paper trends report for ${{ steps.date.outputs.date }}"
+          git push
