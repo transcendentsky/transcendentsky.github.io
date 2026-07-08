@@ -3,7 +3,7 @@ highlight_theme: tomorrow-night-blue
 
 url: https://transcendentsky.github.io
 baseurl:
-title: 全权
+title: 人不能两次踏进同一条河流
 description: >-
   全权的个人网站，收录简历、项目、研究笔记与博客文章。
 
@@ -12,7 +12,7 @@ timezone: Asia/Shanghai
 
 author:
   type: person
-  name: 全权
+  name: 人不能两次踏进同一条河流
   url: https://transcendentsky.github.io
   avatar: /images/avatar.gif
   bio: 可靠多模态智能系统 / 行业诊断智能体算法。
