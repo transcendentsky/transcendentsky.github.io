@@ -1,0 +1,16 @@
+---
+layout: page
+title: 科技日报
+permalink: /tech-news/
+key: page-tech-news
+---
+
+<p>这里用于汇总每日科技新闻、AI 产业动态和技术发展趋势推送。</p>
+
+{%- assign _articles = site.categories.technews | sort: 'date' | reverse -%}
+
+{%- if _articles and _articles.size > 0 -%}
+  {%- include article-list.html articles=_articles type='item' show_excerpt=true show_info=true show_readmore=true -%}
+{%- else -%}
+  <p>暂无科技日报内容。</p>
+{%- endif -%}

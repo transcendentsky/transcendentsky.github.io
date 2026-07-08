@@ -20,6 +20,11 @@ header:
     url: /blog/
 
   - titles:
+      zh-CN: 科技日报
+      en: Tech News
+    url: /tech-news/
+
+  - titles:
       zh-CN: 旧文归档
       en: Legacy
     url: /archives/
