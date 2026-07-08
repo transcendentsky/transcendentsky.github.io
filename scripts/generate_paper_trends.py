@@ -369,10 +369,37 @@ def source_text(paper: Paper) -> str:
     return "未发现明确开源地址"
 
 
-def render_report(papers: List[Paper], report_date: dt.date, lookback_days: int, max_results: int) -> str:
-    high = sorted([p for p in papers if p.classification == "高创新"], key=lambda p: p.innovation_score, reverse=True)
-    medium = sorted([p for p in papers if p.classification == "中等创新"], key=lambda p: p.innovation_score, reverse=True)
-    incremental = sorted([p for p in papers if p.classification == "偏增量"], key=lambda p: p.innovation_score, reverse=True)
+def key_innovation_text(paper: Paper) -> str:
+    text = f"{paper.title}. {paper.summary}"
+    sentences = re.split(r"(?<=[.!?])\s+", text)
+    priority_terms = [
+        "introduce", "introduces", "propose", "proposes", "present", "presents",
+        "benchmark", "dataset", "framework", "paradigm", "world model", "agent",
+        "multi-agent", "tool", "reasoning", "multimodal", "vision-language", "unified",
+    ]
+    ranked: List[Tuple[int, str]] = []
+    for sentence in sentences:
+        s = clean_text(sentence)
+        if len(s) < 40:
+            continue
+        lower = s.lower()
+        score = sum(1 for term in priority_terms if term in lower)
+        if score > 0:
+            ranked.append((score, s))
+    if ranked:
+        ranked.sort(key=lambda item: item[0], reverse=True)
+        chosen = ranked[0][1]
+    else:
+        chosen = paper.summary[:360]
+    if len(chosen) > 360:
+        chosen = chosen[:357].rstrip() + "..."
+    return chosen
+
+
+def render_report(papers: List[Paper], report_date: dt.date, lookback_days: int, max_results: int, top_k: int) -> str:
+    top_k = max(5, min(10, top_k))
+    ranked_papers = sorted(papers, key=lambda p: p.innovation_score, reverse=True)
+    selected = ranked_papers[:top_k]
 
     title = f"每日论文趋势报告：多模态、智能体与大模型（{report_date.isoformat()}）"
     lines = [
@@ -391,89 +418,61 @@ def render_report(papers: List[Paper], report_date: dt.date, lookback_days: int,
         "",
         f"# {title}",
         "",
-        f"> 自动生成报告：采集 arXiv 最近 {lookback_days} 天内与多模态、智能体、大模型、具身智能、推理和对齐相关的论文，并用启发式规则判断创新性。机构和开源信息为最佳努力识别，重要论文建议人工复核。",
+        f"> 自动生成报告：采集 arXiv 最近 {lookback_days} 天内与多模态、智能体、大模型、具身智能、推理和对齐相关的论文，只筛选最值得优先精读的 Top {len(selected)}。机构和开源信息为最佳努力识别，重要论文建议人工复核。",
         "",
         "<!--more-->",
         "",
         "## 今日概览",
         "",
         f"- 采集论文数：{len(papers)} 篇。",
-        f"- 高创新候选：{len(high)} 篇。",
-        f"- 中等创新：{len(medium)} 篇。",
-        f"- 偏增量：{len(incremental)} 篇。",
+        f"- 最终精选：{len(selected)} 篇。",
         f"- 每个主题最多抓取：{max_results} 篇，按 arXiv submittedDate 排序。",
+        "- 筛选标准：优先选择新任务/新范式/新系统架构/新基准数据集/智能体或多模态能力边界推进明显的论文。",
         "",
-        "## 高创新论文名单",
+        "## 今日最值得关注的论文",
         "",
     ]
 
-    if high:
+    if selected:
         lines.extend([
-            "| 论文名 | 学校/公司 | 创新性打分 | 是否开源 | arXiv |",
+            "| 论文名 | 学校/公司 | 创新性打分 | 是否开源 | 关键创新或理念 |",
             "| --- | --- | ---: | --- | --- |",
         ])
-        for paper in high:
+        for paper in selected:
             lines.append(
                 "| "
-                + f"{md_escape(paper.title)} | {md_escape(affiliation_text(paper))} | {paper.innovation_score} | {md_escape(source_text(paper))} | [链接]({paper.abs_url}) |"
+                + f"[{md_escape(paper.title)}]({paper.abs_url}) | {md_escape(affiliation_text(paper))} | {paper.innovation_score} | {md_escape(source_text(paper))} | {md_escape(key_innovation_text(paper))} |"
             )
     else:
-        lines.append("今日未筛出 75 分以上的高创新候选。")
+        lines.append("今日未筛出足够值得优先精读的候选。")
 
     lines.extend([
         "",
-        "## 高创新候选简析",
+        "## 精选简析",
         "",
     ])
-    for paper in high[:20]:
+    for index, paper in enumerate(selected, start=1):
         lines.extend([
-            f"### {paper.title}",
+            f"### {index}. {paper.title}",
             "",
             f"- 机构：{affiliation_text(paper)}",
             f"- 作者：{short_authors(paper.authors)}",
-            f"- 分数：{paper.innovation_score} / 100，判断：{paper.classification}",
-            f"- 开源：{source_text(paper)}",
-            f"- 依据：{'; '.join(paper.reasons)}",
-            f"- 摘要简述：{paper.summary[:450]}{'...' if len(paper.summary) > 450 else ''}",
+            f"- 创新性打分：{paper.innovation_score} / 100",
+            f"- 是否开源：{source_text(paper)}",
+            f"- 关键创新/理念：{key_innovation_text(paper)}",
+            f"- 筛选依据：{'; '.join(paper.reasons)}",
             f"- 论文：[{paper.arxiv_id}]({paper.abs_url})",
             "",
         ])
 
     lines.extend([
-        "## 其余论文分层",
-        "",
-        "### 中等创新",
-        "",
-    ])
-    if medium:
-        for paper in medium[:30]:
-            lines.append(f"- **{paper.title}**，{paper.innovation_score} 分，{paper.query_bucket}，[arXiv]({paper.abs_url})。")
-    else:
-        lines.append("无。")
-
-    lines.extend(["", "### 偏增量", ""])
-    if incremental:
-        for paper in incremental[:40]:
-            lines.append(f"- **{paper.title}**，{paper.innovation_score} 分，{paper.query_bucket}，[arXiv]({paper.abs_url})。")
-    else:
-        lines.append("无。")
-
-    lines.extend([
-        "",
         "## 方法说明",
         "",
-        "本报告不是论文最终评审，而是每日筛选器。脚本会综合标题、摘要、arXiv 分类、是否跨领域、是否出现 benchmark/dataset/framework/agent/world model 等信号，以及是否发现开源实现，给出 0-100 的创新性打分。",
+        "本报告是每日论文筛选器，不是最终论文评审。脚本会综合标题、摘要、arXiv 分类、跨领域程度、是否出现 benchmark/dataset/framework/agent/world model 等信号，以及是否发现开源实现，给出 0-100 的创新性打分。",
         "",
-        "判断边界：",
-        "",
-        "- 高创新：可能提出新任务、新范式、新系统架构、新数据集/基准或跨领域能力组合，值得优先精读。",
-        "- 中等创新：有一定方法或系统价值，但可能更依赖已有路线组合。",
-        "- 偏增量：更像效率提升、工程优化、经验研究、复现或局部改进。",
-        "",
-        "开源地址识别规则：优先读取 arXiv 摘要和 comment 中的 GitHub/Hugging Face 链接；对高分论文再用 GitHub Search 做标题匹配。该字段存在漏检和误检风险。",
+        "只保留 Top 5-10 篇，避免把中等创新和偏增量论文加入正文。开源地址优先读取 arXiv 摘要和 comment 中的 GitHub/Hugging Face 链接；对高分论文再用 GitHub Search 做标题匹配，并过滤论文日报、awesome list 等聚合仓库。",
     ])
     return "\n".join(lines) + "\n"
-
 
 def parse_date(value: str) -> Optional[dt.date]:
     if not value:
@@ -490,6 +489,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     parser.add_argument("--lookback-days", type=int, default=7)
     parser.add_argument("--per-query", type=int, default=40)
     parser.add_argument("--max-total", type=int, default=160)
+    parser.add_argument("--top-k", type=int, default=8, help="Number of best papers to include, clamped to 5-10")
     parser.add_argument("--output-dir", default="_posts")
     parser.add_argument("--github-search", action="store_true", help="Use GitHub repo search for high-score candidates")
     args = parser.parse_args(argv)
@@ -539,7 +539,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     os.makedirs(args.output_dir, exist_ok=True)
     slug = "paper-trends-multimodal-agent-llm"
     out_path = os.path.join(args.output_dir, f"{report_date.isoformat()}-{slug}.md")
-    content = render_report(papers, report_date, args.lookback_days, args.per_query)
+    content = render_report(papers, report_date, args.lookback_days, args.per_query, args.top_k)
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(content)
     print(out_path)
