@@ -264,7 +264,7 @@ def title_tokens(title: str) -> List[str]:
 def looks_like_generic_paper_list(repo: dict) -> bool:
     full_name = (repo.get("full_name") or "").lower()
     description = (repo.get("description") or "").lower()
-    generic = ["paper-daily", "daily-paper", "daily-papers", "dailyarxiv", "daily-arxiv", "awesome", "reading-list", "newsletter"]
+    generic = ["paper-daily", "daily-paper", "daily-papers", "dailyarxiv", "daily-arxiv", "arxiv-daily", "arxiv_daily", "ai-daily", "ai_daily", "embodied-ai-daily", "awesome", "reading-list", "newsletter"]
     return any(term in full_name or term in description for term in generic)
 
 
