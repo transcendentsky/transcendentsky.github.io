@@ -20,16 +20,21 @@ header:
     url: /blog/
 
   - titles:
+      zh-CN: 科研技能
+    en: Research Skills
+    url: /research-skills/
+
+  - titles:
       zh-CN: 科技日报
-      en: Tech News
+    en: Tech News
     url: /tech-news/
 
   - titles:
       zh-CN: 旧文归档
-      en: Legacy
+    en: Legacy
     url: /archives/
 
   - titles:
       zh-CN: GitHub
-      en: GitHub
+    en: GitHub
     url: https://github.com/transcendentsky
