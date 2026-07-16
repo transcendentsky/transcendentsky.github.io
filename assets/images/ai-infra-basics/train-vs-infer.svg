@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="640" viewBox="0 0 1180 640" role="img" aria-labelledby="title desc">
+  <title id="title">Training vs inference infrastructure</title>
+  <desc id="desc">A comparison between training infrastructure and inference infrastructure.</desc>
+  <rect width="1180" height="640" rx="28" fill="#fbfaf6"/>
+  <text x="590" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#17324d">训练 Infra 与推理 Infra 的差异</text>
+  <text x="590" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#607080">训练关注大规模吞吐和容错，推理关注延迟、并发和成本</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="90" y="140" width="475" height="420" rx="22" fill="#ffffff" stroke="#dce7ef"/>
+    <rect x="615" y="140" width="475" height="420" rx="22" fill="#ffffff" stroke="#dce7ef"/>
+    <rect x="90" y="140" width="475" height="72" rx="22" fill="#2f80ed"/>
+    <rect x="615" y="140" width="475" height="72" rx="22" fill="#00a878"/>
+    <text x="328" y="185" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff">训练基础设施</text>
+    <text x="853" y="185" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff">推理基础设施</text>
+
+    <text x="130" y="255" font-size="18" font-weight="700" fill="#17324d">核心目标</text>
+    <text x="255" y="255" font-size="16" fill="#536170">更快完成训练、更稳定恢复、更低 GPU 空闲</text>
+    <text x="655" y="255" font-size="18" font-weight="700" fill="#17324d">核心目标</text>
+    <text x="780" y="255" font-size="16" fill="#536170">低延迟、高并发、低成本、稳定服务</text>
+
+    <text x="130" y="310" font-size="18" font-weight="700" fill="#17324d">典型技术</text>
+    <text x="255" y="310" font-size="16" fill="#536170">DDP、FSDP、ZeRO、Pipeline、Checkpoint</text>
+    <text x="655" y="310" font-size="18" font-weight="700" fill="#17324d">典型技术</text>
+    <text x="780" y="310" font-size="16" fill="#536170">KV Cache、Batching、Quantization、Router</text>
+
+    <text x="130" y="365" font-size="18" font-weight="700" fill="#17324d">资源特征</text>
+    <text x="255" y="365" font-size="16" fill="#536170">长任务、强网络、强存储、GPU 集群调度</text>
+    <text x="655" y="365" font-size="18" font-weight="700" fill="#17324d">资源特征</text>
+    <text x="780" y="365" font-size="16" fill="#536170">弹性扩缩、显存管理、多租户隔离</text>
+
+    <text x="130" y="420" font-size="18" font-weight="700" fill="#17324d">主要指标</text>
+    <text x="255" y="420" font-size="16" fill="#536170">tokens/s、GPU 利用率、失败恢复时间</text>
+    <text x="655" y="420" font-size="18" font-weight="700" fill="#17324d">主要指标</text>
+    <text x="780" y="420" font-size="16" fill="#536170">TTFT、TPOT、QPS、P95/P99、成本/请求</text>
+
+    <text x="130" y="475" font-size="18" font-weight="700" fill="#17324d">常见问题</text>
+    <text x="255" y="475" font-size="16" fill="#536170">数据加载慢、通信瓶颈、OOM、节点失败</text>
+    <text x="655" y="475" font-size="18" font-weight="700" fill="#17324d">常见问题</text>
+    <text x="780" y="475" font-size="16" fill="#536170">排队延迟、缓存碎片、热模型拥塞、冷启动</text>
+  </g>
+</svg>
