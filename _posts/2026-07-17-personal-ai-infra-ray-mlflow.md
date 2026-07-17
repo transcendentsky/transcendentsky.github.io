@@ -389,7 +389,374 @@ Ollama 很适合做快速模型测试：
 
 端口可以自己调整，但建议固定下来，写进 `.env` 或 `README`，否则时间久了会乱。
 
-## 十三、这套方案的优缺点
+## 十三、各组件最小使用教程
+
+下面给一个偏“个人工作站”的最小使用教程。命令只是示例，真实环境里要按你的 CUDA、Python、模型路径和显卡情况调整。
+
+### 1. Ray：启动本机调度器
+
+Ray 的第一步是启动本机 head node。
+
+```bash
+ray start --head --dashboard-host=0.0.0.0
+```
+
+启动后打开：
+
+```text
+http://localhost:8265
+```
+
+就能看到 Ray Dashboard。
+
+最小任务示例：
+
+```python
+import ray
+
+ray.init(address="auto")
+
+@ray.remote(num_cpus=2, num_gpus=0.25)
+def run_batch_infer(task_id):
+    return f"task {task_id} done"
+
+refs = [run_batch_infer.remote(i) for i in range(4)]
+print(ray.get(refs))
+```
+
+Ray 的用法要点：
+
+| 用法 | 说明 |
+| --- | --- |
+| `@ray.remote` | 把普通 Python 函数变成可调度任务 |
+| `num_gpus=0.25` | 声明任务最多使用四分之一张 GPU |
+| Actor | 适合常驻服务，如 Agent worker、模型 worker |
+| Ray Dashboard | 看任务状态、资源占用和错误日志 |
+
+个人场景里，Ray 最适合管三类任务：
+
+1. 批量推理。
+2. 数据处理。
+3. 微调任务排队。
+
+### 2. MLflow：记录一次实验
+
+先启动 MLflow UI：
+
+```bash
+mlflow ui --host 0.0.0.0 --port 5000 --backend-store-uri ./mlruns
+```
+
+打开：
+
+```text
+http://localhost:5000
+```
+
+最小记录示例：
+
+```python
+import mlflow
+
+mlflow.set_experiment("qwen-lora-demo")
+
+with mlflow.start_run():
+    mlflow.log_param("base_model", "Qwen2.5-7B-Instruct")
+    mlflow.log_param("lora_rank", 16)
+    mlflow.log_param("learning_rate", 2e-4)
+    mlflow.log_metric("train_loss", 1.23)
+    mlflow.log_artifact("configs/xtuner_lora.py")
+```
+
+如果训练产出了 LoRA 权重，可以这样登记：
+
+```python
+mlflow.log_artifacts("work_dirs/qwen_lora/adapter", artifact_path="lora_adapter")
+```
+
+MLflow 的建议用法：
+
+| 内容 | 放进 MLflow 的位置 |
+| --- | --- |
+| 学习率、batch size、LoRA rank | Params |
+| loss、eval score、tokens/s | Metrics |
+| 训练配置、日志、adapter 权重 | Artifacts |
+| 可部署模型版本 | Model Registry |
+
+一句话：每跑一次训练，都应该有一个 MLflow run。
+
+### 3. vLLM：启动 OpenAI 兼容 API
+
+vLLM 最适合快速把本地模型变成 API 服务。
+
+示例：
+
+```bash
+vllm serve /data/models/Qwen2.5-7B-Instruct \
+  --host 0.0.0.0 \
+  --port 8000 \
+  --served-model-name qwen-local \
+  --max-model-len 8192 \
+  --gpu-memory-utilization 0.85
+```
+
+调用方式：
+
+```bash
+curl http://localhost:8000/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "qwen-local",
+    "messages": [
+      {"role": "user", "content": "解释一下 KV Cache 是什么"}
+    ],
+    "temperature": 0.7
+  }'
+```
+
+Python 调用可以复用 OpenAI SDK：
+
+```python
+from openai import OpenAI
+
+client = OpenAI(
+    api_key="EMPTY",
+    base_url="http://localhost:8000/v1",
+)
+
+resp = client.chat.completions.create(
+    model="qwen-local",
+    messages=[{"role": "user", "content": "写一个 AI infra 学习路线"}],
+)
+
+print(resp.choices[0].message.content)
+```
+
+vLLM 重点参数：
+
+| 参数 | 作用 |
+| --- | --- |
+| `--max-model-len` | 控制最大上下文，影响 KV Cache 显存 |
+| `--gpu-memory-utilization` | 控制 vLLM 可用显存比例 |
+| `--served-model-name` | API 中使用的模型名 |
+| `--tensor-parallel-size` | 多卡切分模型时使用 |
+
+### 4. LMDeploy：启动另一个推理服务选择
+
+LMDeploy 也可以启动 OpenAI 兼容服务，适合书生生态和一些高性能量化场景。
+
+示例：
+
+```bash
+lmdeploy serve api_server /data/models/internlm2_5-7b-chat \
+  --server-name 0.0.0.0 \
+  --server-port 23333 \
+  --model-name internlm-local
+```
+
+调用方式类似：
+
+```bash
+curl http://localhost:23333/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "internlm-local",
+    "messages": [
+      {"role": "user", "content": "用三句话解释 Ray 的作用"}
+    ]
+  }'
+```
+
+建议：
+
+| 场景 | 选择 |
+| --- | --- |
+| 通用 OpenAI API 服务 | vLLM |
+| InternLM / LMDeploy 生态模型 | LMDeploy |
+| 想比较吞吐和显存 | 两个都测一遍 |
+| 快速试 prompt | Ollama 更快 |
+
+### 5. XTuner：跑一次 LoRA 微调
+
+XTuner 的典型流程是：
+
+```text
+准备数据 → 选择配置 → 启动训练 → 导出 LoRA → 合并或部署
+```
+
+最小目录：
+
+```text
+data/sft/train.jsonl
+configs/qwen_lora.py
+work_dirs/qwen_lora/
+```
+
+训练示例：
+
+```bash
+xtuner train configs/qwen_lora.py --work-dir work_dirs/qwen_lora
+```
+
+如果要把训练过程记录到 MLflow，可以在训练脚本外层做一层包装：
+
+```python
+import subprocess
+import mlflow
+
+mlflow.set_experiment("xtuner-qwen-lora")
+
+with mlflow.start_run():
+    mlflow.log_param("config", "configs/qwen_lora.py")
+    mlflow.log_param("base_model", "Qwen2.5-7B-Instruct")
+
+    subprocess.run([
+        "xtuner", "train",
+        "configs/qwen_lora.py",
+        "--work-dir", "work_dirs/qwen_lora"
+    ], check=True)
+
+    mlflow.log_artifacts("work_dirs/qwen_lora", artifact_path="xtuner_output")
+```
+
+XTuner 使用建议：
+
+| 场景 | 建议 |
+| --- | --- |
+| 第一次跑 | 用小数据集确认链路 |
+| 显存不够 | 降 batch、降 max length、用 QLoRA |
+| 效果不稳 | 先检查数据质量，不要急着调参 |
+| 准备部署 | 保存 adapter，并记录 base model 版本 |
+
+### 6. Chroma / FAISS：搭一个最小 RAG
+
+如果想快速做本地 RAG，Chroma 最省事。
+
+最小示例：
+
+```python
+import chromadb
+
+client = chromadb.PersistentClient(path="./rag/chroma")
+collection = client.get_or_create_collection("personal_docs")
+
+collection.add(
+    documents=[
+        "Ray 负责单机任务调度和资源管理。",
+        "MLflow 用来记录实验参数、指标和模型产物。",
+        "vLLM 可以启动 OpenAI 兼容 API 服务。"
+    ],
+    ids=["doc1", "doc2", "doc3"],
+)
+
+result = collection.query(
+    query_texts=["MLflow 是干什么的？"],
+    n_results=2,
+)
+
+print(result)
+```
+
+真实项目里要补上 embedding 模型、chunk 切分和元数据：
+
+| 环节 | 建议 |
+| --- | --- |
+| 文档解析 | Markdown、PDF、网页分开处理 |
+| chunk | 500-1000 中文字左右先试 |
+| metadata | 保存文件名、标题、页码、URL |
+| rerank | 质量不够时再加 reranker |
+| 引用 | 回答里带来源，方便排查幻觉 |
+
+### 7. Prometheus + Grafana：看 GPU 和服务状态
+
+最小监控可以先从 GPU 开始。
+
+如果你使用 DCGM exporter，可以让 Prometheus 抓取 GPU 指标；Grafana 负责展示面板。
+
+你至少应该看：
+
+| 面板 | 作用 |
+| --- | --- |
+| GPU 利用率 | 判断是否吃满算力 |
+| 显存占用 | 判断是否会 OOM |
+| GPU 温度 | 判断是否降频 |
+| 推理请求数 | 看 API 是否有流量 |
+| 请求延迟 | 看服务是否卡顿 |
+| token/s | 看模型生成速度 |
+
+个人最小版本也可以先不用完整 Prometheus，直接从这些开始：
+
+```bash
+nvidia-smi -l 1
+```
+
+再逐步升级到 Grafana 面板。
+
+### 8. Ollama：快速试模型
+
+Ollama 适合做第一步模型体验。
+
+```bash
+ollama pull qwen2.5:7b
+ollama run qwen2.5:7b
+```
+
+也可以启动本地 API：
+
+```bash
+ollama serve
+```
+
+Ollama 的定位：
+
+| 适合 | 不适合 |
+| --- | --- |
+| 快速试模型 | 高并发生产服务 |
+| 快速试 prompt | 严格吞吐优化 |
+| 本地 demo | 大规模评测 |
+| 小模型体验 | 多租户服务治理 |
+
+我的建议是：Ollama 用来“试”，vLLM/LMDeploy 用来“服务”。
+
+### 9. Jupyter：个人实验入口
+
+Jupyter 适合做数据处理、RAG 调试、评测分析。
+
+启动：
+
+```bash
+jupyter lab --ip=0.0.0.0 --port=8888
+```
+
+建议 notebook 分三类：
+
+| Notebook 类型 | 示例 |
+| --- | --- |
+| 数据处理 | 清洗 SFT 数据、切分文档 |
+| 实验分析 | 读取 MLflow 指标、画 loss 曲线 |
+| RAG 调试 | 查看检索结果、调 chunk 和 prompt |
+
+不要把长期服务写在 notebook 里。Notebook 适合探索，真正稳定后再沉淀成脚本。
+
+### 10. 最小闭环怎么串起来？
+
+最小闭环可以按下面走：
+
+```text
+1. Ollama 试模型和 prompt
+2. 准备一份 SFT 数据
+3. XTuner 跑 LoRA
+4. MLflow 记录参数、指标和 adapter
+5. vLLM/LMDeploy 启动本地 API
+6. Chroma/FAISS 接 RAG
+7. Ray 管批量推理和评测任务
+8. Prometheus/Grafana 看资源
+9. 错误样本回流到下一轮数据
+```
+
+这就是个人 AI Infra 的最小可用系统。
+
+## 十四、这套方案的优缺点
 
 优点：
 
@@ -413,7 +780,7 @@ Ollama 很适合做快速模型测试：
 
 所以这套方案的定位非常明确：**个人和小团队的高性价比 AI Infra，而不是企业级云原生平台。**
 
-## 十四、总结：先跑顺个人闭环，再谈平台化
+## 十五、总结：先跑顺个人闭环，再谈平台化
 
 个人 AI Infra 的目标不是“看起来像大厂平台”，而是让你每天的 AI 工作流更顺：
 
