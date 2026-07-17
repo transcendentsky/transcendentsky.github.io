@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="520" viewBox="0 0 1080 520" role="img" aria-labelledby="title desc">
+  <title id="title">MLflow 在个人 AI Infra 中的角色</title>
+  <desc id="desc">展示数据、训练、评测、模型仓库和部署之间由 MLflow 串联的关系</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f8fbff"/>
+      <stop offset="100%" stop-color="#eef6f1"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-20%" width="120%" height="150%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="1080" height="520" rx="28" fill="url(#bg)"/>
+  <text x="54" y="70" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#172033">MLflow：个人 AI Infra 的实验与模型资产层</text>
+  <text x="56" y="108" font-family="Arial, sans-serif" font-size="18" fill="#526070">把每次训练、评测、权重、Prompt 和部署版本记录成可追踪资产</text>
+
+  <g filter="url(#shadow)">
+    <rect x="55" y="180" width="150" height="88" rx="16" fill="#ffffff"/>
+    <text x="130" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#17324d">数据</text>
+    <text x="130" y="244" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#5c6b7a">版本 / 样本</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="270" y="180" width="150" height="88" rx="16" fill="#ffffff"/>
+    <text x="345" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#17324d">训练</text>
+    <text x="345" y="244" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#5c6b7a">参数 / 指标</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="465" y="154" width="170" height="140" rx="20" fill="#155e75"/>
+    <text x="550" y="207" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff">MLflow</text>
+    <text x="550" y="241" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#dff7fb">Tracking</text>
+    <text x="550" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#dff7fb">Registry</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="680" y="180" width="150" height="88" rx="16" fill="#ffffff"/>
+    <text x="755" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#17324d">评测</text>
+    <text x="755" y="244" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#5c6b7a">分数 / 样例</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="875" y="180" width="150" height="88" rx="16" fill="#ffffff"/>
+    <text x="950" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#17324d">部署</text>
+    <text x="950" y="244" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#5c6b7a">版本 / 回滚</text>
+  </g>
+
+  <path d="M205 224 H270" stroke="#2f7d8c" stroke-width="4" stroke-linecap="round"/>
+  <path d="M420 224 H465" stroke="#2f7d8c" stroke-width="4" stroke-linecap="round"/>
+  <path d="M635 224 H680" stroke="#2f7d8c" stroke-width="4" stroke-linecap="round"/>
+  <path d="M830 224 H875" stroke="#2f7d8c" stroke-width="4" stroke-linecap="round"/>
+  <path d="M225 320 H855" stroke="#9ab8b5" stroke-width="3" stroke-dasharray="10 10"/>
+  <text x="540" y="356" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#405466">一次 run 串起：代码版本、配置、数据、指标、权重、评测报告</text>
+
+  <g>
+    <rect x="94" y="405" width="205" height="48" rx="24" fill="#e3f2ef"/>
+    <text x="196" y="436" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#115e59">LoRA Adapter</text>
+    <rect x="328" y="405" width="205" height="48" rx="24" fill="#eaf1ff"/>
+    <text x="430" y="436" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#1d4e89">Prompt / Trace</text>
+    <rect x="562" y="405" width="205" height="48" rx="24" fill="#fef3c7"/>
+    <text x="664" y="436" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#7c4a03">Eval Report</text>
+    <rect x="796" y="405" width="205" height="48" rx="24" fill="#f4e8ff"/>
+    <text x="898" y="436" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#6d28d9">Model Version</text>
+  </g>
+</svg>
