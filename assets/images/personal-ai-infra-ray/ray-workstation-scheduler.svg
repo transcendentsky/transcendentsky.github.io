@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="660" viewBox="0 0 1180 660" role="img" aria-labelledby="title desc">
+  <title id="title">Ray scheduling on a personal workstation</title>
+  <desc id="desc">Ray schedules LoRA fine-tuning, inference serving, batch evaluation and RAG jobs on a personal AI workstation.</desc>
+  <rect width="1180" height="660" rx="28" fill="#fbfaf6"/>
+  <text x="590" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#17324d">个人工作站上的 Ray 调度</text>
+  <text x="590" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#607080">不是让所有任务同时抢 GPU，而是让它们按资源声明排队、隔离、执行</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="100" y="140" width="980" height="82" rx="18" fill="#17324d"/>
+    <text x="590" y="192" text-anchor="middle" font-size="25" font-weight="700" fill="#ffffff">Ray Head / Dashboard / Resource Scheduler</text>
+
+    <rect x="90" y="282" width="220" height="125" rx="18" fill="#ffffff" stroke="#dce7ef"/>
+    <text x="200" y="325" text-anchor="middle" font-size="21" font-weight="700" fill="#b25cff">LoRA 微调</text>
+    <text x="200" y="358" text-anchor="middle" font-size="15" fill="#536170">num_gpus=0.8</text>
+    <text x="200" y="382" text-anchor="middle" font-size="15" fill="#536170">XTuner Job</text>
+
+    <rect x="350" y="282" width="220" height="125" rx="18" fill="#ffffff" stroke="#dce7ef"/>
+    <text x="460" y="325" text-anchor="middle" font-size="21" font-weight="700" fill="#2f80ed">推理服务</text>
+    <text x="460" y="358" text-anchor="middle" font-size="15" fill="#536170">num_gpus=0.5</text>
+    <text x="460" y="382" text-anchor="middle" font-size="15" fill="#536170">vLLM Actor</text>
+
+    <rect x="610" y="282" width="220" height="125" rx="18" fill="#ffffff" stroke="#dce7ef"/>
+    <text x="720" y="325" text-anchor="middle" font-size="21" font-weight="700" fill="#00a878">批量评测</text>
+    <text x="720" y="358" text-anchor="middle" font-size="15" fill="#536170">num_gpus=0.25</text>
+    <text x="720" y="382" text-anchor="middle" font-size="15" fill="#536170">Eval Tasks</text>
+
+    <rect x="870" y="282" width="220" height="125" rx="18" fill="#ffffff" stroke="#dce7ef"/>
+    <text x="980" y="325" text-anchor="middle" font-size="21" font-weight="700" fill="#f2994a">RAG / Agent</text>
+    <text x="980" y="358" text-anchor="middle" font-size="15" fill="#536170">CPU + 少量 GPU</text>
+    <text x="980" y="382" text-anchor="middle" font-size="15" fill="#536170">并发 Worker</text>
+
+    <rect x="165" y="500" width="850" height="80" rx="18" fill="#eaf0f6"/>
+    <text x="590" y="532" text-anchor="middle" font-size="20" font-weight="700" fill="#17324d">本机资源池：GPU / CPU / RAM / NVMe</text>
+    <text x="590" y="561" text-anchor="middle" font-size="16" fill="#536170">Ray 负责调度；vLLM/XTuner/MLflow 仍负责各自的专业能力。</text>
+  </g>
+</svg>
