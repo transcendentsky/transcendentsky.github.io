@@ -1,9 +1,9 @@
-name: Daily Paper Trends
+name: Weekly Paper Trends
 
 on:
   schedule:
-    # 23:30 UTC = 07:30 Asia/Shanghai
-    - cron: '30 23 * * *'
+    # Sunday 23:30 UTC = Monday 07:30 Asia/Shanghai
+    - cron: '30 23 * * 0'
   workflow_dispatch:
     inputs:
       report_date:
@@ -53,5 +53,5 @@ jobs:
             echo "No report changes to commit."
             exit 0
           fi
-          git commit -m "Add daily paper trends report for ${{ steps.date.outputs.date }}"
+          git commit -m "Add weekly paper trends report for ${{ steps.date.outputs.date }}"
           git push
