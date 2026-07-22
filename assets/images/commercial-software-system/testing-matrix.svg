@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="560" viewBox="0 0 1080 560" role="img" aria-labelledby="title desc">
+  <title id="title">商业系统测试矩阵</title>
+  <desc id="desc">展示单元测试、集成测试、端到端测试、性能测试、安全测试和灾备测试</desc>
+  <rect width="1080" height="560" rx="28" fill="#fbfaf7"/>
+  <text x="56" y="72" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#111827">测试矩阵：商业系统不能只测 happy path</text>
+  <text x="58" y="110" font-family="Arial, sans-serif" font-size="18" fill="#64748b">测试要覆盖功能正确性、系统边界、性能容量、安全风险和运维故障</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="100" y="170" width="250" height="86" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="225" y="205" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">单元测试</text>
+    <text x="225" y="232" text-anchor="middle" font-size="14" fill="#64748b">业务规则 / 边界条件</text>
+    <rect x="415" y="170" width="250" height="86" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="540" y="205" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">集成测试</text>
+    <text x="540" y="232" text-anchor="middle" font-size="14" fill="#64748b">DB / Cache / MQ / API</text>
+    <rect x="730" y="170" width="250" height="86" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="855" y="205" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">E2E 测试</text>
+    <text x="855" y="232" text-anchor="middle" font-size="14" fill="#64748b">真实用户路径</text>
+    <rect x="100" y="330" width="250" height="86" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="225" y="365" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">性能测试</text>
+    <text x="225" y="392" text-anchor="middle" font-size="14" fill="#64748b">QPS / 延迟 / 容量</text>
+    <rect x="415" y="330" width="250" height="86" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="540" y="365" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">安全测试</text>
+    <text x="540" y="392" text-anchor="middle" font-size="14" fill="#64748b">权限 / 注入 / 泄露</text>
+    <rect x="730" y="330" width="250" height="86" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="855" y="365" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">故障测试</text>
+    <text x="855" y="392" text-anchor="middle" font-size="14" fill="#64748b">降级 / 回滚 / 灾备</text>
+  </g>
+  <text x="540" y="495" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#475569">测试不是为了覆盖率好看，而是为了让线上风险在上线前暴露</text>
+</svg>
