@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="560" viewBox="0 0 1080 560" role="img" aria-labelledby="title desc">
+  <title id="title">Claude Code 离线包分发流程</title>
+  <desc id="desc">展示公网下载、校验、打包、上传内网、安装到公共目录的流程</desc>
+  <rect width="1080" height="560" rx="28" fill="#fbfaf7"/>
+  <text x="56" y="72" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#111827">离线包分发：把“安装 Claude Code”变成可审计流程</text>
+  <text x="58" y="110" font-family="Arial, sans-serif" font-size="18" fill="#64748b">公网侧只负责取包和校验，内网侧只负责安装和版本管理</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="65" y="215" width="145" height="86" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="137" y="250" text-anchor="middle" font-size="18" font-weight="700" fill="#111827">获取版本</text>
+    <text x="137" y="276" text-anchor="middle" font-size="14" fill="#64748b">GitHub release</text>
+    <rect x="250" y="215" width="145" height="86" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="322" y="250" text-anchor="middle" font-size="18" font-weight="700" fill="#111827">下载二进制</text>
+    <text x="322" y="276" text-anchor="middle" font-size="14" fill="#64748b">linux/mac/win</text>
+    <rect x="435" y="215" width="145" height="86" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="507" y="250" text-anchor="middle" font-size="18" font-weight="700" fill="#111827">校验签名</text>
+    <text x="507" y="276" text-anchor="middle" font-size="14" fill="#64748b">sha256</text>
+    <rect x="620" y="215" width="145" height="86" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="692" y="250" text-anchor="middle" font-size="18" font-weight="700" fill="#111827">生成离线包</text>
+    <text x="692" y="276" text-anchor="middle" font-size="14" fill="#64748b">tar.gz + install.sh</text>
+    <rect x="805" y="215" width="145" height="86" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="877" y="250" text-anchor="middle" font-size="18" font-weight="700" fill="#111827">内网安装</text>
+    <text x="877" y="276" text-anchor="middle" font-size="14" fill="#64748b">/opt/claude-code</text>
+    <path d="M210 258 H250" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
+    <path d="M395 258 H435" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
+    <path d="M580 258 H620" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
+    <path d="M765 258 H805" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <g font-family="Arial, sans-serif">
+    <rect x="165" y="405" width="210" height="52" rx="26" fill="#e0f2fe"/>
+    <text x="270" y="438" text-anchor="middle" font-size="15" fill="#075985">版本清单</text>
+    <rect x="435" y="405" width="210" height="52" rx="26" fill="#dcfce7"/>
+    <text x="540" y="438" text-anchor="middle" font-size="15" fill="#166534">checksum 记录</text>
+    <rect x="705" y="405" width="210" height="52" rx="26" fill="#fef3c7"/>
+    <text x="810" y="438" text-anchor="middle" font-size="15" fill="#854d0e">回滚目录</text>
+  </g>
+</svg>
