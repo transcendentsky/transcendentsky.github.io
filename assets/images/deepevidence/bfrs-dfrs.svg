@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="560" viewBox="0 0 1080 560" role="img" aria-labelledby="title desc">
+  <title id="title">BFRS and DFRS strategies</title>
+  <desc id="desc">Breadth-first research and depth-first research complement each other in DeepEvidence.</desc>
+  <rect width="1080" height="560" rx="28" fill="#fbfaf7"/>
+  <text x="56" y="72" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#111827">BFRS + DFRS：广度发现候选，深度追踪证据</text>
+  <text x="58" y="110" font-family="Arial, sans-serif" font-size="18" fill="#64748b">DeepEvidence 不只是搜索文本，而是在多个生物医学 KG 之间做有策略的图探索</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="95" y="165" width="390" height="260" rx="22" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="290" y="215" text-anchor="middle" font-size="30" font-weight="700" fill="#155e75">BFRS</text>
+    <text x="290" y="252" text-anchor="middle" font-size="17" fill="#475569">Breadth-First ReSearch</text>
+    <circle cx="215" cy="320" r="20" fill="#0ea5e9"/>
+    <circle cx="290" cy="285" r="20" fill="#0ea5e9"/>
+    <circle cx="365" cy="320" r="20" fill="#0ea5e9"/>
+    <circle cx="290" cy="360" r="20" fill="#0ea5e9"/>
+    <path d="M235 315 L270 292 M310 292 L345 315 M235 326 L270 354 M310 354 L345 326" stroke="#94a3b8" stroke-width="3"/>
+    <text x="290" y="400" text-anchor="middle" font-size="15" fill="#64748b">跨图搜索一跳邻域，快速发现候选实体和桥接关系</text>
+
+    <rect x="595" y="165" width="390" height="260" rx="22" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="790" y="215" text-anchor="middle" font-size="30" font-weight="700" fill="#7c3aed">DFRS</text>
+    <text x="790" y="252" text-anchor="middle" font-size="17" fill="#475569">Depth-First ReSearch</text>
+    <circle cx="700" cy="320" r="20" fill="#8b5cf6"/>
+    <circle cx="760" cy="320" r="20" fill="#8b5cf6"/>
+    <circle cx="820" cy="320" r="20" fill="#8b5cf6"/>
+    <circle cx="880" cy="320" r="20" fill="#8b5cf6"/>
+    <path d="M720 320 H740 M780 320 H800 M840 320 H860" stroke="#94a3b8" stroke-width="3"/>
+    <text x="790" y="400" text-anchor="middle" font-size="15" fill="#64748b">沿关键实体多跳深入，追踪机制、引用和证据链</text>
+  </g>
+  <text x="540" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#475569">BFRS 提供覆盖面，DFRS 提供深度；evidence graph 把两者的发现统一成可复核结构</text>
+</svg>
