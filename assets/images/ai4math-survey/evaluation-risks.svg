@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="600" viewBox="0 0 1120 600" role="img" aria-labelledby="title desc">
+  <title id="title">Evaluation risks in AI mathematical reasoning</title>
+  <desc id="desc">A matrix of benchmarks, metrics, and failure modes in AI mathematical reasoning evaluation.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#fffdf8"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <filter id="shadow" x="-12%" y="-18%" width="124%" height="150%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  <rect width="1120" height="600" rx="28" fill="url(#bg)"/>
+  <text x="56" y="72" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#111827">评价数学推理模型时最容易踩的坑</text>
+  <text x="58" y="110" font-family="Arial, sans-serif" font-size="18" fill="#64748b">Benchmark 分数必须和污染、采样预算、验证方式、失败模式一起阅读</text>
+  <g font-family="Arial, sans-serif" filter="url(#shadow)">
+    <rect x="78" y="165" width="288" height="330" rx="20" fill="#ffffff"/>
+    <text x="222" y="212" text-anchor="middle" font-size="22" font-weight="700" fill="#0f172a">Benchmark 维度</text>
+    <text x="118" y="260" font-size="16" fill="#334155">• 小学算术 / MWP</text>
+    <text x="118" y="296" font-size="16" fill="#334155">• 竞赛数学 / Olympiad</text>
+    <text x="118" y="332" font-size="16" fill="#334155">• 几何与多模态题</text>
+    <text x="118" y="368" font-size="16" fill="#334155">• Lean / Isabelle 证明</text>
+    <text x="118" y="404" font-size="16" fill="#334155">• 多语言与专家评测</text>
+    <rect x="416" y="165" width="288" height="330" rx="20" fill="#ffffff"/>
+    <text x="560" y="212" text-anchor="middle" font-size="22" font-weight="700" fill="#0f172a">指标口径</text>
+    <text x="456" y="260" font-size="16" fill="#334155">• pass@1：一次作答</text>
+    <text x="456" y="296" font-size="16" fill="#334155">• majority voting：多数投票</text>
+    <text x="456" y="332" font-size="16" fill="#334155">• pass@k：多样本命中</text>
+    <text x="456" y="368" font-size="16" fill="#334155">• verifier-assisted：验证器筛选</text>
+    <text x="456" y="404" font-size="16" fill="#334155">• test-time compute：推理预算</text>
+    <rect x="754" y="165" width="288" height="330" rx="20" fill="#ffffff"/>
+    <text x="898" y="212" text-anchor="middle" font-size="22" font-weight="700" fill="#0f172a">风险与失败模式</text>
+    <text x="794" y="260" font-size="16" fill="#334155">• 数据污染与 benchmark 饱和</text>
+    <text x="794" y="296" font-size="16" fill="#334155">• 扰动脆弱与模板依赖</text>
+    <text x="794" y="332" font-size="16" fill="#334155">• reward hacking</text>
+    <text x="794" y="368" font-size="16" fill="#334155">• 图形 grounding 失败</text>
+    <text x="794" y="404" font-size="16" fill="#334155">• 推理规模带来的能耗成本</text>
+  </g>
+  <g font-family="Arial, sans-serif">
+    <rect x="257" y="522" width="606" height="42" rx="21" fill="#fee2e2"/>
+    <text x="560" y="549" text-anchor="middle" font-size="16" fill="#991b1b">没有报告采样次数、验证器和计算预算的高分，很难横向比较。</text>
+  </g>
+</svg>
