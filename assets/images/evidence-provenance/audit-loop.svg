@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="560" viewBox="0 0 1080 560" role="img" aria-labelledby="title desc">
+  <title id="title">Audit Loop</title>
+  <desc id="desc">Evidence tracing and execution provenance form an audit and improvement loop.</desc>
+  <rect width="1080" height="560" rx="28" fill="#f8fafc"/>
+  <text x="56" y="72" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#111827">从执行到审计：证据和溯源形成闭环</text>
+  <text x="58" y="110" font-family="Arial, sans-serif" font-size="18" fill="#64748b">记录、验证、回放、审计和改进策略，构成可治理的自动化系统</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="80" y="220" width="140" height="82" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="150" y="254" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">Observe</text>
+    <text x="150" y="280" text-anchor="middle" font-size="14" fill="#64748b">记录事实</text>
+    <rect x="270" y="220" width="140" height="82" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="340" y="254" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">Link</text>
+    <text x="340" y="280" text-anchor="middle" font-size="14" fill="#64748b">关联证据</text>
+    <rect x="460" y="220" width="140" height="82" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="530" y="254" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">Verify</text>
+    <text x="530" y="280" text-anchor="middle" font-size="14" fill="#64748b">校验完整性</text>
+    <rect x="650" y="220" width="140" height="82" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="720" y="254" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">Replay</text>
+    <text x="720" y="280" text-anchor="middle" font-size="14" fill="#64748b">复现实验</text>
+    <rect x="840" y="220" width="140" height="82" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="910" y="254" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">Improve</text>
+    <text x="910" y="280" text-anchor="middle" font-size="14" fill="#64748b">改进策略</text>
+    <path d="M220 261 H270" stroke="#0891b2" stroke-width="4" stroke-linecap="round"/>
+    <path d="M410 261 H460" stroke="#0891b2" stroke-width="4" stroke-linecap="round"/>
+    <path d="M600 261 H650" stroke="#0891b2" stroke-width="4" stroke-linecap="round"/>
+    <path d="M790 261 H840" stroke="#0891b2" stroke-width="4" stroke-linecap="round"/>
+    <path d="M910 302 C910 420 150 420 150 302" fill="none" stroke="#94a3b8" stroke-width="4" stroke-dasharray="12 10"/>
+    <text x="530" y="420" text-anchor="middle" font-size="17" fill="#475569">一次失败的执行不应只是日志，而应成为下一轮策略、测试和权限规则的输入</text>
+  </g>
+</svg>

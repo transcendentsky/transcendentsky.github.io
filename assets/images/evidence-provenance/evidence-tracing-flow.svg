@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="560" viewBox="0 0 1080 560" role="img" aria-labelledby="title desc">
+  <title id="title">Evidence Tracing Flow</title>
+  <desc id="desc">Evidence tracing connects claims, evidence, actions, observations, and decisions.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f8fbff"/>
+      <stop offset="100%" stop-color="#eef7f4"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-20%" width="120%" height="150%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="1080" height="560" rx="28" fill="url(#bg)"/>
+  <text x="56" y="72" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#111827">Evidence Tracing：让每个结论都有证据链</text>
+  <text x="58" y="110" font-family="Arial, sans-serif" font-size="18" fill="#64748b">从输入、证据、工具调用到最终决策，记录“为什么得出这个结果”</text>
+  <g font-family="Arial, sans-serif" filter="url(#shadow)">
+    <rect x="75" y="215" width="150" height="92" rx="16" fill="#ffffff"/>
+    <text x="150" y="252" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Claim</text>
+    <text x="150" y="280" text-anchor="middle" font-size="14" fill="#64748b">结论 / 判断</text>
+    <rect x="285" y="215" width="150" height="92" rx="16" fill="#ffffff"/>
+    <text x="360" y="252" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Evidence</text>
+    <text x="360" y="280" text-anchor="middle" font-size="14" fill="#64748b">文档 / 日志 / 数据</text>
+    <rect x="495" y="185" width="180" height="152" rx="20" fill="#155e75"/>
+    <text x="585" y="242" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff">Trace</text>
+    <text x="585" y="276" text-anchor="middle" font-size="16" fill="#d9f8fb">span / event / link</text>
+    <text x="585" y="302" text-anchor="middle" font-size="15" fill="#d9f8fb">context correlation</text>
+    <rect x="735" y="215" width="150" height="92" rx="16" fill="#ffffff"/>
+    <text x="810" y="252" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Action</text>
+    <text x="810" y="280" text-anchor="middle" font-size="14" fill="#64748b">工具 / 命令 / API</text>
+    <rect x="930" y="215" width="110" height="92" rx="16" fill="#ffffff"/>
+    <text x="985" y="252" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Audit</text>
+    <text x="985" y="280" text-anchor="middle" font-size="14" fill="#64748b">可复核</text>
+  </g>
+  <path d="M225 261 H285" stroke="#0891b2" stroke-width="4" stroke-linecap="round"/>
+  <path d="M435 261 H495" stroke="#0891b2" stroke-width="4" stroke-linecap="round"/>
+  <path d="M675 261 H735" stroke="#0891b2" stroke-width="4" stroke-linecap="round"/>
+  <path d="M885 261 H930" stroke="#0891b2" stroke-width="4" stroke-linecap="round"/>
+  <text x="540" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#475569">好的证据追踪不是保存所有内容，而是保存能复核结论的最小充分证据</text>
+</svg>
