@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">MaxKB tutorial workflow</title>
+  <desc id="desc">Step-by-step workflow for deploying MaxKB and building the first knowledge base agent.</desc>
+  <defs>
+    <style>
+      .bg { fill: #fbfbf8; }
+      .title { font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 32px; font-weight: 700; fill: #172033; }
+      .box { fill: #ffffff; stroke: #bcc7d4; stroke-width: 2; }
+      .num { fill: #2459a6; }
+      .numtext { font-family: Arial, sans-serif; font-size: 24px; font-weight: 700; fill: #ffffff; text-anchor: middle; dominant-baseline: middle; }
+      .head { font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 23px; font-weight: 700; fill: #1f2937; }
+      .body { font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 17px; fill: #4b5563; }
+      .arrow { stroke: #6b7280; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1200" height="620"/>
+  <text class="title" x="60" y="68">从零搭建第一个 MaxKB 知识库智能体</text>
+
+  <g transform="translate(60 120)">
+    <rect class="box" x="0" y="0" width="240" height="142" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="24"/>
+    <text class="numtext" x="38" y="39">1</text>
+    <text class="head" x="78" y="45">部署服务</text>
+    <text class="body" x="28" y="86">Docker 或离线安装</text>
+    <text class="body" x="28" y="114">确认 8080 可访问</text>
+  </g>
+
+  <g transform="translate(348 120)">
+    <rect class="box" x="0" y="0" width="240" height="142" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="24"/>
+    <text class="numtext" x="38" y="39">2</text>
+    <text class="head" x="78" y="45">接入模型</text>
+    <text class="body" x="28" y="86">LLM + 向量模型</text>
+    <text class="body" x="28" y="114">先做最小可用验证</text>
+  </g>
+
+  <g transform="translate(636 120)">
+    <rect class="box" x="0" y="0" width="240" height="142" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="24"/>
+    <text class="numtext" x="38" y="39">3</text>
+    <text class="head" x="78" y="45">创建知识库</text>
+    <text class="body" x="28" y="86">上传文档并切分</text>
+    <text class="body" x="28" y="114">执行命中测试</text>
+  </g>
+
+  <g transform="translate(924 120)">
+    <rect class="box" x="0" y="0" width="216" height="142" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="24"/>
+    <text class="numtext" x="38" y="39">4</text>
+    <text class="head" x="78" y="45">创建智能体</text>
+    <text class="body" x="28" y="86">绑定模型和知识库</text>
+    <text class="body" x="28" y="114">配置提示词</text>
+  </g>
+
+  <path class="arrow" d="M300 191 H348"/>
+  <path class="arrow" d="M588 191 H636"/>
+  <path class="arrow" d="M876 191 H924"/>
+
+  <g transform="translate(156 360)">
+    <rect class="box" x="0" y="0" width="260" height="142" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="24"/>
+    <text class="numtext" x="38" y="39">5</text>
+    <text class="head" x="78" y="45">调试问答</text>
+    <text class="body" x="28" y="86">检查引用是否命中</text>
+    <text class="body" x="28" y="114">调 TopK 和相似度</text>
+  </g>
+
+  <g transform="translate(470 360)">
+    <rect class="box" x="0" y="0" width="260" height="142" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="24"/>
+    <text class="numtext" x="38" y="39">6</text>
+    <text class="head" x="78" y="45">发布集成</text>
+    <text class="body" x="28" y="86">公开链接 / iframe</text>
+    <text class="body" x="28" y="114">API Key 接入业务</text>
+  </g>
+
+  <g transform="translate(784 360)">
+    <rect class="box" x="0" y="0" width="260" height="142" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="24"/>
+    <text class="numtext" x="38" y="39">7</text>
+    <text class="head" x="78" y="45">生产运维</text>
+    <text class="body" x="28" y="86">备份、升级、权限</text>
+    <text class="body" x="28" y="114">日志、成本和安全</text>
+  </g>
+
+  <path class="arrow" d="M1032 262 C1032 314 914 336 914 360"/>
+  <path class="arrow" d="M416 431 H470"/>
+  <path class="arrow" d="M730 431 H784"/>
+</svg>
