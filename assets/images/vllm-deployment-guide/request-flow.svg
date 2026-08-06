@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">vLLM request lifecycle</title>
+  <desc id="desc">The lifecycle of a vLLM request from prompt, prefill, decode, streaming response, metrics and tuning.</desc>
+  <defs>
+    <style>
+      .bg{fill:#fbfbf9}.title{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:32px;font-weight:700;fill:#172033}.box{fill:#fff;stroke:#b8c4d0;stroke-width:2}.num{fill:#255fa8}.nt{font-family:Arial,sans-serif;font-size:22px;font-weight:700;fill:#fff;text-anchor:middle;dominant-baseline:middle}.h{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;font-weight:700;fill:#1f2937}.b{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:16px;fill:#4b5563}.arrow{stroke:#6b7280;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="620"/>
+  <text class="title" x="60" y="68">vLLM 请求生命周期：部署调优要看懂这条链路</text>
+
+  <g transform="translate(60 120)">
+    <rect class="box" width="220" height="138" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="23"/><text class="nt" x="38" y="39">1</text>
+    <text class="h" x="76" y="45">请求进入</text>
+    <text class="b" x="28" y="84">OpenAI 兼容接口</text>
+    <text class="b" x="28" y="112">鉴权、限流、路由</text>
+  </g>
+  <g transform="translate(336 120)">
+    <rect class="box" width="220" height="138" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="23"/><text class="nt" x="38" y="39">2</text>
+    <text class="h" x="76" y="45">Tokenize</text>
+    <text class="b" x="28" y="84">模板渲染</text>
+    <text class="b" x="28" y="112">输入长度检查</text>
+  </g>
+  <g transform="translate(612 120)">
+    <rect class="box" width="220" height="138" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="23"/><text class="nt" x="38" y="39">3</text>
+    <text class="h" x="76" y="45">Prefill</text>
+    <text class="b" x="28" y="84">处理提示词</text>
+    <text class="b" x="28" y="112">建立 KV Cache</text>
+  </g>
+  <g transform="translate(888 120)">
+    <rect class="box" width="240" height="138" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="23"/><text class="nt" x="38" y="39">4</text>
+    <text class="h" x="76" y="45">Decode</text>
+    <text class="b" x="28" y="84">连续批处理</text>
+    <text class="b" x="28" y="112">逐 token 生成</text>
+  </g>
+
+  <path class="arrow" d="M280 189H336"/>
+  <path class="arrow" d="M556 189H612"/>
+  <path class="arrow" d="M832 189H888"/>
+
+  <g transform="translate(184 370)">
+    <rect class="box" width="250" height="138" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="23"/><text class="nt" x="38" y="39">5</text>
+    <text class="h" x="76" y="45">返回结果</text>
+    <text class="b" x="28" y="84">Streaming 或一次性返回</text>
+    <text class="b" x="28" y="112">usage / finish_reason</text>
+  </g>
+  <g transform="translate(476 370)">
+    <rect class="box" width="250" height="138" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="23"/><text class="nt" x="38" y="39">6</text>
+    <text class="h" x="76" y="45">观测指标</text>
+    <text class="b" x="28" y="84">TTFT / TPOT / 吞吐</text>
+    <text class="b" x="28" y="112">GPU / KV Cache / 队列</text>
+  </g>
+  <g transform="translate(768 370)">
+    <rect class="box" width="250" height="138" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="23"/><text class="nt" x="38" y="39">7</text>
+    <text class="h" x="76" y="45">调优迭代</text>
+    <text class="b" x="28" y="84">并发、上下文、量化</text>
+    <text class="b" x="28" y="112">TP / PP / 多副本</text>
+  </g>
+  <path class="arrow" d="M1008 258C1008 318 894 338 894 370"/>
+  <path class="arrow" d="M434 439H476"/>
+  <path class="arrow" d="M726 439H768"/>
+</svg>

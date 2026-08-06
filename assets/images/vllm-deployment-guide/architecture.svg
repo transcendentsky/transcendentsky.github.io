@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">vLLM deployment architecture</title>
+  <desc id="desc">A production vLLM deployment architecture with clients, gateway, vLLM server, model cache, GPU workers and monitoring.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f7f9fc}.top{fill:#172033}.panel{fill:#fff;stroke:#c8d3df;stroke-width:2}.blue{fill:#e9f3ff;stroke:#3d82d1;stroke-width:2}.green{fill:#e9f7ef;stroke:#2f9d68;stroke-width:2}.orange{fill:#fff2df;stroke:#d1842b;stroke-width:2}.purple{fill:#f1edff;stroke:#7562cf;stroke-width:2}.gray{fill:#eef2f6;stroke:#9aa8b7;stroke-width:2}.line{stroke:#667085;stroke-width:2.5;fill:none;marker-end:url(#arrow)}.title{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:30px;font-weight:700;fill:#fff}.h{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:23px;font-weight:700;fill:#1f2937}.s{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:16px;fill:#475467}.w{fill:#fff}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#667085"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="680"/>
+  <rect class="top" width="1200" height="88"/>
+  <text class="title" x="56" y="55">vLLM 生产部署拓扑</text>
+  <text class="s w" x="760" y="55">OpenAI Compatible API + Continuous Batching + KV Cache</text>
+
+  <rect class="panel" x="56" y="136" width="180" height="116" rx="8"/>
+  <text class="h" x="102" y="178">客户端</text>
+  <text class="s" x="86" y="210">RAG / Agent</text>
+  <text class="s" x="86" y="232">业务后端 / UI</text>
+
+  <rect class="gray" x="300" y="126" width="210" height="136" rx="8"/>
+  <text class="h" x="356" y="169">网关层</text>
+  <text class="s" x="334" y="202">Nginx / API Gateway</text>
+  <text class="s" x="334" y="226">鉴权、限流、TLS</text>
+
+  <rect class="blue" x="586" y="110" width="260" height="168" rx="8"/>
+  <text class="h" x="650" y="153">vLLM Server</text>
+  <text class="s" x="622" y="187">OpenAI Chat Completions</text>
+  <text class="s" x="622" y="211">Scheduler / Batching</text>
+  <text class="s" x="622" y="235">Streaming / Metrics</text>
+
+  <rect class="green" x="922" y="110" width="220" height="168" rx="8"/>
+  <text class="h" x="981" y="153">GPU 执行</text>
+  <text class="s" x="958" y="187">CUDA / ROCm / XPU</text>
+  <text class="s" x="958" y="211">Attention Kernels</text>
+  <text class="s" x="958" y="235">KV Cache</text>
+
+  <rect class="orange" x="586" y="382" width="260" height="136" rx="8"/>
+  <text class="h" x="658" y="424">模型缓存</text>
+  <text class="s" x="622" y="456">HF_HOME / ModelScope</text>
+  <text class="s" x="622" y="480">VLLM_CACHE_ROOT</text>
+
+  <rect class="purple" x="922" y="382" width="220" height="136" rx="8"/>
+  <text class="h" x="981" y="424">监控运维</text>
+  <text class="s" x="958" y="456">/metrics</text>
+  <text class="s" x="958" y="480">Prometheus / Grafana</text>
+
+  <rect class="panel" x="56" y="386" width="454" height="130" rx="8"/>
+  <text class="h" x="92" y="429">关键部署参数</text>
+  <text class="s" x="92" y="462">--max-model-len / --gpu-memory-utilization / --tensor-parallel-size</text>
+  <text class="s" x="92" y="488">--served-model-name / --api-key / --enable-per-request-metrics</text>
+
+  <path class="line" d="M236 194H300"/>
+  <path class="line" d="M510 194H586"/>
+  <path class="line" d="M846 194H922"/>
+  <path class="line" d="M716 278V382"/>
+  <path class="line" d="M1032 278V382"/>
+  <path class="line" d="M846 450H922"/>
+  <path class="line" d="M510 450H586"/>
+
+  <rect class="panel" x="56" y="566" width="1086" height="66" rx="8"/>
+  <text class="s" x="88" y="604">部署原则：先让单模型单实例稳定，再扩展到多 GPU、网关限流、监控告警和多副本；不要在未压测的情况下直接开放公网高并发。</text>
+</svg>
