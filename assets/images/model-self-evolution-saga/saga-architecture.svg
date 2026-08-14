@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">SAGA bi-level goal-evolving architecture</title>
+  <desc id="desc">SAGA architecture showing an outer loop for objective evolution and an inner loop for candidate optimization.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.top{fill:#172033}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.blue{fill:#e8f2ff;stroke:#3b82c4;stroke-width:2}.green{fill:#e8f7ef;stroke:#31a36b;stroke-width:2}.orange{fill:#fff2df;stroke:#d1842b;stroke-width:2}.purple{fill:#f1edff;stroke:#7562cf;stroke-width:2}.red{fill:#fff0f0;stroke:#d44c4c;stroke-width:2}.line{stroke:#64748b;stroke-width:2.5;fill:none;marker-end:url(#arrow)}.loop{stroke:#334155;stroke-width:3;fill:none;stroke-dasharray:8 7;marker-end:url(#arrowDark)}.title{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:30px;font-weight:700;fill:#fff}.h{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:23px;font-weight:700;fill:#1f2937}.s{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:16px;fill:#475569}.small{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:14px;fill:#64748b}.w{fill:#fff}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#64748b"/>
+    </marker>
+    <marker id="arrowDark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="700"/>
+  <rect class="top" width="1200" height="88"/>
+  <text class="title" x="56" y="55">SAGA：目标自演化的科学发现智能体</text>
+  <text class="s w" x="760" y="55">Outer Loop: Objective Evolution · Inner Loop: Solution Optimization</text>
+
+  <rect class="panel" x="70" y="130" width="210" height="120" rx="8"/>
+  <text class="h" x="118" y="176">科学目标</text>
+  <text class="s" x="102" y="210">高层任务描述</text>
+  <text class="s" x="102" y="232">领域约束与背景</text>
+
+  <rect class="blue" x="365" y="120" width="210" height="130" rx="8"/>
+  <text class="h" x="420" y="164">Planner</text>
+  <text class="s" x="397" y="198">拆解目标</text>
+  <text class="s" x="397" y="222">提出新 objective</text>
+
+  <rect class="green" x="675" y="120" width="210" height="130" rx="8"/>
+  <text class="h" x="720" y="164">Implementer</text>
+  <text class="s" x="707" y="198">把目标转成</text>
+  <text class="s" x="707" y="222">可执行评分函数</text>
+
+  <rect class="orange" x="675" y="380" width="210" height="130" rx="8"/>
+  <text class="h" x="725" y="424">Optimizer</text>
+  <text class="s" x="707" y="458">搜索候选假设</text>
+  <text class="s" x="707" y="482">优化当前评分函数</text>
+
+  <rect class="purple" x="365" y="380" width="210" height="130" rx="8"/>
+  <text class="h" x="420" y="424">Analyzer</text>
+  <text class="s" x="397" y="458">分析结果分布</text>
+  <text class="s" x="397" y="482">识别失败模式</text>
+
+  <rect class="red" x="960" y="280" width="180" height="120" rx="8"/>
+  <text class="h" x="1007" y="326">候选解</text>
+  <text class="s" x="994" y="360">分子 / 蛋白</text>
+  <text class="s" x="994" y="382">DNA / 材料 / 流程</text>
+
+  <path class="line" d="M280 190H365"/>
+  <path class="line" d="M575 185H675"/>
+  <path class="line" d="M780 250V380"/>
+  <path class="line" d="M675 445H575"/>
+  <path class="line" d="M470 380V250"/>
+  <path class="line" d="M885 445C940 430 965 390 980 375"/>
+
+  <path class="loop" d="M330 98H920V535H330Z"/>
+  <text class="h" x="96" y="604">关键思想</text>
+  <text class="s" x="220" y="604">不是只优化固定 reward，而是让智能体根据中间结果持续发现、实现、评估和修正 reward 本身。</text>
+  <text class="small" x="220" y="632">这让科学发现从“给定目标下搜索解”前进一步，变成“目标和解一起演化”。</text>
+</svg>
