@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">DeepScientist closed-loop discovery architecture</title>
+  <desc id="desc">DeepScientist architecture showing hypothesize, verify, analyze, findings memory, research map, and Bayesian optimization loop.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.top{fill:#172033}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.blue{fill:#e8f2ff;stroke:#3b82c4;stroke-width:2}.green{fill:#e8f7ef;stroke:#31a36b;stroke-width:2}.orange{fill:#fff2df;stroke:#d1842b;stroke-width:2}.purple{fill:#f1edff;stroke:#7562cf;stroke-width:2}.red{fill:#fff0f0;stroke:#d44c4c;stroke-width:2}.gray{fill:#eef2f6;stroke:#94a3b8;stroke-width:2}.line{stroke:#64748b;stroke-width:2.5;fill:none;marker-end:url(#arrow)}.loop{stroke:#334155;stroke-width:3;fill:none;stroke-dasharray:8 7;marker-end:url(#arrowDark)}.title{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:30px;font-weight:700;fill:#fff}.h{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:23px;font-weight:700;fill:#1f2937}.s{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:16px;fill:#475569}.small{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:14px;fill:#64748b}.w{fill:#fff}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#64748b"/>
+    </marker>
+    <marker id="arrowDark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="700"/>
+  <rect class="top" width="1200" height="88"/>
+  <text class="title" x="56" y="55">DeepScientist：面向前沿发现的闭环科研系统</text>
+  <text class="s w" x="765" y="55">Hypothesize · Verify · Analyze · Findings Memory</text>
+
+  <rect class="blue" x="90" y="132" width="240" height="140" rx="8"/>
+  <text class="h" x="145" y="176">Hypothesize</text>
+  <text class="s" x="126" y="212">提出候选研究方法</text>
+  <text class="s" x="126" y="236">平衡探索与利用</text>
+
+  <rect class="green" x="480" y="132" width="240" height="140" rx="8"/>
+  <text class="h" x="552" y="176">Verify</text>
+  <text class="s" x="516" y="212">实现实验</text>
+  <text class="s" x="516" y="236">逐级提高验证保真度</text>
+
+  <rect class="orange" x="870" y="132" width="240" height="140" rx="8"/>
+  <text class="h" x="940" y="176">Analyze</text>
+  <text class="s" x="906" y="212">解释实验结果</text>
+  <text class="s" x="906" y="236">提取可复用发现</text>
+
+  <rect class="purple" x="278" y="385" width="280" height="145" rx="8"/>
+  <text class="h" x="340" y="430">Findings Memory</text>
+  <text class="s" x="318" y="466">累计成功、失败、消融</text>
+  <text class="s" x="318" y="490">把结果变成下一轮起点</text>
+
+  <rect class="red" x="642" y="385" width="280" height="145" rx="8"/>
+  <text class="h" x="704" y="430">Research Map</text>
+  <text class="s" x="682" y="466">可视化研究状态</text>
+  <text class="s" x="682" y="490">定位局部最优和新方向</text>
+
+  <rect class="gray" x="90" y="570" width="1020" height="64" rx="8"/>
+  <text class="s" x="122" y="607">关键点：DeepScientist 把科学发现形式化为 Bayesian Optimization 问题，用 Findings Memory 和 Research Map 支撑长周期迭代。</text>
+
+  <path class="line" d="M330 202H480"/>
+  <path class="line" d="M720 202H870"/>
+  <path class="line" d="M990 272C960 350 880 380 822 385"/>
+  <path class="line" d="M642 456H558"/>
+  <path class="line" d="M418 385C360 340 262 314 210 272"/>
+  <path class="loop" d="M210 114H990C1110 114 1140 558 600 558C75 558 75 114 210 114"/>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Self-evolving AI scientist systems comparison</title>
+  <desc id="desc">Comparison among SAGA, ARIS, AutoResearchClaw, and DeepScientist in the model self-evolution series.</desc>
+  <defs>
+    <style>
+      .bg{fill:#fbfbf8}.title{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:32px;font-weight:700;fill:#172033}.box{fill:#fff;stroke:#b8c4d0;stroke-width:2}.c1{fill:#e8f2ff}.c2{fill:#e8f7ef}.c3{fill:#fff2df}.c4{fill:#f1edff}.num{fill:#2459a6}.nt{font-family:Arial,sans-serif;font-size:20px;font-weight:700;fill:#fff;text-anchor:middle;dominant-baseline:middle}.h{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;font-weight:700;fill:#1f2937}.b{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:16px;fill:#4b5563}.line{stroke:#64748b;stroke-width:2.5;fill:none}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="640"/>
+  <text class="title" x="60" y="70">模型自进化系列中的四类系统</text>
+
+  <rect class="box c1" x="80" y="140" width="470" height="145" rx="8"/>
+  <circle class="num" cx="122" cy="183" r="24"/><text class="nt" x="122" y="184">S</text>
+  <text class="h" x="165" y="190">SAGA：目标自演化</text>
+  <text class="b" x="115" y="228">演化对象：objective / scoring function</text>
+  <text class="b" x="115" y="254">闭环：分析失败模式 -> 修改目标 -> 重新优化候选</text>
+
+  <rect class="box c2" x="650" y="140" width="470" height="145" rx="8"/>
+  <circle class="num" cx="692" cy="183" r="24"/><text class="nt" x="692" y="184">A</text>
+  <text class="h" x="735" y="190">ARIS：流程自审计</text>
+  <text class="b" x="685" y="228">演化对象：research harness / evidence workflow</text>
+  <text class="b" x="685" y="254">闭环：执行 -> 跨模型审查 -> 证据链修复</text>
+
+  <rect class="box c3" x="80" y="370" width="470" height="145" rx="8"/>
+  <circle class="num" cx="122" cy="413" r="24"/><text class="nt" x="122" y="414">C</text>
+  <text class="h" x="165" y="420">AutoResearchClaw：管线自增强</text>
+  <text class="b" x="115" y="458">演化对象：端到端科研流水线和跨运行 lesson</text>
+  <text class="b" x="115" y="484">闭环：debate -> execution -> verification -> future runs</text>
+
+  <rect class="box c4" x="650" y="370" width="470" height="145" rx="8"/>
+  <circle class="num" cx="692" cy="413" r="24"/><text class="nt" x="692" y="414">D</text>
+  <text class="h" x="735" y="420">DeepScientist：发现自推进</text>
+  <text class="b" x="685" y="458">演化对象：Findings Memory 与研究搜索策略</text>
+  <text class="b" x="685" y="484">闭环：hypothesize -> verify -> analyze -> BO selection</text>
+
+  <path class="line" d="M550 212H650"/>
+  <path class="line" d="M315 285V370"/>
+  <path class="line" d="M885 285V370"/>
+  <path class="line" d="M550 442H650"/>
+  <text class="b" x="92" y="590">DeepScientist 的重点不是单次自动写论文，而是长周期内持续积累发现、选择高价值方向，并把实验结果变成下一轮搜索的先验。</text>
+</svg>
