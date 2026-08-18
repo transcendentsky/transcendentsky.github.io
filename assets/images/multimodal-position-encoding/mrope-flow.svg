@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">M-RoPE and multimodal token flow</title>
+  <desc id="desc">Token flow diagram showing text, image and video position ids in multimodal rotary position embedding.</desc>
+  <defs>
+    <style>
+      .bg{fill:#fbfbf8}.title{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:32px;font-weight:700;fill:#172033}.box{fill:#fff;stroke:#b8c4d0;stroke-width:2}.c1{fill:#e8f2ff}.c2{fill:#e8f7ef}.c3{fill:#fff2df}.c4{fill:#f1edff}.num{fill:#2459a6}.nt{font-family:Arial,sans-serif;font-size:20px;font-weight:700;fill:#fff;text-anchor:middle;dominant-baseline:middle}.h{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:21px;font-weight:700;fill:#1f2937}.b{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:15px;fill:#4b5563}.arrow{stroke:#6b7280;stroke-width:2.5;fill:none;marker-end:url(#arrow)}.grid{stroke:#94a3b8;stroke-width:1.5;fill:#fff}.patch{fill:#dbeafe;stroke:#3b82c4;stroke-width:1}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="640"/>
+  <text class="title" x="60" y="70">M-RoPE 思路：把位置拆成时间、高度、宽度三条轴</text>
+
+  <rect class="box c1" x="70" y="128" width="240" height="150" rx="8"/>
+  <circle class="num" cx="112" cy="171" r="24"/><text class="nt" x="112" y="172">T</text>
+  <text class="h" x="155" y="178">文本 token</text>
+  <text class="b" x="108" y="218">位置：p</text>
+  <text class="b" x="108" y="244">映射：(p, p, p)</text>
+
+  <rect class="box c2" x="370" y="128" width="240" height="150" rx="8"/>
+  <circle class="num" cx="412" cy="171" r="24"/><text class="nt" x="412" y="172">I</text>
+  <text class="h" x="455" y="178">图像 patch</text>
+  <text class="b" x="408" y="218">位置：(h, w)</text>
+  <text class="b" x="408" y="244">映射：(t0, h, w)</text>
+
+  <rect class="box c3" x="670" y="128" width="240" height="150" rx="8"/>
+  <circle class="num" cx="712" cy="171" r="24"/><text class="nt" x="712" y="172">V</text>
+  <text class="h" x="755" y="178">视频 patch</text>
+  <text class="b" x="708" y="218">位置：(t, h, w)</text>
+  <text class="b" x="708" y="244">映射：时空 3D</text>
+
+  <rect class="box c4" x="970" y="128" width="170" height="150" rx="8"/>
+  <text class="h" x="1015" y="178">注意力</text>
+  <text class="b" x="1002" y="218">q/k 旋转</text>
+  <text class="b" x="1002" y="244">保留相对位置</text>
+
+  <path class="arrow" d="M310 203H370"/>
+  <path class="arrow" d="M610 203H670"/>
+  <path class="arrow" d="M910 203H970"/>
+
+  <g transform="translate(160 370)">
+    <rect class="grid" x="0" y="0" width="168" height="168"/>
+    <rect class="patch" x="0" y="0" width="42" height="42"/>
+    <rect class="patch" x="42" y="0" width="42" height="42"/>
+    <rect class="patch" x="84" y="0" width="42" height="42"/>
+    <rect class="patch" x="126" y="0" width="42" height="42"/>
+    <rect class="patch" x="0" y="42" width="42" height="42"/>
+    <rect class="patch" x="42" y="42" width="42" height="42"/>
+    <rect class="patch" x="84" y="42" width="42" height="42"/>
+    <rect class="patch" x="126" y="42" width="42" height="42"/>
+    <rect class="patch" x="0" y="84" width="42" height="42"/>
+    <rect class="patch" x="42" y="84" width="42" height="42"/>
+    <rect class="patch" x="84" y="84" width="42" height="42"/>
+    <rect class="patch" x="126" y="84" width="42" height="42"/>
+    <rect class="patch" x="0" y="126" width="42" height="42"/>
+    <rect class="patch" x="42" y="126" width="42" height="42"/>
+    <rect class="patch" x="84" y="126" width="42" height="42"/>
+    <rect class="patch" x="126" y="126" width="42" height="42"/>
+    <text class="b" x="12" y="205">2D 图像：行列位置不能只靠展平顺序</text>
+  </g>
+
+  <rect class="box" x="520" y="390" width="530" height="130" rx="8"/>
+  <text class="h" x="560" y="430">通道维度分段旋转</text>
+  <text class="b" x="560" y="466">q = concat(q_time, q_height, q_width)</text>
+  <text class="b" x="560" y="492">k = concat(k_time, k_height, k_width)</text>
+  <text class="b" x="560" y="518">每段使用对应轴的位置 ID 做 RoPE，文本则三个轴使用相同 ID。</text>
+</svg>
