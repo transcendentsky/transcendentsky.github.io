@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Experience summarization stack for autonomous research systems</title>
+  <desc id="desc">A layered stack of experience summarization mechanisms for autonomous research systems.</desc>
+  <defs>
+    <style>
+      .bg{fill:#fbfbf8}.title{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:32px;font-weight:700;fill:#172033}.box{fill:#fff;stroke:#b8c4d0;stroke-width:2}.c1{fill:#e8f2ff}.c2{fill:#e8f7ef}.c3{fill:#fff2df}.c4{fill:#f1edff}.c5{fill:#fff0f0}.num{fill:#2459a6}.nt{font-family:Arial,sans-serif;font-size:21px;font-weight:700;fill:#fff;text-anchor:middle;dominant-baseline:middle}.h{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;font-weight:700;fill:#1f2937}.b{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:16px;fill:#4b5563}.arrow{stroke:#6b7280;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="640"/>
+  <text class="title" x="60" y="70">经验总结机制：从日志到可复用策略</text>
+
+  <rect class="box c1" x="92" y="125" width="1016" height="74" rx="8"/>
+  <circle class="num" cx="138" cy="162" r="23"/><text class="nt" x="138" y="163">1</text>
+  <text class="h" x="180" y="155">Raw Trace</text>
+  <text class="b" x="335" y="155">保存 prompt、代码、日志、指标、错误、环境、artifact，不先总结。</text>
+
+  <rect class="box c2" x="92" y="225" width="1016" height="74" rx="8"/>
+  <circle class="num" cx="138" cy="262" r="23"/><text class="nt" x="138" y="263">2</text>
+  <text class="h" x="180" y="255">Structured Finding</text>
+  <text class="b" x="335" y="255">把结果变成 finding：假设、证据、状态、限制、下一步。</text>
+
+  <rect class="box c3" x="92" y="325" width="1016" height="74" rx="8"/>
+  <circle class="num" cx="138" cy="362" r="23"/><text class="nt" x="138" y="363">3</text>
+  <text class="h" x="180" y="355">Failure Lesson</text>
+  <text class="b" x="335" y="355">把失败归因成 lesson：触发条件、严重性、修复动作、复用范围。</text>
+
+  <rect class="box c4" x="92" y="425" width="1016" height="74" rx="8"/>
+  <circle class="num" cx="138" cy="462" r="23"/><text class="nt" x="138" y="463">4</text>
+  <text class="h" x="180" y="455">Policy / Skill Update</text>
+  <text class="b" x="405" y="455">将高频 lesson 变成 checklist、review gate、scorer 或可版本化 skill。</text>
+
+  <rect class="box c5" x="92" y="525" width="1016" height="74" rx="8"/>
+  <circle class="num" cx="138" cy="562" r="23"/><text class="nt" x="138" y="563">5</text>
+  <text class="h" x="180" y="555">Retrieval into Future Runs</text>
+  <text class="b" x="455" y="555">按任务相似度、时间衰减、严重性和人工确认状态注入下一轮。</text>
+
+  <path class="arrow" d="M600 199V225"/>
+  <path class="arrow" d="M600 299V325"/>
+  <path class="arrow" d="M600 399V425"/>
+  <path class="arrow" d="M600 499V525"/>
+</svg>

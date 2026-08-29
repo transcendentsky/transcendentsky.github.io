@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Open source auto research and AI scientist project map</title>
+  <desc id="desc">A project map of open source auto research and AI scientist systems and their experience accumulation mechanisms.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.top{fill:#172033}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.blue{fill:#e8f2ff;stroke:#3b82c4;stroke-width:2}.green{fill:#e8f7ef;stroke:#31a36b;stroke-width:2}.orange{fill:#fff2df;stroke:#d1842b;stroke-width:2}.purple{fill:#f1edff;stroke:#7562cf;stroke-width:2}.red{fill:#fff0f0;stroke:#d44c4c;stroke-width:2}.gray{fill:#eef2f6;stroke:#94a3b8;stroke-width:2}.line{stroke:#64748b;stroke-width:2.5;fill:none;marker-end:url(#arrow)}.title{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:30px;font-weight:700;fill:#fff}.h{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;font-weight:700;fill:#1f2937}.s{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:16px;fill:#475569}.small{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:14px;fill:#64748b}.w{fill:#fff}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="700"/>
+  <rect class="top" width="1200" height="88"/>
+  <text class="title" x="56" y="55">开源 Auto Research / AI Scientist 项目谱系</text>
+  <text class="s w" x="740" y="55">Pipeline · Tree Search · Memory · Review · Cross-run Learning</text>
+
+  <rect class="blue" x="70" y="125" width="270" height="145" rx="8"/>
+  <text class="h" x="120" y="168">AI Scientist v1/v2</text>
+  <text class="s" x="110" y="205">idea -> experiment -> paper</text>
+  <text class="s" x="110" y="229">review feedback / tree search</text>
+  <text class="small" x="110" y="253">经验沉淀：review、idea JSON、tree logs</text>
+
+  <rect class="green" x="465" y="125" width="270" height="145" rx="8"/>
+  <text class="h" x="520" y="168">Agent Laboratory</text>
+  <text class="s" x="505" y="205">PhD / Postdoc / Engineer</text>
+  <text class="s" x="505" y="229">literature + experiment + report</text>
+  <text class="small" x="505" y="253">经验沉淀：paper solver、review edits</text>
+
+  <rect class="orange" x="860" y="125" width="270" height="145" rx="8"/>
+  <text class="h" x="935" y="168">AgentRxiv</text>
+  <text class="s" x="900" y="205">agent-generated preprints</text>
+  <text class="s" x="900" y="229">similarity retrieval</text>
+  <text class="small" x="900" y="253">经验沉淀：跨实验室论文记忆</text>
+
+  <rect class="purple" x="70" y="390" width="270" height="145" rx="8"/>
+  <text class="h" x="120" y="433">DeepScientist</text>
+  <text class="s" x="110" y="470">Findings Memory</text>
+  <text class="s" x="110" y="494">Research Map / BO selection</text>
+  <text class="small" x="110" y="518">经验沉淀：成功、失败、消融</text>
+
+  <rect class="red" x="465" y="390" width="270" height="145" rx="8"/>
+  <text class="h" x="530" y="433">AutoResearchClaw</text>
+  <text class="s" x="505" y="470">23-stage pipeline</text>
+  <text class="s" x="505" y="494">self-healing + evolution</text>
+  <text class="small" x="505" y="518">经验沉淀：lessons、safeguards</text>
+
+  <rect class="gray" x="860" y="390" width="270" height="145" rx="8"/>
+  <text class="h" x="935" y="433">ARIS / AIDE</text>
+  <text class="s" x="900" y="470">cross-model review / tree search</text>
+  <text class="s" x="900" y="494">journal / trace / metric feedback</text>
+  <text class="small" x="900" y="518">经验沉淀：审查链、solution tree</text>
+
+  <path class="line" d="M340 198H465"/>
+  <path class="line" d="M735 198H860"/>
+  <path class="line" d="M205 270V390"/>
+  <path class="line" d="M600 270V390"/>
+  <path class="line" d="M995 270V390"/>
+
+  <rect class="panel" x="70" y="590" width="1060" height="64" rx="8"/>
+  <text class="s" x="102" y="627">共同趋势：从“单次完成研究”走向“保存失败、审计证据、复用经验、跨运行改进”的长周期科研系统。</text>
+</svg>
