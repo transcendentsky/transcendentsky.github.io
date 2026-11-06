@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="540" viewBox="0 0 1120 540" role="img" aria-labelledby="title desc">
+  <title id="title">RRSI 的成本，应该和谁比较？</title>
+  <desc id="desc">论文 v3 表 2 工作场景实验：初始 harness 每试验 1.56 百万 policy tokens，未正则化演化为 3.80 百万，RRSI 为 2.42 百万。RRSI 比未正则化演化少约 36%，但比初始 harness 多约 55%。</desc>
+  <rect width="1120" height="540" rx="24" fill="#f5f7fb"/>
+  <g font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif">
+    <text x="48" y="58" font-size="30" font-weight="700" fill="#15243b">RRSI 更省，但要看和谁比较</text>
+    <text x="48" y="92" font-size="17" fill="#52627a">工作场景实验 · 每次试验的 policy tokens · 单位：百万（M）</text>
+    <g stroke="#dce3ee" stroke-width="1">
+      <path d="M270 135V358M430 135V358M590 135V358M750 135V358M910 135V358"/>
+    </g>
+    <g font-size="19" fill="#263c59" text-anchor="end">
+      <text x="245" y="179">初始 harness</text><text x="245" y="254">未正则化演化</text><text x="245" y="329">完整 RRSI</text>
+    </g>
+    <rect x="270" y="148" width="249.6" height="46" rx="5" fill="#94a3b8"/>
+    <rect x="270" y="223" width="608" height="46" rx="5" fill="#e1a45b"/>
+    <rect x="270" y="298" width="387.2" height="46" rx="5" fill="#258875"/>
+    <g font-size="21" font-weight="700" fill="#243d60">
+      <text x="534" y="179">1.56M</text><text x="892" y="254">3.80M</text><text x="672" y="329">2.42M</text>
+    </g>
+    <g font-size="15" fill="#64748b" text-anchor="middle">
+      <text x="270" y="384">0</text><text x="430" y="384">1</text><text x="590" y="384">2</text><text x="750" y="384">3</text><text x="910" y="384">4 M</text>
+    </g>
+    <rect x="48" y="410" width="1024" height="72" rx="12" fill="#e7f5f1"/>
+    <text x="70" y="441" fill="#186952" font-size="21" font-weight="700">比未正则化演化少约 36%　｜　比初始 harness 多约 55%</text>
+    <text x="70" y="467" fill="#52627a" font-size="16">统计执行任务的 policy token；不等于全部搜索费用，也不等于运行耗时。</text>
+    <text x="48" y="515" fill="#64748b" font-size="15">数据：RRSI，arXiv:2609.24972v3，Table 2。本文重绘；条形坐标从 0 开始。</text>
+  </g>
+</svg>
