@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">SAGA scientific applications map</title>
+  <desc id="desc">Five scientific application domains evaluated in SAGA paper.</desc>
+  <defs>
+    <style>
+      .bg{fill:#fbfbf8}.title{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:32px;font-weight:700;fill:#172033}.box{fill:#fff;stroke:#b8c4d0;stroke-width:2}.c1{fill:#e8f2ff}.c2{fill:#e8f7ef}.c3{fill:#fff2df}.c4{fill:#f1edff}.c5{fill:#fff0f0}.num{fill:#2459a6}.nt{font-family:Arial,sans-serif;font-size:22px;font-weight:700;fill:#fff;text-anchor:middle;dominant-baseline:middle}.h{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;font-weight:700;fill:#1f2937}.b{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:16px;fill:#4b5563}.line{stroke:#64748b;stroke-width:2.5;fill:none}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="640"/>
+  <text class="title" x="60" y="70">SAGA 验证地图：五类科学设计任务</text>
+
+  <rect class="box c1" x="70" y="130" width="310" height="150" rx="8"/>
+  <circle class="num" cx="110" cy="170" r="24"/><text class="nt" x="110" y="171">1</text>
+  <text class="h" x="150" y="178">抗生素设计</text>
+  <text class="b" x="105" y="218">发现 E. coli 初始 hit</text>
+  <text class="b" x="105" y="244">平衡活性、新颖性、安全性</text>
+
+  <rect class="box c2" x="445" y="130" width="310" height="150" rx="8"/>
+  <circle class="num" cx="485" cy="170" r="24"/><text class="nt" x="485" y="171">2</text>
+  <text class="h" x="525" y="178">纳米抗体设计</text>
+  <text class="b" x="480" y="218">PD-L1 de novo binders</text>
+  <text class="b" x="480" y="244">实验验证 K_D 约 300-400 nM</text>
+
+  <rect class="box c3" x="820" y="130" width="310" height="150" rx="8"/>
+  <circle class="num" cx="860" cy="170" r="24"/><text class="nt" x="860" y="171">3</text>
+  <text class="h" x="900" y="178">功能 DNA 序列</text>
+  <text class="b" x="855" y="218">细胞类型特异 enhancer</text>
+  <text class="b" x="855" y="244">面向 HepG2 等细胞线优化</text>
+
+  <rect class="box c4" x="260" y="370" width="310" height="150" rx="8"/>
+  <circle class="num" cx="300" cy="410" r="24"/><text class="nt" x="300" y="411">4</text>
+  <text class="h" x="340" y="418">无机材料设计</text>
+  <text class="b" x="295" y="458">永磁体与超硬材料</text>
+  <text class="b" x="295" y="484">结合 DFT 等验证</text>
+
+  <rect class="box c5" x="635" y="370" width="310" height="150" rx="8"/>
+  <circle class="num" cx="675" cy="410" r="24"/><text class="nt" x="675" y="411">5</text>
+  <text class="h" x="715" y="418">化工流程设计</text>
+  <text class="b" x="670" y="458">从零生成 process flowsheet</text>
+  <text class="b" x="670" y="484">把目标演化迁移到流程空间</text>
+
+  <path class="line" d="M600 300V340"/>
+  <path class="line" d="M600 340H415V370"/>
+  <path class="line" d="M600 340H790V370"/>
+  <text class="b" x="88" y="585">共同点：每个任务都不是单一分数最大化，而是多目标、强约束、评价代理不完美、实验验证昂贵的科学设计问题。</text>
+</svg>

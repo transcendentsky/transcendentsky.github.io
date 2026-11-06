@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">Agent project to AI infra architecture</title>
+  <desc id="desc">Architecture diagram showing how to upgrade an Agent demo into AI infrastructure platform.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.top{fill:#172033}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.blue{fill:#e8f2ff;stroke:#3b82c4;stroke-width:2}.green{fill:#e8f7ef;stroke:#31a36b;stroke-width:2}.orange{fill:#fff2df;stroke:#d1842b;stroke-width:2}.purple{fill:#f1edff;stroke:#7562cf;stroke-width:2}.gray{fill:#eef2f6;stroke:#94a3b8;stroke-width:2}.line{stroke:#64748b;stroke-width:2.5;fill:none;marker-end:url(#arrow)}.title{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:30px;font-weight:700;fill:#fff}.h{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:23px;font-weight:700;fill:#1f2937}.s{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:16px;fill:#475569}.w{fill:#fff}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="680"/>
+  <rect class="top" width="1200" height="88"/>
+  <text class="title" x="56" y="55">从 Agent Demo 到 AI Infra 项目</text>
+  <text class="s w" x="738" y="55">Runtime + Gateway + Evaluation + Observability</text>
+
+  <rect class="panel" x="56" y="130" width="190" height="130" rx="8"/>
+  <text class="h" x="94" y="176">业务入口</text>
+  <text class="s" x="86" y="210">Web / API</text>
+  <text class="s" x="86" y="234">CLI / Batch</text>
+
+  <rect class="blue" x="316" y="110" width="240" height="170" rx="8"/>
+  <text class="h" x="374" y="153">Agent Runtime</text>
+  <text class="s" x="350" y="188">Planner / Executor</text>
+  <text class="s" x="350" y="212">Tool Calling</text>
+  <text class="s" x="350" y="236">State / Memory</text>
+
+  <rect class="green" x="626" y="110" width="240" height="170" rx="8"/>
+  <text class="h" x="682" y="153">Model Gateway</text>
+  <text class="s" x="660" y="188">Routing / Fallback</text>
+  <text class="s" x="660" y="212">Retry / Timeout</text>
+  <text class="s" x="660" y="236">Token Accounting</text>
+
+  <rect class="orange" x="936" y="110" width="210" height="170" rx="8"/>
+  <text class="h" x="991" y="153">推理后端</text>
+  <text class="s" x="974" y="188">vLLM / Ollama</text>
+  <text class="s" x="974" y="212">OpenAI API</text>
+  <text class="s" x="974" y="236">Cloud LLMs</text>
+
+  <rect class="purple" x="316" y="384" width="240" height="150" rx="8"/>
+  <text class="h" x="386" y="427">RAG 层</text>
+  <text class="s" x="350" y="462">Chunk / Embedding</text>
+  <text class="s" x="350" y="486">Vector DB / Rerank</text>
+
+  <rect class="panel" x="626" y="384" width="240" height="150" rx="8"/>
+  <text class="h" x="691" y="427">评估系统</text>
+  <text class="s" x="660" y="462">Task Success</text>
+  <text class="s" x="660" y="486">Retrieval / Tool Accuracy</text>
+
+  <rect class="gray" x="936" y="384" width="210" height="150" rx="8"/>
+  <text class="h" x="991" y="427">可观测性</text>
+  <text class="s" x="974" y="462">Trace / Metrics</text>
+  <text class="s" x="974" y="486">Logs / Cost</text>
+
+  <rect class="panel" x="56" y="386" width="190" height="148" rx="8"/>
+  <text class="h" x="99" y="429">部署层</text>
+  <text class="s" x="86" y="462">Docker Compose</text>
+  <text class="s" x="86" y="486">Healthz / Metrics</text>
+
+  <path class="line" d="M246 195H316"/>
+  <path class="line" d="M556 195H626"/>
+  <path class="line" d="M866 195H936"/>
+  <path class="line" d="M436 280V384"/>
+  <path class="line" d="M746 280V384"/>
+  <path class="line" d="M1041 280V384"/>
+  <path class="line" d="M246 460H316"/>
+  <path class="line" d="M556 460H626"/>
+  <path class="line" d="M866 460H936"/>
+
+  <rect class="panel" x="56" y="582" width="1090" height="58" rx="8"/>
+  <text class="s" x="88" y="617">核心变化：从“能回答问题”升级为“能被部署、被压测、被观测、被评估、被扩展”的 Agent 基础设施。</text>
+</svg>

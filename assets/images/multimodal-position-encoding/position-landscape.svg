@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Multimodal position encoding landscape</title>
+  <desc id="desc">A landscape diagram of position encoding methods for text, image, video, and multimodal models.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.top{fill:#172033}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.blue{fill:#e8f2ff;stroke:#3b82c4;stroke-width:2}.green{fill:#e8f7ef;stroke:#31a36b;stroke-width:2}.orange{fill:#fff2df;stroke:#d1842b;stroke-width:2}.purple{fill:#f1edff;stroke:#7562cf;stroke-width:2}.red{fill:#fff0f0;stroke:#d44c4c;stroke-width:2}.gray{fill:#eef2f6;stroke:#94a3b8;stroke-width:2}.line{stroke:#64748b;stroke-width:2.5;fill:none;marker-end:url(#arrow)}.title{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:30px;font-weight:700;fill:#fff}.h{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:23px;font-weight:700;fill:#1f2937}.s{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:16px;fill:#475569}.small{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:14px;fill:#64748b}.w{fill:#fff}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="700"/>
+  <rect class="top" width="1200" height="88"/>
+  <text class="title" x="56" y="55">多模态大模型位置编码版图</text>
+  <text class="s w" x="780" y="55">Text 1D · Image 2D · Video 3D · Interleaved Tokens</text>
+
+  <rect class="blue" x="70" y="132" width="240" height="145" rx="8"/>
+  <text class="h" x="135" y="176">文本 1D</text>
+  <text class="s" x="108" y="212">Sinusoidal / Learned</text>
+  <text class="s" x="108" y="236">RoPE / ALiBi</text>
+  <text class="s" x="108" y="260">长上下文外推</text>
+
+  <rect class="green" x="355" y="132" width="240" height="145" rx="8"/>
+  <text class="h" x="420" y="176">图像 2D</text>
+  <text class="s" x="393" y="212">ViT patch grid</text>
+  <text class="s" x="393" y="236">2D absolute / 2D RoPE</text>
+  <text class="s" x="393" y="260">分辨率和比例变化</text>
+
+  <rect class="orange" x="640" y="132" width="240" height="145" rx="8"/>
+  <text class="h" x="705" y="176">视频 3D</text>
+  <text class="s" x="678" y="212">time + height + width</text>
+  <text class="s" x="678" y="236">frame sampling</text>
+  <text class="s" x="678" y="260">时序关系和运动</text>
+
+  <rect class="purple" x="925" y="132" width="220" height="145" rx="8"/>
+  <text class="h" x="982" y="176">多模态</text>
+  <text class="s" x="958" y="212">text + image + video</text>
+  <text class="s" x="958" y="236">M-RoPE / separators</text>
+  <text class="s" x="958" y="260">跨模态对齐</text>
+
+  <rect class="panel" x="115" y="392" width="250" height="125" rx="8"/>
+  <text class="h" x="174" y="436">展平方案</text>
+  <text class="s" x="150" y="470">简单但丢失二维邻接</text>
+  <text class="s" x="150" y="494">适合早期 VLM 桥接</text>
+
+  <rect class="red" x="475" y="392" width="250" height="125" rx="8"/>
+  <text class="h" x="530" y="436">分解方案</text>
+  <text class="s" x="510" y="470">x/y/t 独立编码</text>
+  <text class="s" x="510" y="494">适合任意分辨率</text>
+
+  <rect class="gray" x="835" y="392" width="250" height="125" rx="8"/>
+  <text class="h" x="890" y="436">统一方案</text>
+  <text class="s" x="870" y="470">M-RoPE / 2D RoPE</text>
+  <text class="s" x="870" y="494">兼顾文本和视觉</text>
+
+  <path class="line" d="M190 277V392"/>
+  <path class="line" d="M475 277V392"/>
+  <path class="line" d="M760 277V392"/>
+  <path class="line" d="M1035 277V392"/>
+  <path class="line" d="M365 455H475"/>
+  <path class="line" d="M725 455H835"/>
+
+  <rect class="panel" x="70" y="585" width="1075" height="58" rx="8"/>
+  <text class="s" x="102" y="620">核心矛盾：Transformer 看到的是 token 序列，但图像和视频天然是二维/三维结构；位置编码负责把几何结构塞回注意力计算里。</text>
+</svg>

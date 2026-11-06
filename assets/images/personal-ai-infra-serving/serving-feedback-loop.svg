@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="560" viewBox="0 0 1080 560" role="img" aria-labelledby="title desc">
+  <title id="title">个人推理服务闭环</title>
+  <desc id="desc">展示从模型产物到推理服务、压测、监控、MLflow 记录和回滚的闭环</desc>
+  <rect width="1080" height="560" rx="28" fill="#f8fafc"/>
+  <text x="56" y="72" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#111827">从模型产物到稳定 API：推理服务闭环</text>
+  <text x="58" y="110" font-family="Arial, sans-serif" font-size="18" fill="#64748b">部署不是启动命令结束，而是评测、压测、监控和回滚形成闭环</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="78" y="205" width="155" height="82" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="155" y="238" text-anchor="middle" font-size="19" font-weight="700" fill="#0f172a">模型产物</text>
+    <text x="155" y="265" text-anchor="middle" font-size="14" fill="#64748b">base / LoRA / merged</text>
+
+    <rect x="300" y="205" width="155" height="82" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="377" y="238" text-anchor="middle" font-size="19" font-weight="700" fill="#0f172a">启动服务</text>
+    <text x="377" y="265" text-anchor="middle" font-size="14" fill="#64748b">vLLM / LMDeploy</text>
+
+    <rect x="522" y="205" width="155" height="82" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="599" y="238" text-anchor="middle" font-size="19" font-weight="700" fill="#0f172a">压测评测</text>
+    <text x="599" y="265" text-anchor="middle" font-size="14" fill="#64748b">latency / quality</text>
+
+    <rect x="744" y="205" width="155" height="82" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="821" y="238" text-anchor="middle" font-size="19" font-weight="700" fill="#0f172a">记录版本</text>
+    <text x="821" y="265" text-anchor="middle" font-size="14" fill="#64748b">MLflow registry</text>
+
+    <path d="M233 246 H300" stroke="#0891b2" stroke-width="4" stroke-linecap="round"/>
+    <path d="M455 246 H522" stroke="#0891b2" stroke-width="4" stroke-linecap="round"/>
+    <path d="M677 246 H744" stroke="#0891b2" stroke-width="4" stroke-linecap="round"/>
+    <path d="M821 287 C821 410 155 410 155 287" fill="none" stroke="#94a3b8" stroke-width="4" stroke-dasharray="12 10"/>
+    <text x="488" y="405" text-anchor="middle" font-size="17" fill="#475569">线上异常时：查监控 → 找版本 → 回滚模型或参数</text>
+  </g>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="170" y="455" width="180" height="48" rx="24" fill="#e0f2fe"/>
+    <text x="260" y="486" text-anchor="middle" font-size="15" fill="#075985">TTFT / TPOT</text>
+    <rect x="385" y="455" width="180" height="48" rx="24" fill="#dcfce7"/>
+    <text x="475" y="486" text-anchor="middle" font-size="15" fill="#166534">tokens/s</text>
+    <rect x="600" y="455" width="180" height="48" rx="24" fill="#fef9c3"/>
+    <text x="690" y="486" text-anchor="middle" font-size="15" fill="#854d0e">GPU memory</text>
+    <rect x="815" y="455" width="180" height="48" rx="24" fill="#ede9fe"/>
+    <text x="905" y="486" text-anchor="middle" font-size="15" fill="#5b21b6">bad cases</text>
+  </g>
+</svg>

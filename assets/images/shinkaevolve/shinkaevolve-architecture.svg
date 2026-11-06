@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+  <rect width="1200" height="620" fill="#f7f8fb"/>
+  <text x="60" y="58" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#18212f">ShinkaEvolve: LLM-guided evolutionary discovery</text>
+  <text x="60" y="88" font-family="Arial, sans-serif" font-size="16" fill="#566273">Search programs, reject duplicates, learn which models and strategies work</text>
+
+  <rect x="55" y="145" width="190" height="105" rx="10" fill="#e9eef8" stroke="#6681b8" stroke-width="2"/>
+  <text x="150" y="182" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#23395d">Initial program</text>
+  <text x="150" y="211" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#42526b">P0 + evaluator</text>
+
+  <rect x="290" y="125" width="245" height="145" rx="10" fill="#edf5ef" stroke="#5a946b" stroke-width="2"/>
+  <text x="412" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#275938">Archive + islands</text>
+  <text x="412" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#3f6048">parent sampling</text>
+  <text x="412" y="216" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#3f6048">top-k + random inspiration</text>
+  <text x="412" y="242" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#3f6048">exploration / exploitation</text>
+
+  <rect x="580" y="125" width="245" height="145" rx="10" fill="#fff3df" stroke="#c28b38" stroke-width="2"/>
+  <text x="702" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#754d15">LLM mutations</text>
+  <text x="702" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#765c31">diff edit</text>
+  <text x="702" y="216" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#765c31">full rewrite</text>
+  <text x="702" y="242" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#765c31">crossover</text>
+
+  <rect x="870" y="125" width="275" height="145" rx="10" fill="#f8e9ed" stroke="#b5677c" stroke-width="2"/>
+  <text x="1007" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#743448">Novelty gate</text>
+  <text x="1007" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#754c59">embedding similarity</text>
+  <text x="1007" y="216" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#754c59">optional LLM judge</text>
+  <text x="1007" y="242" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#754c59">reject near duplicates</text>
+
+  <line x1="245" y1="198" x2="290" y2="198" stroke="#34495e" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="535" y1="198" x2="580" y2="198" stroke="#34495e" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="825" y1="198" x2="870" y2="198" stroke="#34495e" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <rect x="180" y="360" width="250" height="135" rx="10" fill="#e9eef8" stroke="#6681b8" stroke-width="2"/>
+  <text x="305" y="398" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#23395d">Execute candidate</text>
+  <text x="305" y="428" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#42526b">fitness</text>
+  <text x="305" y="452" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#42526b">metrics</text>
+  <text x="305" y="476" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#42526b">text feedback</text>
+
+  <rect x="475" y="360" width="250" height="135" rx="10" fill="#edf5ef" stroke="#5a946b" stroke-width="2"/>
+  <text x="600" y="398" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#275938">Update search</text>
+  <text x="600" y="428" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#3f6048">archive + migration</text>
+  <text x="600" y="452" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#3f6048">bandit model rewards</text>
+  <text x="600" y="476" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#3f6048">best-so-far lineage</text>
+
+  <rect x="770" y="360" width="250" height="135" rx="10" fill="#fff3df" stroke="#c28b38" stroke-width="2"/>
+  <text x="895" y="398" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#754d15">Meta-scratchpad</text>
+  <text x="895" y="428" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#765c31">summarize successes</text>
+  <text x="895" y="452" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#765c31">extract strategies</text>
+  <text x="895" y="476" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#765c31">inject recommendations</text>
+
+  <path d="M1007 270 C1007 315 305 315 305 360" fill="none" stroke="#34495e" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="430" y1="427" x2="475" y2="427" stroke="#34495e" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="725" y1="427" x2="770" y2="427" stroke="#34495e" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M895 360 C895 315 702 315 702 270" fill="none" stroke="#34495e" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M600 495 C600 545 412 545 412 270" fill="none" stroke="#34495e" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <text x="600" y="586" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#18212f">The loop improves quality per expensive program evaluation</text>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#34495e"/>
+    </marker>
+  </defs>
+</svg>

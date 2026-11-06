@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">AutoResearchClaw self-evolution mechanisms</title>
+  <desc id="desc">Five mechanisms of AutoResearchClaw and their target failure modes.</desc>
+  <defs>
+    <style>
+      .bg{fill:#fbfbf8}.title{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:32px;font-weight:700;fill:#172033}.box{fill:#fff;stroke:#b8c4d0;stroke-width:2}.c1{fill:#e8f2ff}.c2{fill:#e8f7ef}.c3{fill:#fff2df}.c4{fill:#f1edff}.c5{fill:#fff0f0}.num{fill:#2459a6}.nt{font-family:Arial,sans-serif;font-size:22px;font-weight:700;fill:#fff;text-anchor:middle;dominant-baseline:middle}.h{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:21px;font-weight:700;fill:#1f2937}.b{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:15px;fill:#4b5563}.line{stroke:#64748b;stroke-width:2.5;fill:none}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="640"/>
+  <text class="title" x="60" y="70">五个机制：把“自动研究”变成“自增强研究”</text>
+
+  <rect class="box c1" x="70" y="135" width="310" height="142" rx="8"/>
+  <circle class="num" cx="110" cy="175" r="24"/><text class="nt" x="110" y="176">1</text>
+  <text class="h" x="150" y="183">Multi-Agent Debate</text>
+  <text class="b" x="105" y="222">Innovator / Pragmatist / Contrarian</text>
+  <text class="b" x="105" y="248">Result-stage Optimist / Skeptic / Methodologist</text>
+
+  <rect class="box c2" x="445" y="135" width="310" height="142" rx="8"/>
+  <circle class="num" cx="485" cy="175" r="24"/><text class="nt" x="485" y="176">2</text>
+  <text class="h" x="525" y="183">Self-Healing Execution</text>
+  <text class="b" x="480" y="222">code validation, repair cycles</text>
+  <text class="b" x="480" y="248">PROCEED / REFINE / PIVOT</text>
+
+  <rect class="box c3" x="820" y="135" width="310" height="142" rx="8"/>
+  <circle class="num" cx="860" cy="175" r="24"/><text class="nt" x="860" y="176">3</text>
+  <text class="h" x="900" y="183">Verifiable Reporting</text>
+  <text class="b" x="855" y="222">numbers only from registry</text>
+  <text class="b" x="855" y="248">CrossRef / OpenAlex / arXiv / Semantic Scholar</text>
+
+  <rect class="box c4" x="260" y="370" width="310" height="142" rx="8"/>
+  <circle class="num" cx="300" cy="410" r="24"/><text class="nt" x="300" y="411">4</text>
+  <text class="h" x="340" y="418">Human-in-the-Loop</text>
+  <text class="b" x="295" y="457">full-auto to step-by-step</text>
+  <text class="b" x="295" y="483">targeted CoPilot > extremes</text>
+
+  <rect class="box c5" x="635" y="370" width="310" height="142" rx="8"/>
+  <circle class="num" cx="675" cy="410" r="24"/><text class="nt" x="675" y="411">5</text>
+  <text class="h" x="715" y="418">Cross-Run Evolution</text>
+  <text class="b" x="670" y="457">lessons from failures and feedback</text>
+  <text class="b" x="670" y="483">time-decayed injection into future runs</text>
+
+  <path class="line" d="M600 300V340"/>
+  <path class="line" d="M600 340H415V370"/>
+  <path class="line" d="M600 340H790V370"/>
+  <text class="b" x="92" y="585">这五个机制分别处理：假设质量、执行失败、结果编造、人机协作粒度、跨任务经验积累。组合起来才构成真正的 self-reinforcing research system。</text>
+</svg>

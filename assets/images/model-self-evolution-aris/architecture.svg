@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">ARIS three-layer research harness architecture</title>
+  <desc id="desc">ARIS architecture showing execution, orchestration, assurance and meta optimization loops.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.top{fill:#172033}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.blue{fill:#e8f2ff;stroke:#3b82c4;stroke-width:2}.green{fill:#e8f7ef;stroke:#31a36b;stroke-width:2}.orange{fill:#fff2df;stroke:#d1842b;stroke-width:2}.purple{fill:#f1edff;stroke:#7562cf;stroke-width:2}.red{fill:#fff0f0;stroke:#d44c4c;stroke-width:2}.line{stroke:#64748b;stroke-width:2.5;fill:none;marker-end:url(#arrow)}.loop{stroke:#334155;stroke-width:3;fill:none;stroke-dasharray:8 7;marker-end:url(#arrowDark)}.title{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:30px;font-weight:700;fill:#fff}.h{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:23px;font-weight:700;fill:#1f2937}.s{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:16px;fill:#475569}.small{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:14px;fill:#64748b}.w{fill:#fff}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#64748b"/>
+    </marker>
+    <marker id="arrowDark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="700"/>
+  <rect class="top" width="1200" height="88"/>
+  <text class="title" x="56" y="55">ARIS：跨模型对抗协作的自主研究 Harness</text>
+  <text class="s w" x="770" y="55">Execution · Orchestration · Assurance · Meta-Optimization</text>
+
+  <rect class="blue" x="70" y="135" width="290" height="150" rx="8"/>
+  <text class="h" x="140" y="180">执行层</text>
+  <text class="s" x="110" y="216">Markdown skills</text>
+  <text class="s" x="110" y="240">MCP model bridges</text>
+  <text class="s" x="110" y="264">Research wiki / figures</text>
+
+  <rect class="green" x="455" y="135" width="290" height="150" rx="8"/>
+  <text class="h" x="525" y="180">编排层</text>
+  <text class="s" x="495" y="216">W1 idea discovery</text>
+  <text class="s" x="495" y="240">W1.5 experiments</text>
+  <text class="s" x="495" y="264">W2-W6 lifecycle</text>
+
+  <rect class="orange" x="840" y="135" width="290" height="150" rx="8"/>
+  <text class="h" x="910" y="180">保障层</text>
+  <text class="s" x="880" y="216">Evidence-to-claim audit</text>
+  <text class="s" x="880" y="240">Cross-model review</text>
+  <text class="s" x="880" y="264">PDF / citation / proof checks</text>
+
+  <rect class="panel" x="70" y="405" width="230" height="120" rx="8"/>
+  <text class="h" x="125" y="450">Executor</text>
+  <text class="s" x="106" y="484">Claude Code / Codex</text>
+  <text class="s" x="106" y="508">writes, runs, revises</text>
+
+  <rect class="red" x="380" y="405" width="230" height="120" rx="8"/>
+  <text class="h" x="433" y="450">Reviewer</text>
+  <text class="s" x="416" y="484">different model family</text>
+  <text class="s" x="416" y="508">scores, critiques, blocks</text>
+
+  <rect class="purple" x="690" y="405" width="230" height="120" rx="8"/>
+  <text class="h" x="750" y="450">Trace</text>
+  <text class="s" x="726" y="484">artifacts, claims</text>
+  <text class="s" x="726" y="508">logs, decisions</text>
+
+  <rect class="panel" x="995" y="405" width="135" height="120" rx="8"/>
+  <text class="h" x="1020" y="450">Meta</text>
+  <text class="s" x="1018" y="484">improve</text>
+  <text class="s" x="1018" y="508">skills</text>
+
+  <path class="line" d="M360 210H455"/>
+  <path class="line" d="M745 210H840"/>
+  <path class="line" d="M185 285V405"/>
+  <path class="line" d="M985 285V405"/>
+  <path class="line" d="M300 465H380"/>
+  <path class="line" d="M610 465H690"/>
+  <path class="line" d="M920 465H995"/>
+  <path class="loop" d="M1070 525C960 620 350 620 185 525"/>
+
+  <rect class="panel" x="70" y="590" width="1060" height="64" rx="8"/>
+  <text class="s" x="102" y="627">核心观点：ARIS 的“自进化”不是模型权重自训练，而是通过跨模型审查、证据链、研究记忆和技能改造，让研究流程自身持续变好。</text>
+</svg>

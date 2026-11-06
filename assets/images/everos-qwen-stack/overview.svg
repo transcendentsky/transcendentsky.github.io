@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">EverOS, Qwen retrieval services, and everos-mcp deployment topology</title>
+  <desc id="desc">An MCP client connects to everos-mcp, which connects to EverOS. EverOS calls Qwen embedding, Qwen reranker, and a chat LLM.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#365c7d"/>
+    </marker>
+    <style>
+      .bg { fill: #f6f8fb; }
+      .panel { fill: #ffffff; stroke: #c8d5e2; stroke-width: 2; }
+      .accent { fill: #e8f2fa; stroke: #4c84ad; stroke-width: 2; }
+      .model { fill: #f8f1e8; stroke: #b77b43; stroke-width: 2; }
+      .title { font: 700 26px sans-serif; fill: #18344d; }
+      .label { font: 700 18px sans-serif; fill: #18344d; }
+      .text { font: 15px sans-serif; fill: #405366; }
+      .small { font: 13px sans-serif; fill: #657789; }
+      .arrow { stroke: #365c7d; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .dashed { stroke-dasharray: 8 7; }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="620"/>
+  <text class="title" x="60" y="58">Self-hosted EverOS memory stack</text>
+  <text class="small" x="60" y="84">MCP client -&gt; everos-mcp -&gt; EverOS v2 -&gt; local retrieval models</text>
+
+  <rect class="panel" x="55" y="180" width="190" height="150" rx="10"/>
+  <text class="label" x="82" y="225">MCP client</text>
+  <text class="text" x="82" y="255">Claude Code</text>
+  <text class="text" x="82" y="280">Cursor / Cline</text>
+  <text class="text" x="82" y="305">Any MCP client</text>
+
+  <rect class="accent" x="325" y="155" width="230" height="200" rx="10"/>
+  <text class="label" x="360" y="205">everos-mcp</text>
+  <text class="text" x="360" y="238">remember / recall</text>
+  <text class="text" x="360" y="264">briefing / history</text>
+  <text class="text" x="360" y="290">space_id -&gt; session_id</text>
+  <text class="small" x="360" y="325">stdio transport</text>
+
+  <rect class="accent" x="650" y="125" width="250" height="260" rx="10"/>
+  <text class="label" x="700" y="180">EverOS</text>
+  <text class="text" x="700" y="212">HTTP API: /api/v2</text>
+  <text class="text" x="700" y="244">Markdown source of truth</text>
+  <text class="text" x="700" y="276">SQLite + LanceDB index</text>
+  <text class="text" x="700" y="308">memory extraction</text>
+  <text class="small" x="700" y="345">default: 127.0.0.1:8000</text>
+
+  <rect class="model" x="970" y="85" width="175" height="125" rx="10"/>
+  <text class="label" x="993" y="130">Embedding</text>
+  <text class="text" x="993" y="160">Qwen3-Embedding-8B</text>
+  <text class="small" x="993" y="187">/v1/embeddings</text>
+
+  <rect class="model" x="970" y="250" width="175" height="125" rx="10"/>
+  <text class="label" x="1000" y="295">Rerank</text>
+  <text class="text" x="993" y="325">Qwen3-Reranker-8B</text>
+  <text class="small" x="993" y="352">/v1/rerank</text>
+
+  <rect class="model" x="970" y="415" width="175" height="125" rx="10"/>
+  <text class="label" x="1008" y="460">Chat LLM</text>
+  <text class="text" x="993" y="490">OpenAI-compatible</text>
+  <text class="small" x="993" y="517">extraction / reflection</text>
+
+  <path class="arrow" d="M245 255 L325 255"/>
+  <path class="arrow" d="M555 255 L650 255"/>
+  <path class="arrow" d="M900 190 L970 150"/>
+  <path class="arrow" d="M900 255 L970 310"/>
+  <path class="arrow" d="M900 330 L970 465"/>
+  <text class="small" x="258" y="238">MCP stdio</text>
+  <text class="small" x="570" y="238">HTTP :5004 or :8000</text>
+</svg>

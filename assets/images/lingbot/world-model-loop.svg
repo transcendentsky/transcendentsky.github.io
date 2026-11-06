@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="600" viewBox="0 0 1120 600" role="img" aria-labelledby="title desc">
+  <title id="title">World model loop</title>
+  <desc id="desc">A loop showing observation, prediction, action, and feedback for LingBot-like systems.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto">
+      <path d="M0,0 L11,5.5 L0,11 Z" fill="#526170"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-30%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#142536" flood-opacity=".15"/>
+    </filter>
+  </defs>
+  <rect width="1120" height="600" rx="28" fill="#f5f8fb"/>
+  <text x="560" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#183044">世界模型如何变成行动能力</text>
+  <text x="560" y="104" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#66727e">关键不是“生成视频”，而是把预测、决策和反馈接成闭环</text>
+  <g stroke="#526170" stroke-width="4" fill="none" marker-end="url(#arrow)">
+    <path d="M315 235 C410 150, 710 150, 805 235"/>
+    <path d="M865 335 C840 455, 650 500, 560 445"/>
+    <path d="M500 445 C410 500, 220 455, 195 335"/>
+    <path d="M255 235 C350 330, 770 330, 865 235"/>
+  </g>
+  <g font-family="Arial, sans-serif" filter="url(#shadow)">
+    <rect x="120" y="210" width="230" height="128" rx="18" fill="#ffffff"/>
+    <text x="235" y="253" text-anchor="middle" font-size="22" font-weight="700" fill="#2f80ed">Observe</text>
+    <text x="235" y="285" text-anchor="middle" font-size="16" fill="#536170">感知图像、状态、位姿</text>
+    <text x="235" y="313" text-anchor="middle" font-size="15" fill="#536170">把世界压成可计算表征</text>
+
+    <rect x="445" y="145" width="230" height="128" rx="18" fill="#ffffff"/>
+    <text x="560" y="188" text-anchor="middle" font-size="22" font-weight="700" fill="#00a878">Predict</text>
+    <text x="560" y="220" text-anchor="middle" font-size="16" fill="#536170">想象未来画面与状态</text>
+    <text x="560" y="248" text-anchor="middle" font-size="15" fill="#536170">评估动作后果</text>
+
+    <rect x="770" y="210" width="230" height="128" rx="18" fill="#ffffff"/>
+    <text x="885" y="253" text-anchor="middle" font-size="22" font-weight="700" fill="#b25cff">Act</text>
+    <text x="885" y="285" text-anchor="middle" font-size="16" fill="#536170">选择机器人动作或相机控制</text>
+    <text x="885" y="313" text-anchor="middle" font-size="15" fill="#536170">把预测落到真实环境</text>
+
+    <rect x="445" y="365" width="230" height="128" rx="18" fill="#ffffff"/>
+    <text x="560" y="408" text-anchor="middle" font-size="22" font-weight="700" fill="#f2994a">Update</text>
+    <text x="560" y="440" text-anchor="middle" font-size="16" fill="#536170">接收反馈、校正记忆</text>
+    <text x="560" y="468" text-anchor="middle" font-size="15" fill="#536170">进入下一轮闭环</text>
+  </g>
+</svg>

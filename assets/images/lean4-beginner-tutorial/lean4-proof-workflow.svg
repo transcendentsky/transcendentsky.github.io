@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560">
+  <rect width="1200" height="560" fill="#f7f8fb"/>
+  <text x="60" y="55" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#18212f">Lean 4 beginner workflow</text>
+  <text x="60" y="86" font-family="Arial, sans-serif" font-size="16" fill="#566273">Write a type, construct a term, and let the kernel check the evidence</text>
+
+  <rect x="60" y="150" width="215" height="125" rx="10" fill="#e9eef8" stroke="#6681b8" stroke-width="2"/>
+  <text x="167" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#23395d">1. State goal</text>
+  <text x="167" y="221" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#42526b">theorem / example</text>
+  <text x="167" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#42526b">P : Prop or a type</text>
+
+  <rect x="330" y="150" width="215" height="125" rx="10" fill="#edf5ef" stroke="#5a946b" stroke-width="2"/>
+  <text x="437" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#275938">2. Inspect state</text>
+  <text x="437" y="221" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#3f6048">context</text>
+  <text x="437" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#3f6048">current goal</text>
+
+  <rect x="600" y="150" width="215" height="125" rx="10" fill="#fff3df" stroke="#c28b38" stroke-width="2"/>
+  <text x="707" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#754d15">3. Build proof</text>
+  <text x="707" y="221" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#765c31">term-style</text>
+  <text x="707" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#765c31">tactic-style</text>
+
+  <rect x="870" y="150" width="270" height="125" rx="10" fill="#f8e9ed" stroke="#b5677c" stroke-width="2"/>
+  <text x="1005" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#743448">4. Kernel check</text>
+  <text x="1005" y="221" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#754c59">accepted proof term</text>
+  <text x="1005" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#754c59">or actionable error</text>
+
+  <line x1="275" y1="212" x2="330" y2="212" stroke="#34495e" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="545" y1="212" x2="600" y2="212" stroke="#34495e" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="815" y1="212" x2="870" y2="212" stroke="#34495e" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <rect x="190" y="365" width="820" height="92" rx="12" fill="#ffffff" stroke="#bac4d1" stroke-width="2"/>
+  <text x="600" y="402" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#18212f">If the proof fails</text>
+  <text x="600" y="433" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#566273">read expected / got, inspect the goal, check names and imports, then refine the term</text>
+  <path d="M1005 275 C1005 325 1005 335 925 365" fill="none" stroke="#34495e" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M275 365 C195 335 195 325 195 275" fill="none" stroke="#34495e" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <text x="600" y="515" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#18212f">Propositions are types; proofs are terms; tactics construct terms</text>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#34495e"/>
+    </marker>
+  </defs>
+</svg>

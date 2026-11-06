@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">ARIS research lifecycle workflow</title>
+  <desc id="desc">ARIS lifecycle from idea discovery to experiment, review, writing, rebuttal and meta optimization.</desc>
+  <defs>
+    <style>
+      .bg{fill:#fbfbf8}.title{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:32px;font-weight:700;fill:#172033}.box{fill:#fff;stroke:#b8c4d0;stroke-width:2}.c1{fill:#e8f2ff}.c2{fill:#e8f7ef}.c3{fill:#fff2df}.c4{fill:#f1edff}.c5{fill:#fff0f0}.c6{fill:#eef2f6}.num{fill:#2459a6}.nt{font-family:Arial,sans-serif;font-size:22px;font-weight:700;fill:#fff;text-anchor:middle;dominant-baseline:middle}.h{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:21px;font-weight:700;fill:#1f2937}.b{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:15px;fill:#4b5563}.arrow{stroke:#6b7280;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="640"/>
+  <text class="title" x="60" y="70">ARIS 工作流：把科研拆成可审计、可恢复、可复用的技能链</text>
+
+  <g transform="translate(60 125)">
+    <rect class="box c1" width="220" height="132" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="23"/><text class="nt" x="38" y="39">W1</text>
+    <text class="h" x="78" y="45">Idea Discovery</text>
+    <text class="b" x="28" y="82">文献、想法、novelty</text>
+    <text class="b" x="28" y="108">输出 IDEA_REPORT</text>
+  </g>
+  <g transform="translate(332 125)">
+    <rect class="box c2" width="220" height="132" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="23"/><text class="nt" x="38" y="39">W1.5</text>
+    <text class="h" x="86" y="45">Experiment</text>
+    <text class="b" x="28" y="82">实现、部署、GPU</text>
+    <text class="b" x="28" y="108">输出实验日志</text>
+  </g>
+  <g transform="translate(604 125)">
+    <rect class="box c3" width="220" height="132" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="23"/><text class="nt" x="38" y="39">W2</text>
+    <text class="h" x="78" y="45">Auto Review</text>
+    <text class="b" x="28" y="82">跨模型审查</text>
+    <text class="b" x="28" y="108">打分、修复、再审</text>
+  </g>
+  <g transform="translate(876 125)">
+    <rect class="box c4" width="240" height="132" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="23"/><text class="nt" x="38" y="39">W3</text>
+    <text class="h" x="78" y="45">Paper Writing</text>
+    <text class="b" x="28" y="82">写作、引用、PDF</text>
+    <text class="b" x="28" y="108">claim audit</text>
+  </g>
+  <path class="arrow" d="M280 191H332"/>
+  <path class="arrow" d="M552 191H604"/>
+  <path class="arrow" d="M824 191H876"/>
+
+  <g transform="translate(246 390)">
+    <rect class="box c5" width="260" height="132" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="23"/><text class="nt" x="38" y="39">W4-6</text>
+    <text class="h" x="92" y="45">Submission Loop</text>
+    <text class="b" x="28" y="82">rebuttal、resubmit、talk</text>
+    <text class="b" x="28" y="108">会后继续沉淀</text>
+  </g>
+  <g transform="translate(694 390)">
+    <rect class="box c6" width="260" height="132" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="23"/><text class="nt" x="38" y="39">M</text>
+    <text class="h" x="92" y="45">Meta Optimize</text>
+    <text class="b" x="28" y="82">分析 usage logs</text>
+    <text class="b" x="28" y="108">提出 skill 改进</text>
+  </g>
+  <path class="arrow" d="M996 257C996 333 824 358 824 390"/>
+  <path class="arrow" d="M506 456H694"/>
+  <path class="arrow" d="M694 505C510 590 155 548 148 257"/>
+
+  <text class="b" x="90" y="590">ARIS 的重点不是一次性自动生成论文，而是把长期研究过程变成一串可审查 artifact contracts：想法、实验、结果、声明、论文和反驳都能被追踪。</text>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="660" viewBox="0 0 1180 660" role="img" aria-labelledby="title desc">
+  <title id="title">Edge AI inference pipeline</title>
+  <desc id="desc">An edge AI inference pipeline from user input, preprocessing, model runtime, hardware acceleration, post-processing, and feedback.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7fbff"/>
+      <stop offset="1" stop-color="#f7fff8"/>
+    </linearGradient>
+    <filter id="shadow" x="-12%" y="-24%" width="124%" height="148%">
+      <feDropShadow dx="0" dy="9" stdDeviation="13" flood-color="#17324d" flood-opacity=".14"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#5b6976"/>
+    </marker>
+  </defs>
+  <rect width="1180" height="660" rx="28" fill="url(#bg)"/>
+  <text x="590" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#17324d">端侧 AI 推理链路</text>
+  <text x="590" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#607080">端侧优化不是只优化模型，而是优化从输入到输出的整条路径</text>
+
+  <g stroke="#5b6976" stroke-width="4" fill="none" marker-end="url(#arrow)">
+    <path d="M220 268 H325"/>
+    <path d="M485 268 H590"/>
+    <path d="M750 268 H855"/>
+    <path d="M945 330 C945 440 760 480 625 480"/>
+    <path d="M555 480 C420 480 235 440 235 330"/>
+  </g>
+
+  <g font-family="Arial, sans-serif" filter="url(#shadow)">
+    <rect x="80" y="205" width="140" height="126" rx="18" fill="#ffffff"/>
+    <text x="150" y="249" text-anchor="middle" font-size="21" font-weight="700" fill="#2f80ed">输入</text>
+    <text x="150" y="280" text-anchor="middle" font-size="15" fill="#536170">语音 / 图像</text>
+    <text x="150" y="303" text-anchor="middle" font-size="15" fill="#536170">文本 / 传感器</text>
+
+    <rect x="325" y="205" width="160" height="126" rx="18" fill="#ffffff"/>
+    <text x="405" y="249" text-anchor="middle" font-size="21" font-weight="700" fill="#00a878">预处理</text>
+    <text x="405" y="280" text-anchor="middle" font-size="15" fill="#536170">Resize / Tokenize</text>
+    <text x="405" y="303" text-anchor="middle" font-size="15" fill="#536170">Normalize</text>
+
+    <rect x="590" y="205" width="160" height="126" rx="18" fill="#ffffff"/>
+    <text x="670" y="249" text-anchor="middle" font-size="21" font-weight="700" fill="#b25cff">Runtime</text>
+    <text x="670" y="280" text-anchor="middle" font-size="15" fill="#536170">ONNX / TFLite</text>
+    <text x="670" y="303" text-anchor="middle" font-size="15" fill="#536170">MNN / NCNN</text>
+
+    <rect x="855" y="205" width="180" height="126" rx="18" fill="#ffffff"/>
+    <text x="945" y="249" text-anchor="middle" font-size="21" font-weight="700" fill="#f2994a">硬件加速</text>
+    <text x="945" y="280" text-anchor="middle" font-size="15" fill="#536170">NPU / GPU / DSP</text>
+    <text x="945" y="303" text-anchor="middle" font-size="15" fill="#536170">CPU SIMD</text>
+
+    <rect x="500" y="420" width="250" height="120" rx="18" fill="#17324d"/>
+    <text x="625" y="464" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">输出与反馈</text>
+    <text x="625" y="495" text-anchor="middle" font-size="15" fill="#cfe2ee">后处理 / 缓存 / 日志</text>
+    <text x="625" y="518" text-anchor="middle" font-size="15" fill="#cfe2ee">质量与功耗回传</text>
+  </g>
+</svg>

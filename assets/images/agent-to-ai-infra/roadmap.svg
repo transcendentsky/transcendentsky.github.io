@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">Agent to AI infra roadmap</title>
+  <desc id="desc">A staged roadmap for upgrading an Agent project into an AI infrastructure portfolio project.</desc>
+  <defs>
+    <style>
+      .bg{fill:#fbfbf8}.title{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:32px;font-weight:700;fill:#172033}.box{fill:#fff;stroke:#b8c4d0;stroke-width:2}.num{fill:#2459a6}.nt{font-family:Arial,sans-serif;font-size:22px;font-weight:700;fill:#fff;text-anchor:middle;dominant-baseline:middle}.h{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;font-weight:700;fill:#1f2937}.b{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:16px;fill:#4b5563}.arrow{stroke:#6b7280;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="620"/>
+  <text class="title" x="60" y="70">改造路线：用 6 个阶段把 Agent 项目做成 AI Infra 作品</text>
+
+  <g transform="translate(60 125)">
+    <rect class="box" width="235" height="138" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="23"/><text class="nt" x="38" y="39">1</text>
+    <text class="h" x="76" y="45">模型网关</text>
+    <text class="b" x="28" y="84">多模型、fallback</text>
+    <text class="b" x="28" y="112">retry、timeout、usage</text>
+  </g>
+  <g transform="translate(346 125)">
+    <rect class="box" width="235" height="138" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="23"/><text class="nt" x="38" y="39">2</text>
+    <text class="h" x="76" y="45">本地推理</text>
+    <text class="b" x="28" y="84">vLLM / Ollama</text>
+    <text class="b" x="28" y="112">OpenAI Compatible API</text>
+  </g>
+  <g transform="translate(632 125)">
+    <rect class="box" width="235" height="138" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="23"/><text class="nt" x="38" y="39">3</text>
+    <text class="h" x="76" y="45">执行 Trace</text>
+    <text class="b" x="28" y="84">模型调用、工具调用</text>
+    <text class="b" x="28" y="112">检索、延迟、成本</text>
+  </g>
+  <g transform="translate(918 125)">
+    <rect class="box" width="222" height="138" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="23"/><text class="nt" x="38" y="39">4</text>
+    <text class="h" x="76" y="45">评估系统</text>
+    <text class="b" x="28" y="84">任务成功率</text>
+    <text class="b" x="28" y="112">工具和检索准确率</text>
+  </g>
+
+  <path class="arrow" d="M295 194H346"/>
+  <path class="arrow" d="M581 194H632"/>
+  <path class="arrow" d="M867 194H918"/>
+
+  <g transform="translate(248 382)">
+    <rect class="box" width="300" height="138" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="23"/><text class="nt" x="38" y="39">5</text>
+    <text class="h" x="76" y="45">部署运维</text>
+    <text class="b" x="28" y="84">Docker Compose、healthz</text>
+    <text class="b" x="28" y="112">metrics、日志、限流</text>
+  </g>
+  <g transform="translate(654 382)">
+    <rect class="box" width="300" height="138" rx="8"/>
+    <circle class="num" cx="38" cy="38" r="23"/><text class="nt" x="38" y="39">6</text>
+    <text class="h" x="76" y="45">求职包装</text>
+    <text class="b" x="28" y="84">README、架构图、压测报告</text>
+    <text class="b" x="28" y="112">简历 bullet、demo 视频</text>
+  </g>
+  <path class="arrow" d="M1029 263C1029 326 804 346 804 382"/>
+  <path class="arrow" d="M548 451H654"/>
+</svg>

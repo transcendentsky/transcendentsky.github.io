@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="560" viewBox="0 0 1080 560" role="img" aria-labelledby="title desc">
+  <title id="title">XTuner 微调工作流</title>
+  <desc id="desc">展示从准备数据、复制配置、修改配置、启动训练、转换权重、合并部署的步骤</desc>
+  <rect width="1080" height="560" rx="28" fill="#fbfaf7"/>
+  <text x="56" y="72" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#111827">XTuner 工作流：从配置到可部署模型</text>
+  <text x="58" y="110" font-family="Arial, sans-serif" font-size="18" fill="#64748b">个人项目里，把每一步做成固定流水线，比临时改脚本更重要</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="65" y="190" width="145" height="86" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="137" y="225" text-anchor="middle" font-size="18" font-weight="700" fill="#111827">准备数据</text>
+    <text x="137" y="252" text-anchor="middle" font-size="14" fill="#64748b">jsonl / template</text>
+
+    <rect x="245" y="190" width="145" height="86" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="317" y="225" text-anchor="middle" font-size="18" font-weight="700" fill="#111827">复制配置</text>
+    <text x="317" y="252" text-anchor="middle" font-size="14" fill="#64748b">copy-cfg</text>
+
+    <rect x="425" y="190" width="145" height="86" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="497" y="225" text-anchor="middle" font-size="18" font-weight="700" fill="#111827">修改配置</text>
+    <text x="497" y="252" text-anchor="middle" font-size="14" fill="#64748b">model / lr / lora</text>
+
+    <rect x="605" y="190" width="145" height="86" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="677" y="225" text-anchor="middle" font-size="18" font-weight="700" fill="#111827">启动训练</text>
+    <text x="677" y="252" text-anchor="middle" font-size="14" fill="#64748b">xtuner train</text>
+
+    <rect x="785" y="190" width="145" height="86" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="857" y="225" text-anchor="middle" font-size="18" font-weight="700" fill="#111827">转换合并</text>
+    <text x="857" y="252" text-anchor="middle" font-size="14" fill="#64748b">pth_to_hf / merge</text>
+
+    <path d="M210 233 H245" stroke="#8b5cf6" stroke-width="4" stroke-linecap="round"/>
+    <path d="M390 233 H425" stroke="#8b5cf6" stroke-width="4" stroke-linecap="round"/>
+    <path d="M570 233 H605" stroke="#8b5cf6" stroke-width="4" stroke-linecap="round"/>
+    <path d="M750 233 H785" stroke="#8b5cf6" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <g font-family="Arial, sans-serif">
+    <rect x="134" y="385" width="190" height="56" rx="28" fill="#ede9fe"/>
+    <text x="229" y="420" text-anchor="middle" font-size="16" fill="#5b21b6">评测 bad cases</text>
+    <rect x="354" y="385" width="190" height="56" rx="28" fill="#e0f2fe"/>
+    <text x="449" y="420" text-anchor="middle" font-size="16" fill="#075985">保存 MLflow run</text>
+    <rect x="574" y="385" width="190" height="56" rx="28" fill="#dcfce7"/>
+    <text x="669" y="420" text-anchor="middle" font-size="16" fill="#166534">注册候选模型</text>
+    <rect x="794" y="385" width="190" height="56" rx="28" fill="#fef3c7"/>
+    <text x="889" y="420" text-anchor="middle" font-size="16" fill="#854d0e">推理服务验证</text>
+  </g>
+</svg>

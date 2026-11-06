@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="560" viewBox="0 0 1080 560" role="img" aria-labelledby="title desc">
+  <title id="title">RAG 向量库链路</title>
+  <desc id="desc">展示从文档、切分、Embedding、Chroma/FAISS、检索到 LLM 生成的 RAG 链路</desc>
+  <rect width="1080" height="560" rx="28" fill="#fbfaf7"/>
+  <text x="56" y="72" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#111827">RAG 配套工具：Chroma / FAISS 负责“可检索记忆”</text>
+  <text x="58" y="110" font-family="Arial, sans-serif" font-size="18" fill="#64748b">文档不是直接塞进模型，而是被切分、向量化、检索、重排后再进入 Prompt</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="65" y="205" width="135" height="82" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="132" y="239" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">文档</text>
+    <text x="132" y="264" text-anchor="middle" font-size="14" fill="#64748b">PDF / MD / HTML</text>
+    <rect x="240" y="205" width="135" height="82" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="307" y="239" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">切分</text>
+    <text x="307" y="264" text-anchor="middle" font-size="14" fill="#64748b">chunk / overlap</text>
+    <rect x="415" y="205" width="135" height="82" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="482" y="239" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">Embedding</text>
+    <text x="482" y="264" text-anchor="middle" font-size="14" fill="#64748b">向量化</text>
+    <rect x="590" y="185" width="165" height="122" rx="18" fill="#0f766e"/>
+    <text x="672" y="235" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">Vector Store</text>
+    <text x="672" y="266" text-anchor="middle" font-size="15" fill="#ccfbf1">Chroma / FAISS</text>
+    <rect x="795" y="205" width="135" height="82" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="862" y="239" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">生成</text>
+    <text x="862" y="264" text-anchor="middle" font-size="14" fill="#64748b">LLM + Prompt</text>
+    <path d="M200 246 H240" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+    <path d="M375 246 H415" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+    <path d="M550 246 H590" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+    <path d="M755 246 H795" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <g font-family="Arial, sans-serif">
+    <rect x="180" y="395" width="200" height="52" rx="26" fill="#e0f2fe"/>
+    <text x="280" y="428" text-anchor="middle" font-size="15" fill="#075985">记录索引版本</text>
+    <rect x="440" y="395" width="200" height="52" rx="26" fill="#dcfce7"/>
+    <text x="540" y="428" text-anchor="middle" font-size="15" fill="#166534">评测 recall@k</text>
+    <rect x="700" y="395" width="200" height="52" rx="26" fill="#fef3c7"/>
+    <text x="800" y="428" text-anchor="middle" font-size="15" fill="#854d0e">保存 bad cases</text>
+  </g>
+</svg>

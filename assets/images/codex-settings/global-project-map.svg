@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="680" viewBox="0 0 1180 680" role="img" aria-labelledby="title desc">
+  <title id="title">Codex 全局设置与项目设置分工图</title>
+  <desc id="desc">展示用户级 .codex、.agents/skills 与项目级 AGENTS.md、.codex、.agents/skills 的职责边界。</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.14"/></filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#475569"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.title{font:700 34px sans-serif;fill:#111827}.sub{font:400 17px sans-serif;fill:#475569}.box{fill:#fff;stroke:#d7dee9;stroke-width:1.3;filter:url(#shadow)}.h{font:700 24px sans-serif;fill:#111827}.t{font:400 15px sans-serif;fill:#334155}.mono{font:600 14px monospace;fill:#0f172a}.pill{font:700 14px sans-serif;fill:#fff}.blue{fill:#2563eb}.green{fill:#059669}.amber{fill:#d97706}.slate{fill:#475569}.softblue{fill:#dbeafe}.softgreen{fill:#dcfce7}.softamber{fill:#fef3c7}.softslate{fill:#e2e8f0}.line{stroke:#475569;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="1180" height="680"/>
+  <text x="58" y="64" class="title">Codex 设置分工：用户偏好放全局，仓库知识放项目</text>
+  <text x="58" y="98" class="sub">全局配置解决“我怎么工作”；项目配置解决“这个仓库怎么开发”。</text>
+
+  <rect x="70" y="145" width="475" height="455" rx="14" class="box"/>
+  <circle cx="112" cy="190" r="22" class="softblue"/><text x="103" y="197" class="mono">~</text>
+  <text x="145" y="198" class="h">全局设置</text>
+  <text x="100" y="234" class="t">作用范围：当前用户的所有 Codex 项目</text>
+  <text x="100" y="267" class="mono">~/.codex/config.toml</text>
+  <text x="100" y="292" class="t">模型、沙箱、审批、MCP、Apps、Subagents、通知</text>
+  <text x="100" y="330" class="mono">~/.codex/AGENTS.md</text>
+  <text x="100" y="355" class="t">通用工作偏好：语言、测试习惯、Git 安全边界</text>
+  <text x="100" y="393" class="mono">~/.agents/skills/</text>
+  <text x="100" y="418" class="t">跨项目可复用 Skills：审查、调试、研究、写测试</text>
+  <text x="100" y="456" class="mono">~/.codex/hooks.json / rules/</text>
+  <text x="100" y="481" class="t">所有项目都适用的安全底线和自动化动作</text>
+  <rect x="100" y="530" width="168" height="34" rx="17" class="blue"/><text x="125" y="552" class="pill">不要提交到仓库</text>
+
+  <rect x="635" y="145" width="475" height="455" rx="14" class="box"/>
+  <circle cx="677" cy="190" r="22" class="softgreen"/><text x="666" y="197" class="mono">repo</text>
+  <text x="720" y="198" class="h">项目内设置</text>
+  <text x="665" y="234" class="t">作用范围：当前仓库或某个子目录</text>
+  <text x="665" y="267" class="mono">AGENTS.md</text>
+  <text x="665" y="292" class="t">项目架构、构建命令、测试命令、目录边界</text>
+  <text x="665" y="330" class="mono">.codex/config.toml</text>
+  <text x="665" y="355" class="t">项目执行策略、项目 Hooks、Rules、专用 Subagents</text>
+  <text x="665" y="393" class="mono">.agents/skills/</text>
+  <text x="665" y="418" class="t">只在本仓库成立的流程：迁移、发布、评测、生成</text>
+  <text x="665" y="456" class="mono">.codex/hooks.json / rules/</text>
+  <text x="665" y="481" class="t">项目专属检查：lint、test、schema、migration、敏感文件</text>
+  <rect x="665" y="530" width="168" height="34" rx="17" class="green"/><text x="696" y="552" class="pill">可随 Git 共享</text>
+
+  <path d="M555 322 C590 322, 600 322, 625 322" class="line"/>
+  <rect x="478" y="625" width="230" height="34" rx="17" class="slate"/><text x="504" y="647" class="pill">可信仓库才加载项目配置</text>
+</svg>

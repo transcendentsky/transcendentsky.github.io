@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="680" viewBox="0 0 1180 680" role="img" aria-labelledby="title desc">
+  <title id="title">Personal AI infra stack overview</title>
+  <desc id="desc">A modular personal AI infrastructure stack with Ray, MLflow, LMDeploy or vLLM, XTuner, vector database, monitoring and notebooks.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7fbff"/>
+      <stop offset="1" stop-color="#f8fff8"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-20%" width="120%" height="145%">
+      <feDropShadow dx="0" dy="9" stdDeviation="13" flood-color="#17324d" flood-opacity=".14"/>
+    </filter>
+  </defs>
+  <rect width="1180" height="680" rx="28" fill="url(#bg)"/>
+  <text x="590" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#17324d">个人 AI Infra 轻量全栈</text>
+  <text x="590" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#607080">无 K8s：Ray 负责调度，MLflow 负责实验，LMDeploy/vLLM 负责服务，XTuner 负责微调</text>
+
+  <g font-family="Arial, sans-serif" filter="url(#shadow)">
+    <rect x="110" y="135" width="960" height="74" rx="18" fill="#17324d"/>
+    <text x="590" y="180" text-anchor="middle" font-size="24" font-weight="700" fill="#ffffff">使用入口：Jupyter / CLI / OpenAI Compatible API / Agent Apps</text>
+
+    <rect x="110" y="238" width="280" height="130" rx="18" fill="#ffffff"/>
+    <text x="250" y="282" text-anchor="middle" font-size="23" font-weight="700" fill="#2f80ed">Ray</text>
+    <text x="250" y="315" text-anchor="middle" font-size="15" fill="#536170">单机任务队列</text>
+    <text x="250" y="339" text-anchor="middle" font-size="15" fill="#536170">GPU 隔离 / 并发调度</text>
+
+    <rect x="450" y="238" width="280" height="130" rx="18" fill="#ffffff"/>
+    <text x="590" y="282" text-anchor="middle" font-size="23" font-weight="700" fill="#00a878">MLflow</text>
+    <text x="590" y="315" text-anchor="middle" font-size="15" fill="#536170">实验记录 / 模型仓库</text>
+    <text x="590" y="339" text-anchor="middle" font-size="15" fill="#536170">LoRA 版本 / 指标追踪</text>
+
+    <rect x="790" y="238" width="280" height="130" rx="18" fill="#ffffff"/>
+    <text x="930" y="282" text-anchor="middle" font-size="23" font-weight="700" fill="#b25cff">LMDeploy / vLLM</text>
+    <text x="930" y="315" text-anchor="middle" font-size="15" fill="#536170">高性能推理服务</text>
+    <text x="930" y="339" text-anchor="middle" font-size="15" fill="#536170">KV Cache / FP8 / 长上下文</text>
+
+    <rect x="110" y="410" width="280" height="130" rx="18" fill="#ffffff"/>
+    <text x="250" y="454" text-anchor="middle" font-size="23" font-weight="700" fill="#f2994a">XTuner</text>
+    <text x="250" y="487" text-anchor="middle" font-size="15" fill="#536170">LoRA / QLoRA 微调</text>
+    <text x="250" y="511" text-anchor="middle" font-size="15" fill="#536170">Qwen / Llama / InternLM</text>
+
+    <rect x="450" y="410" width="280" height="130" rx="18" fill="#ffffff"/>
+    <text x="590" y="454" text-anchor="middle" font-size="23" font-weight="700" fill="#8792a2">RAG 工具</text>
+    <text x="590" y="487" text-anchor="middle" font-size="15" fill="#536170">Chroma / FAISS</text>
+    <text x="590" y="511" text-anchor="middle" font-size="15" fill="#536170">Embedding / 文档索引</text>
+
+    <rect x="790" y="410" width="280" height="130" rx="18" fill="#ffffff"/>
+    <text x="930" y="454" text-anchor="middle" font-size="23" font-weight="700" fill="#00a878">监控与测试</text>
+    <text x="930" y="487" text-anchor="middle" font-size="15" fill="#536170">Prometheus / Grafana</text>
+    <text x="930" y="511" text-anchor="middle" font-size="15" fill="#536170">Ollama 快速试模型</text>
+
+    <rect x="210" y="582" width="760" height="54" rx="18" fill="#eaf0f6"/>
+    <text x="590" y="616" text-anchor="middle" font-size="20" font-weight="700" fill="#17324d">底座：单机 Linux / CUDA / Python Env / NVMe / 1-2 张 GPU</text>
+  </g>
+</svg>

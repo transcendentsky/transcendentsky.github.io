@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="640" viewBox="0 0 1180 640" role="img" aria-labelledby="title desc">
+  <title id="title">Medical LLM safety loop</title>
+  <desc id="desc">A safety loop for medical QA models from user question, triage, retrieval, answer, clinician review, monitoring and feedback.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto">
+      <path d="M0,0 L11,5.5 L0,11 Z" fill="#5b6976"/>
+    </marker>
+    <filter id="shadow" x="-16%" y="-30%" width="132%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#17324d" flood-opacity=".14"/>
+    </filter>
+  </defs>
+  <rect width="1180" height="640" rx="28" fill="#f6f8fb"/>
+  <text x="590" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#17324d">医疗问答上线后的安全闭环</text>
+  <text x="590" y="94" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#607080">RL 提升效果的前提，是把风险控制纳入产品链路</text>
+
+  <g stroke="#5b6976" stroke-width="4" fill="none" marker-end="url(#arrow)">
+    <path d="M290 225 C390 130 790 130 890 225"/>
+    <path d="M955 320 C930 480 720 525 590 485"/>
+    <path d="M520 485 C385 525 185 480 225 320"/>
+    <path d="M325 305 H490"/>
+    <path d="M690 305 H850"/>
+  </g>
+
+  <g font-family="Arial, sans-serif" filter="url(#shadow)">
+    <rect x="105" y="200" width="220" height="120" rx="18" fill="#ffffff"/>
+    <text x="215" y="242" text-anchor="middle" font-size="21" font-weight="700" fill="#2f80ed">用户问题</text>
+    <text x="215" y="273" text-anchor="middle" font-size="15" fill="#536170">症状 / 用药 / 检查</text>
+    <text x="215" y="296" text-anchor="middle" font-size="15" fill="#536170">先做风险分层</text>
+
+    <rect x="480" y="160" width="220" height="120" rx="18" fill="#ffffff"/>
+    <text x="590" y="202" text-anchor="middle" font-size="21" font-weight="700" fill="#f2994a">分诊边界</text>
+    <text x="590" y="233" text-anchor="middle" font-size="15" fill="#536170">急症识别</text>
+    <text x="590" y="256" text-anchor="middle" font-size="15" fill="#536170">禁忌 / 高危人群</text>
+
+    <rect x="855" y="200" width="220" height="120" rx="18" fill="#ffffff"/>
+    <text x="965" y="242" text-anchor="middle" font-size="21" font-weight="700" fill="#00a878">检索证据</text>
+    <text x="965" y="273" text-anchor="middle" font-size="15" fill="#536170">指南 / 药品说明书</text>
+    <text x="965" y="296" text-anchor="middle" font-size="15" fill="#536170">本地知识库</text>
+
+    <rect x="480" y="430" width="220" height="120" rx="18" fill="#ffffff"/>
+    <text x="590" y="472" text-anchor="middle" font-size="21" font-weight="700" fill="#b25cff">人工复核</text>
+    <text x="590" y="503" text-anchor="middle" font-size="15" fill="#536170">医生审核高风险回答</text>
+    <text x="590" y="526" text-anchor="middle" font-size="15" fill="#536170">形成新偏好数据</text>
+
+    <rect x="490" y="292" width="200" height="78" rx="18" fill="#17324d"/>
+    <text x="590" y="325" text-anchor="middle" font-size="20" font-weight="700" fill="#ffffff">回答生成</text>
+    <text x="590" y="350" text-anchor="middle" font-size="14" fill="#cfe2ee">解释 + 下一步建议</text>
+  </g>
+</svg>

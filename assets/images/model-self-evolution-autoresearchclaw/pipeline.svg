@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">AutoResearchClaw self-reinforcing research pipeline</title>
+  <desc id="desc">AutoResearchClaw pipeline from discovery to experimentation, writing, verification, and cross-run evolution.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.top{fill:#172033}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.blue{fill:#e8f2ff;stroke:#3b82c4;stroke-width:2}.green{fill:#e8f7ef;stroke:#31a36b;stroke-width:2}.orange{fill:#fff2df;stroke:#d1842b;stroke-width:2}.purple{fill:#f1edff;stroke:#7562cf;stroke-width:2}.red{fill:#fff0f0;stroke:#d44c4c;stroke-width:2}.gray{fill:#eef2f6;stroke:#94a3b8;stroke-width:2}.line{stroke:#64748b;stroke-width:2.5;fill:none;marker-end:url(#arrow)}.loop{stroke:#334155;stroke-width:3;fill:none;stroke-dasharray:8 7;marker-end:url(#arrowDark)}.title{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:30px;font-weight:700;fill:#fff}.h{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:23px;font-weight:700;fill:#1f2937}.s{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:16px;fill:#475569}.small{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:14px;fill:#64748b}.w{fill:#fff}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#64748b"/>
+    </marker>
+    <marker id="arrowDark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="700"/>
+  <rect class="top" width="1200" height="88"/>
+  <text class="title" x="56" y="55">AutoResearchClaw：自增强科研 Agent 管线</text>
+  <text class="s w" x="766" y="55">Discovery · Experimentation · Writing · Cross-Run Evolution</text>
+
+  <rect class="blue" x="70" y="130" width="270" height="150" rx="8"/>
+  <text class="h" x="135" y="174">Discovery</text>
+  <text class="s" x="110" y="210">literature search</text>
+  <text class="s" x="110" y="234">multi-agent debate</text>
+  <text class="s" x="110" y="258">hypothesis selection</text>
+
+  <rect class="green" x="465" y="130" width="270" height="150" rx="8"/>
+  <text class="h" x="525" y="174">Experimentation</text>
+  <text class="s" x="505" y="210">self-healing executor</text>
+  <text class="s" x="505" y="234">Pivot / Refine loop</text>
+  <text class="s" x="505" y="258">verified metric registry</text>
+
+  <rect class="orange" x="860" y="130" width="270" height="150" rx="8"/>
+  <text class="h" x="940" y="174">Writing</text>
+  <text class="s" x="900" y="210">paper draft / LaTeX</text>
+  <text class="s" x="900" y="234">multi-agent review</text>
+  <text class="s" x="900" y="258">citation verification</text>
+
+  <rect class="purple" x="70" y="410" width="270" height="125" rx="8"/>
+  <text class="h" x="130" y="454">HITL Gates</text>
+  <text class="s" x="110" y="490">7 intervention modes</text>
+  <text class="s" x="110" y="514">SmartPause uncertainty</text>
+
+  <rect class="red" x="465" y="410" width="270" height="125" rx="8"/>
+  <text class="h" x="530" y="454">Verification</text>
+  <text class="s" x="505" y="490">numeric registry</text>
+  <text class="s" x="505" y="514">4-layer citation checks</text>
+
+  <rect class="gray" x="860" y="410" width="270" height="125" rx="8"/>
+  <text class="h" x="920" y="454">Evolution</text>
+  <text class="s" x="900" y="490">lesson extraction</text>
+  <text class="s" x="900" y="514">time-decayed safeguards</text>
+
+  <path class="line" d="M340 205H465"/>
+  <path class="line" d="M735 205H860"/>
+  <path class="line" d="M995 280V410"/>
+  <path class="line" d="M860 472H735"/>
+  <path class="line" d="M465 472H340"/>
+  <path class="loop" d="M995 535C835 632 370 632 205 535"/>
+  <path class="line" d="M205 410V280"/>
+
+  <rect class="panel" x="70" y="590" width="1060" height="64" rx="8"/>
+  <text class="s" x="102" y="627">核心闭环：失败不终止研究，而被记录、诊断、修复或转向；跨运行 lesson 会进入下一次研究，形成 self-reinforcing pipeline。</text>
+</svg>

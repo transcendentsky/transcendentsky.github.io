@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="560" viewBox="0 0 1080 560" role="img" aria-labelledby="title desc">
+  <title id="title">MLflow 与个人 AI Infra 组件集成</title>
+  <desc id="desc">展示 Ray、XTuner、vLLM、RAG、Agent 与 MLflow 的关系</desc>
+  <rect width="1080" height="560" rx="28" fill="#f8fafc"/>
+  <text x="56" y="70" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#111827">MLflow 不是调度器，而是账本</text>
+  <text x="58" y="108" font-family="Arial, sans-serif" font-size="18" fill="#64748b">Ray 负责把任务跑起来，MLflow 负责把任务留下来</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="86" y="165" width="220" height="74" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="196" y="210" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Ray 调度任务</text>
+
+    <rect x="86" y="282" width="220" height="74" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="196" y="327" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Jupyter / CLI</text>
+
+    <rect x="392" y="145" width="296" height="250" rx="22" fill="#0f766e"/>
+    <text x="540" y="205" text-anchor="middle" font-size="30" font-weight="700" fill="#ffffff">MLflow Server</text>
+    <text x="540" y="250" text-anchor="middle" font-size="17" fill="#ccfbf1">Tracking Store</text>
+    <text x="540" y="283" text-anchor="middle" font-size="17" fill="#ccfbf1">Artifact Store</text>
+    <text x="540" y="316" text-anchor="middle" font-size="17" fill="#ccfbf1">Model Registry</text>
+    <text x="540" y="349" text-anchor="middle" font-size="17" fill="#ccfbf1">Tracing / Evaluation</text>
+
+    <rect x="774" y="125" width="220" height="64" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="884" y="165" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">XTuner / LoRA</text>
+
+    <rect x="774" y="215" width="220" height="64" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="884" y="255" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">vLLM / LMDeploy</text>
+
+    <rect x="774" y="305" width="220" height="64" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="884" y="345" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">RAG / Embedding</text>
+
+    <rect x="774" y="395" width="220" height="64" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="884" y="435" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">Agent 实验</text>
+
+    <path d="M306 202 H392" stroke="#0891b2" stroke-width="4" stroke-linecap="round"/>
+    <path d="M306 319 H392" stroke="#0891b2" stroke-width="4" stroke-linecap="round"/>
+    <path d="M688 247 H774" stroke="#0891b2" stroke-width="4" stroke-linecap="round"/>
+    <path d="M688 247 C720 247 720 157 774 157" fill="none" stroke="#0891b2" stroke-width="4" stroke-linecap="round"/>
+    <path d="M688 247 C720 247 720 337 774 337" fill="none" stroke="#0891b2" stroke-width="4" stroke-linecap="round"/>
+    <path d="M688 247 C720 247 720 427 774 427" fill="none" stroke="#0891b2" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <text x="540" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#475569">个人工作站最需要的是：每个结果都知道从哪里来、能不能复现、是否值得部署</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="560" viewBox="0 0 1080 560" role="img" aria-labelledby="title desc">
+  <title id="title">vLLM 与 LMDeploy 对比</title>
+  <desc id="desc">展示 vLLM 和 LMDeploy 在个人 AI Infra 中的适用侧重点</desc>
+  <rect width="1080" height="560" rx="28" fill="#fbfaf7"/>
+  <text x="56" y="72" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#111827">vLLM vs LMDeploy：不是二选一，而是按场景选</text>
+  <text x="58" y="110" font-family="Arial, sans-serif" font-size="18" fill="#64748b">两者都能提供 OpenAI 兼容 API，差异主要在生态、模型支持、量化路径和调参风格</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="85" y="155" width="410" height="300" rx="22" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="290" y="205" text-anchor="middle" font-size="30" font-weight="700" fill="#1d4ed8">vLLM</text>
+    <text x="130" y="255" font-size="18" fill="#334155">适合：</text>
+    <text x="130" y="292" font-size="16" fill="#475569">OpenAI API 生态、Python 集成、</text>
+    <text x="130" y="320" font-size="16" fill="#475569">多模型社区支持、RAG/Agent 后端、</text>
+    <text x="130" y="348" font-size="16" fill="#475569">PagedAttention、prefix caching、LoRA</text>
+    <rect x="130" y="385" width="320" height="44" rx="22" fill="#dbeafe"/>
+    <text x="290" y="413" text-anchor="middle" font-size="15" fill="#1e40af">默认首选：通用 LLM API 服务</text>
+
+    <rect x="585" y="155" width="410" height="300" rx="22" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="790" y="205" text-anchor="middle" font-size="30" font-weight="700" fill="#0f766e">LMDeploy</text>
+    <text x="630" y="255" font-size="18" fill="#334155">适合：</text>
+    <text x="630" y="292" font-size="16" fill="#475569">TurboMind、高吞吐服务、</text>
+    <text x="630" y="320" font-size="16" fill="#475569">KV Cache int4/int8、AWQ/GPTQ、</text>
+    <text x="630" y="348" font-size="16" fill="#475569">InternLM/Qwen/VLM 相关部署</text>
+    <rect x="630" y="385" width="320" height="44" rx="22" fill="#ccfbf1"/>
+    <text x="790" y="413" text-anchor="middle" font-size="15" fill="#115e59">重点选择：量化和吞吐优化</text>
+  </g>
+
+  <path d="M510 305 H570" stroke="#94a3b8" stroke-width="4" stroke-dasharray="10 8"/>
+  <text x="540" y="505" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#475569">个人建议：先用 vLLM 快速跑通 API，再按显存、吞吐和量化需求引入 LMDeploy</text>
+</svg>

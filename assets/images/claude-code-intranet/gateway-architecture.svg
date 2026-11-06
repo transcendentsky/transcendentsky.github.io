@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="560" viewBox="0 0 1080 560" role="img" aria-labelledby="title desc">
+  <title id="title">Claude Code 内网网关架构</title>
+  <desc id="desc">展示开发机、Claude Code、内网 LLM 网关、审计、云模型和本地模型后端的关系</desc>
+  <rect width="1080" height="560" rx="28" fill="#f8fafc"/>
+  <text x="56" y="72" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#111827">推荐架构：Claude Code 走统一内网 LLM 网关</text>
+  <text x="58" y="110" font-family="Arial, sans-serif" font-size="18" fill="#64748b">客户端只知道网关地址，鉴权、审计、限流、模型路由都在网关处理</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="85" y="215" width="190" height="90" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="180" y="252" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">开发机</text>
+    <text x="180" y="280" text-anchor="middle" font-size="14" fill="#64748b">claude CLI</text>
+    <rect x="365" y="185" width="230" height="150" rx="22" fill="#155e75"/>
+    <text x="480" y="238" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff">LLM Gateway</text>
+    <text x="480" y="275" text-anchor="middle" font-size="16" fill="#d9f8fb">auth / audit / quota</text>
+    <text x="480" y="302" text-anchor="middle" font-size="16" fill="#d9f8fb">model routing</text>
+    <rect x="695" y="145" width="230" height="80" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="810" y="178" text-anchor="middle" font-size="19" font-weight="700" fill="#0f172a">云端 Claude</text>
+    <text x="810" y="203" text-anchor="middle" font-size="14" fill="#64748b">受控出口</text>
+    <rect x="695" y="295" width="230" height="80" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="810" y="328" text-anchor="middle" font-size="19" font-weight="700" fill="#0f172a">本地模型服务</text>
+    <text x="810" y="353" text-anchor="middle" font-size="14" fill="#64748b">Ollama / vLLM / LiteLLM</text>
+    <path d="M275 260 H365" stroke="#0891b2" stroke-width="4" stroke-linecap="round"/>
+    <path d="M595 245 C635 245 645 185 695 185" fill="none" stroke="#0891b2" stroke-width="4" stroke-linecap="round"/>
+    <path d="M595 275 C635 275 645 335 695 335" fill="none" stroke="#0891b2" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="540" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#475569">不要把真实 API Key 分发到每台开发机；开发机使用内网 token，网关持有上游凭证</text>
+</svg>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="560" viewBox="0 0 1080 560" role="img" aria-labelledby="title desc">
+  <title id="title">开发与监控闭环</title>
+  <desc id="desc">展示 Jupyter、Ollama、Prometheus、Grafana、Ray Dashboard 和 MLflow 组成的个人开发监控闭环</desc>
+  <rect width="1080" height="560" rx="28" fill="#f8fafc"/>
+  <text x="56" y="72" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#111827">开发与监控闭环：从试想到稳定运行</text>
+  <text x="58" y="110" font-family="Arial, sans-serif" font-size="18" fill="#64748b">Jupyter 和 Ollama 加快原型，Prometheus/Grafana 帮你看见系统状态</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="100" y="210" width="170" height="84" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="185" y="245" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Jupyter</text>
+    <text x="185" y="272" text-anchor="middle" font-size="14" fill="#64748b">实验原型</text>
+    <rect x="340" y="210" width="170" height="84" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="425" y="245" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Ollama</text>
+    <text x="425" y="272" text-anchor="middle" font-size="14" fill="#64748b">快速试模型</text>
+    <rect x="580" y="210" width="170" height="84" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="665" y="245" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Prometheus</text>
+    <text x="665" y="272" text-anchor="middle" font-size="14" fill="#64748b">采集指标</text>
+    <rect x="820" y="210" width="170" height="84" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="905" y="245" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Grafana</text>
+    <text x="905" y="272" text-anchor="middle" font-size="14" fill="#64748b">看板报警</text>
+    <path d="M270 252 H340" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
+    <path d="M510 252 H580" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
+    <path d="M750 252 H820" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
+    <path d="M905 294 C905 420 185 420 185 294" fill="none" stroke="#94a3b8" stroke-width="4" stroke-dasharray="12 10"/>
+    <text x="545" y="418" text-anchor="middle" font-size="17" fill="#475569">观察结果 → 改参数 → 重新实验 → 记录到 MLflow → 形成稳定脚本</text>
+  </g>
+  <g font-family="Arial, sans-serif">
+    <rect x="180" y="465" width="180" height="46" rx="23" fill="#ede9fe"/>
+    <text x="270" y="494" text-anchor="middle" font-size="15" fill="#5b21b6">Ray Dashboard</text>
+    <rect x="450" y="465" width="180" height="46" rx="23" fill="#dcfce7"/>
+    <text x="540" y="494" text-anchor="middle" font-size="15" fill="#166534">MLflow UI</text>
+    <rect x="720" y="465" width="180" height="46" rx="23" fill="#fef3c7"/>
+    <text x="810" y="494" text-anchor="middle" font-size="15" fill="#854d0e">GPU Metrics</text>
+  </g>
+</svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="640" viewBox="0 0 1180 640" role="img" aria-labelledby="title desc">
+  <title id="title">Ray resource scheduling for personal AI infra</title>
+  <desc id="desc">Ray schedules fine tuning, batch inference, API serving and agent tasks onto a single GPU workstation.</desc>
+  <rect width="1180" height="640" rx="28" fill="#fbfaf6"/>
+  <text x="590" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#17324d">Ray 在个人 AI Infra 里的角色</text>
+  <text x="590" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#607080">不用 K8s，也能在单机上做任务队列、GPU 分配和并发隔离</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="100" y="145" width="980" height="86" rx="18" fill="#17324d"/>
+    <text x="590" y="198" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff">Ray Head：任务队列 / 资源视图 / Actor 生命周期</text>
+
+    <rect x="100" y="285" width="220" height="125" rx="18" fill="#ffffff" stroke="#dce7ef"/>
+    <text x="210" y="328" text-anchor="middle" font-size="21" font-weight="700" fill="#b25cff">微调任务</text>
+    <text x="210" y="360" text-anchor="middle" font-size="15" fill="#536170">XTuner LoRA</text>
+    <text x="210" y="384" text-anchor="middle" font-size="15" fill="#536170">占用 GPU 0.8</text>
+
+    <rect x="360" y="285" width="220" height="125" rx="18" fill="#ffffff" stroke="#dce7ef"/>
+    <text x="470" y="328" text-anchor="middle" font-size="21" font-weight="700" fill="#2f80ed">API 服务</text>
+    <text x="470" y="360" text-anchor="middle" font-size="15" fill="#536170">vLLM / LMDeploy</text>
+    <text x="470" y="384" text-anchor="middle" font-size="15" fill="#536170">常驻 Actor</text>
+
+    <rect x="620" y="285" width="220" height="125" rx="18" fill="#ffffff" stroke="#dce7ef"/>
+    <text x="730" y="328" text-anchor="middle" font-size="21" font-weight="700" fill="#00a878">批量推理</text>
+    <text x="730" y="360" text-anchor="middle" font-size="15" fill="#536170">评测 / 数据生成</text>
+    <text x="730" y="384" text-anchor="middle" font-size="15" fill="#536170">排队运行</text>
+
+    <rect x="880" y="285" width="200" height="125" rx="18" fill="#ffffff" stroke="#dce7ef"/>
+    <text x="980" y="328" text-anchor="middle" font-size="21" font-weight="700" fill="#f2994a">Agent 任务</text>
+    <text x="980" y="360" text-anchor="middle" font-size="15" fill="#536170">多智能体实验</text>
+    <text x="980" y="384" text-anchor="middle" font-size="15" fill="#536170">工具调用并发</text>
+
+    <rect x="165" y="485" width="850" height="80" rx="18" fill="#eaf0f6"/>
+    <text x="590" y="517" text-anchor="middle" font-size="20" font-weight="700" fill="#17324d">本机 GPU / CPU / RAM / NVMe</text>
+    <text x="590" y="546" text-anchor="middle" font-size="16" fill="#536170">Ray 不替代推理框架和训练框架，它负责把任务按资源约束排好队、隔离好、跑起来。</text>
+  </g>
+</svg>

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">MaxKB architecture overview</title>
+  <desc id="desc">A layered architecture diagram for MaxKB, covering users, agent applications, RAG, tools, models, database, and operations.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f9fb; }
+      .panel { fill: #ffffff; stroke: #c8d3df; stroke-width: 2; }
+      .accent { fill: #e7f3ff; stroke: #4e8fd8; stroke-width: 2; }
+      .green { fill: #e8f7ef; stroke: #35a36b; stroke-width: 2; }
+      .orange { fill: #fff2df; stroke: #d8892f; stroke-width: 2; }
+      .purple { fill: #f1edff; stroke: #8067d8; stroke-width: 2; }
+      .dark { fill: #1e2a36; }
+      .line { stroke: #718096; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+      .label { font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #1f2937; font-size: 24px; font-weight: 700; }
+      .small { font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #374151; font-size: 18px; }
+      .tiny { font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #4b5563; font-size: 15px; }
+      .white { fill: #ffffff; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#718096"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1200" height="680"/>
+  <rect class="dark" x="0" y="0" width="1200" height="88"/>
+  <text class="label white" x="60" y="54">MaxKB：企业知识库智能体的核心架构</text>
+  <text class="small white" x="720" y="54">RAG + Workflow + Tools + Multi-Model</text>
+
+  <rect class="panel" x="60" y="126" width="190" height="120" rx="8"/>
+  <text class="label" x="105" y="170">用户入口</text>
+  <text class="tiny" x="92" y="204">Web 问答页</text>
+  <text class="tiny" x="92" y="228">嵌入第三方系统</text>
+
+  <rect class="accent" x="330" y="110" width="250" height="156" rx="8"/>
+  <text class="label" x="390" y="154">智能体层</text>
+  <text class="tiny" x="366" y="188">简易智能体</text>
+  <text class="tiny" x="366" y="212">高级工作流编排</text>
+  <text class="tiny" x="366" y="236">对话日志与发布</text>
+
+  <rect class="green" x="680" y="110" width="230" height="156" rx="8"/>
+  <text class="label" x="748" y="154">知识库</text>
+  <text class="tiny" x="722" y="188">文档上传 / 网页抓取</text>
+  <text class="tiny" x="722" y="212">切分 / 清洗 / 向量化</text>
+  <text class="tiny" x="722" y="236">命中测试 / 检索参数</text>
+
+  <rect class="orange" x="960" y="110" width="180" height="156" rx="8"/>
+  <text class="label" x="1017" y="154">工具</text>
+  <text class="tiny" x="994" y="188">函数库</text>
+  <text class="tiny" x="994" y="212">MCP 工具</text>
+  <text class="tiny" x="994" y="236">外部 API</text>
+
+  <rect class="purple" x="330" y="360" width="250" height="150" rx="8"/>
+  <text class="label" x="405" y="404">模型层</text>
+  <text class="tiny" x="366" y="438">OpenAI / Claude / Gemini</text>
+  <text class="tiny" x="366" y="462">DeepSeek / Qwen / Kimi</text>
+  <text class="tiny" x="366" y="486">Ollama / vLLM / 本地模型</text>
+
+  <rect class="panel" x="680" y="360" width="230" height="150" rx="8"/>
+  <text class="label" x="748" y="404">数据层</text>
+  <text class="tiny" x="724" y="438">PostgreSQL</text>
+  <text class="tiny" x="724" y="462">pgvector</text>
+  <text class="tiny" x="724" y="486">文件与索引数据</text>
+
+  <rect class="panel" x="960" y="360" width="180" height="150" rx="8"/>
+  <text class="label" x="1015" y="404">运维</text>
+  <text class="tiny" x="994" y="438">备份还原</text>
+  <text class="tiny" x="994" y="462">权限管理</text>
+  <text class="tiny" x="994" y="486">安全升级</text>
+
+  <path class="line" d="M250 186 H330"/>
+  <path class="line" d="M580 188 H680"/>
+  <path class="line" d="M910 188 H960"/>
+  <path class="line" d="M455 266 V360"/>
+  <path class="line" d="M795 266 V360"/>
+  <path class="line" d="M1050 266 V360"/>
+  <path class="line" d="M680 436 H580"/>
+  <path class="line" d="M580 438 C630 530 760 565 960 462"/>
+
+  <rect class="panel" x="60" y="548" width="1080" height="76" rx="8"/>
+  <text class="small" x="92" y="586">核心闭环：用户问题进入智能体，智能体按提示词和工作流调度知识库检索、工具调用和模型生成；数据层保存知识、索引与日志；运维层负责生产环境稳定性。</text>
+</svg>

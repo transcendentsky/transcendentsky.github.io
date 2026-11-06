@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="640" viewBox="0 0 1180 640" role="img" aria-labelledby="title desc">
+  <title id="title">Latency memory power triangle</title>
+  <desc id="desc">A triangle showing the tradeoff between latency, memory and power consumption for edge AI inference.</desc>
+  <defs>
+    <filter id="shadow" x="-15%" y="-25%" width="130%" height="150%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#17324d" flood-opacity=".15"/>
+    </filter>
+  </defs>
+  <rect width="1180" height="640" rx="28" fill="#f6f8fb"/>
+  <text x="590" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#17324d">端侧优化的三角约束</text>
+  <text x="590" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#607080">延迟、内存和功耗彼此牵制，优化要按产品场景取舍</text>
+
+  <g filter="url(#shadow)">
+    <path d="M590 145 L215 515 L965 515 Z" fill="#ffffff" stroke="#d5e2ec" stroke-width="4"/>
+    <circle cx="590" cy="145" r="58" fill="#2f80ed"/>
+    <circle cx="215" cy="515" r="58" fill="#00a878"/>
+    <circle cx="965" cy="515" r="58" fill="#f2994a"/>
+  </g>
+
+  <g font-family="Arial, sans-serif">
+    <text x="590" y="139" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">延迟</text>
+    <text x="590" y="166" text-anchor="middle" font-size="14" fill="#ffffff">Latency</text>
+    <text x="215" y="509" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">内存</text>
+    <text x="215" y="536" text-anchor="middle" font-size="14" fill="#ffffff">Memory</text>
+    <text x="965" y="509" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">功耗</text>
+    <text x="965" y="536" text-anchor="middle" font-size="14" fill="#ffffff">Power</text>
+
+    <text x="590" y="330" text-anchor="middle" font-size="24" font-weight="700" fill="#17324d">产品目标决定优化策略</text>
+    <text x="590" y="365" text-anchor="middle" font-size="17" fill="#536170">语音助手优先低延迟；相册离线分析优先低功耗；</text>
+    <text x="590" y="392" text-anchor="middle" font-size="17" fill="#536170">端侧 LLM 优先显存与 KV Cache；AR 应用优先稳定帧率。</text>
+
+    <rect x="385" y="455" width="410" height="68" rx="16" fill="#17324d"/>
+    <text x="590" y="485" text-anchor="middle" font-size="17" font-weight="700" fill="#ffffff">优化不是单点极限，而是可接受质量下的最优平衡</text>
+    <text x="590" y="510" text-anchor="middle" font-size="14" fill="#cfe2ee">Quality floor first, then speed and cost.</text>
+  </g>
+</svg>
